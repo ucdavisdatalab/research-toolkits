@@ -1,0 +1,138 @@
+---
+title: "UC Davis DataLab Network Toolkit"
+date: "`r Sys.Date()`"
+author: "UC Davis DataLab"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    css: datalab_theme.css
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rmdformats)
+
+library(visNetwork)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+# Overview
+
+This page will provide you with a few basic concepts and tools for using network data. Network science is a discipline of its own, so if you plan to use these methods of your own research, please consider this a starting point only. That being said, this page should give you the language to start researching the concepts that are of interest to you and your project.
+
+First we will cover some system agnostic network concepts, such as defining a network and its component parts. We will then move on to common tools for network analysis, and further readings if you wish to learn more.
+
+# Network Concepts
+
+Before using any network tools, you will need to have a *relational* data set. Rather than looking only at attributes of specific data points, relational data also looks at the connections between data points. In network analysis, data points are called *nodes* or *vertices*, and the connections between them are called *edges* or *ties.* Vertices can be anything—people, places, word, concepts—they are usually mapped into rows in a data frame. Edges contain any information on how these things connect or are related to each other. These components create a *network* or *graph*.
+
+Below is an example network. In this network, people are *nodes* and their relations to each other are *edges*. Each node also has node *attributes*, which commonly aligns with a row in a dataframe for that node, like traditional tabular data. You can see these attributes in the table below, or by hovering over the people. 
+
+#### Table Example
+
+|Person|Name|Age|Widgits|
+|---|:---|:---|:--|
+|![](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/male-teacher_1f468-200d-1f3eb.png){width=10%}   | J  | 30 | 1 |
+|![](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/female-student_1f469-200d-1f393.png){width=10%}   | Y  | 21 | 3 |
+|![](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/female-health-worker_1f469-200d-2695-fe0f.png){width=10%}   | G  | 32 | 4 |
+|![](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/male-scientist_1f468-200d-1f52c.png){width=10%}   | Z  | 48 | 8 |
+
+#### Network Example
+
+```{r echo=FALSE, out.width='100%'}
+nodes = data.frame(id = 1:4, 
+                    shape = "image",
+                    title = c("<p style='color: black;'>Name: J<br>Age: 30<br>Widgits: 1</p>", "<p style='color: black;'>Name: Y<br>Age: 21<br>Widgits: 3</p>", "<p style='color: black;'>Name: G<br>Age: 32<br>Widgits: 4</p>", "<p style='color: black;'>Name: Z<br>Age: 48<br>Widgits: 8</p>"),
+                    image = c(
+              "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/male-teacher_1f468-200d-1f3eb.png",
+              "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/female-student_1f469-200d-1f393.png",                        "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/female-health-worker_1f469-200d-2695-fe0f.png",
+              "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/male-scientist_1f468-200d-1f52c.png"))
+
+edges = data.frame(from = c(2,4,3,3), to = c(1,2,4,2), label = c("Siblings", "Student", "Friends", "Parent"))
+
+visNetwork(nodes, edges, width = "100%") %>% 
+  visNodes(shapeProperties = list(useBorderWithImage = FALSE), size = 50) %>%
+  visEdges(length = 200, scaling = list(min = 400)) %>%
+  visInteraction(zoomView = FALSE) %>%
+  visLayout(randomSeed = 2)
+```
+
+# Tools for Non-Coders
+
+## Gephi
+
+[Gephi](https://gephi.org/) is free and open-source software that allows you to visualize and explore networks. You can input network data (edgelists or matrices) and create customizable visualizations for networks, complex systems, and dynamic and hierarchical graphs. It's quick to get started with, but more difficult to master as it involves learning Gephi's user interface and file formats. Tutorials are available to learn the user interface.
+
+## NodeXL
+
+The free version of [NodeXL](https://archive.codeplex.com/?p=nodexl) allows users to create network graphs from edgelists within Excel, and the Pro version includes more advanced network metrics, text and sentiment analysis, and a report generation tool. Neither version has been updated since 2015 but they are useful for users who don't want to learn a programming language or external UI – all NodeXL tools operate within Excel.
+
+## Netlytic
+
+[Netlytic](https://netlytic.org/) is a tool to gather and analyze online conversations from social network sites such as Twitter, Instagram, YouTube, Facebook, or your own dataset. Datasets can be explored and analyzed in Netlytic with a variety of text analysis, category analysis, and network analysis tools (and visualizations), and then exported to other network programs such as Pajek and UCINET, or a CSV format. The program is free for up to five datasets with up to 10,000 records in each. For more and bigger datasets, the site offers several tiers of pricing. The site includes tutorials on using the UI, and [there are also tutorials](https://docs.google.com/document/d/1_EH30ycPj2r6t0vH1QSSBjKJ209qq7-nwz2zAJno8Mk/pub?embedded=true) to integrate Netlytic with R. 
+
+## InfraNodus
+
+[InfraNodus](https://infranodus.com/) is an interactive tool that can be used for free online or downloaded from Github to create a network from text data. Network graphs show main topics, can compare different texts, visualize connections between citations and notes or estimate the bias/opinion of a discourse.
+
+# R Packages
+
+## Fundamental
+
+### Statnet
+
+[Statnet](https://statnet.org/) is a family of R packages built for modeling and simulating exponential random graph models. These models allow you to keep some aspects of your network constant, and generate artificial networks withing those constraints. You can then compare your network to the artificial simulations to check for significance against random chance. Some plotting and descriptive tools are also provided. The family includes:
+
+* [ergm](https://github.com/statnet/ergm) – Analyze and simulate networks using exponential-family random graph models. 
+* [tergm](https://github.com/statnet/tergm) – Analyze dynamic or evolving network data using temporal exponential random graph models. 
+* [latentnet](https://github.com/statnet/latentnet) – Fit and simulate latent space models of networks.
+* [EpiModel](https://github.com/statnet/EpiModel) –  Tools for simulating mathematical models of infectious disease dynamics.
+
+### igraph
+
+[igraph](https://igraph.org/r/) Offers a host of visualization and analysis tools for networks. If you're interested in calculating things like degree distribution and centrality measures this is a good place to start. It has an R and python version and can also be used with Mathematica and C/C++.
+
+* [netCoin](https://cran.r-project.org/web/packages/netCoin/index.html) - A package for analyzing coincidence networks (particularly relevant to ecologists), equipped with broadly useful functions to build interactive and easily shareable network visualizations.
+
+### intergraph
+
+[intergraph](http://mbojan.github.io/intergraph/) provides tools for converting between networks created using the igraph and statnet packages in R.
+
+## Visualization
+
+### visNetwork
+
+[visNetwork](https://github.com/datastorm-open/visNetwork) is a great package for turning network plots into interactive html objects. Networks that are not small can be difficult to visualize, and it’s often useful to create interactive plots to expand the amount of data you show. It works well with networks created in igraph.
+
+### ggraph
+
+[ggraph](https://github.com/thomasp85/ggraph) is used for network plotting in R‘s ggplot/tidyverse framework. This package has supplanted the ggnetwork package.
+
+# Python Modules
+
+## Fundamental
+
+### NetworkX
+
+[NetworkX](https://networkx.org/) is by far the most common network analysis tool for python. It the backbone of many other network packages with more specific uses.
+
+### igraph
+
+[igraph](https://igraph.org/python/) from R also has a python module.
+
+# Further Reading
+
+* **Networks** by Mark Newman is the definitive textbook for networks and is quite accessible.
+* **Social Network Analysis: Methods and Applications** by Stanley Wasserman and Katherine Faust is foundational to social network analysis, and is often called the "SNA Bible".
+* **Understanding Social Networks: Theories, Concepts, and Findings** by Charles Kadushin is a great introduction to social network analysis and networks in general.
+
