@@ -136,3 +136,11 @@ The free version of [NodeXL](https://archive.codeplex.com/?p=nodexl) allows user
 * **Social Network Analysis: Methods and Applications** by Stanley Wasserman and Katherine Faust is foundational to social network analysis, and is often called the "SNA Bible".
 * **Understanding Social Networks: Theories, Concepts, and Findings** by Charles Kadushin is a great introduction to social network analysis and networks in general.
 
+# Contributions
+
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits).
+
+This toolkit has been made possible thanks to contributions by:
+
+* [Jane Carlen](https://jcarlen.github.io/)
+* [Jared Joseph](https://jnjoseph.com/)
