@@ -39,3 +39,9 @@ h1, h2, h3, h4, h5, h6, legend {
     padding: .125em 1px 0 1px;
     transition: background-position .15s, color .15s;
 }
+
+.csl-entry {
+  padding-bottom: 10px;
+  padding-left: 22px ;
+  text-indent: -22px ;
+}
