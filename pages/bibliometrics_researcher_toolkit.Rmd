@@ -1,0 +1,87 @@
+---
+title: "UC Davis DataLab Network Toolkit"
+date: "`r Sys.Date()`"
+author: "UC Davis DataLab"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    css: datalab_theme.css
+bibliography: references.bib
+link-citations: TRUE
+csl: apa.csl
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+# Overview
+
+Bibliometrics is a quantitative field with connections to sociology of science, science policy, and research program evaluation. As data, bibliometrics typically measure research outputs, especially articles in peer-reviewed journals, often in terms of publication counts, citation counts, and measurements derived from these (such as publications per year or journal impact factors, which are roughly citations per article over a certain period of time). Other kinds of research outputs, such as patents and technology transfer, as well as various "alternative metrics" (or "altmetrics" like social media mentions or Wikipedia citations), are sometimes included as bibliometrics data. Bibliometric methods include various descriptive analyses of these data, as well as analytical methods such as statistical regressions, social network analysis (based on relationships such as coauthorships or shared citation patterns), text mining, and agent-based modeling.
+
+Some researchers and analysts prefer the broader term "scientometrics," reserving the term bibliometrics for simpler counts of publications and citations. Like other forms of relatively novel, large-scale social data, bibliometrics and scientometrics can be extremely powerful, but must be gathered and used thoughtfully.
+
+This Toolkit includes important background reading to know before you start a bibliometrics project, a description of the most common sources for gathering bibliometrics data, some local resources, and references for further reading.
+
+# Background and Caution
+
+Hicks and Melkers [-@hicksBibliometricsToolResearch2013] discuss the general use of bibliometrics in program evaluation. They pay special attention to the interpretation of citation counts, emphasizing that "most [bibliometricians] agree that citation counts do not signify scientific quality in any simple way" (page 7). Mingers and Leydesdorff [-@mingersReviewTheoryPractice2015] provide a substantial review of the scholarly bibliometrics literature, including discussions of various data sources, purported "laws" of bibliometrics, and formal definitions of various derived metrics such as the h-index (which attempts to measure both the productivity and citation impact of a scholar by measuring their most cited publications).
+
+The impact factor and h-index are especially notorious as poorly-understood but widely-used metrics. The PLoS Medicine Editors [-@editorsImpactFactorGame2006] provide a brief and critical explanation of the impact factor. Both impact factor and h-index are based on citation counts. It is widely recognized that citation practices differ dramatically across fields of research: biologists, mathematicians, and sociologists do not cite in the same ways. Consequently, it is also widely recognized that citation counts and derived statistics must be normalized for cross-field comparisons to be valid. However, Lee [-@leeReferenceClassProblem2020] argues that a given article or body of research does not necessarily belong to a single field; this implies that the reference class used for normalizing citation counts is not well-defined. Specifically, a normalization calculation that is appropriate for one analysis might not be appropriate for another analysis.
+
+Simple interpretations of bibliometrics might also be confounded by social hierarchies in science. A large-scale cross-disciplinary, interdisciplinary analysis by Elsevier [-@elsevierGenderTheGlobalResearch2017] found that women tend to have lower publication counts than men, but have similar normalized citation rates. However, some studies of specific fields have found gender disparities in citation rates [@maliniakGenderCitationGap2013; @dionGenderedCitationPatterns2018; @foxGenderDifferencesPeer2019]. Other potential confounders might include race and ethnicity, country, career status and position type, and institution type (e.g., research university vs. teaching-focused liberal arts college or community college).
+
+In light of these kinds of challenges with appropriately using and interpreting bibliometrics, especially the impact factor, leaders of the bibliometrics community published two documents, "The DORA Declaration" [@caganSanFranciscoDeclaration2013] and "The Leiden Manifesto" [@hicksBibliometricsLeidenManifesto2015]. Both documents urge caution in using bibliometrics, and the Leiden Manifesto offers a "distillation of best practice in metrics-based research assessment" (page 430). The first point is that "quantitative evaluation should support qualitative, expert assessment."
+
+# Data Sources for Bibliometrics Research
+
+Several APIs and portals are available for gathering bibliometric data. Each platform has its benefits and biases, and ideally multiple should be queried for any given project to ensure more complete data capture.
+
+## Web of Science and Scopus
+
+[Web of Science](https://webofknowledge.com/) and [Scopus](https://scopus.com/) are the most frequently-used sources of bibliometrics data. Both are owned by private, for-profit businesses (Clarivate Analytics and Elsevier, respectively). As of July 2019, UC Davis has access to both services. Both platforms provide web interfaces with basic and advanced search options and basic analytical tools, as well as APIs for automated search and data collection. For works in English, both databases have very good coverage for journal articles in natural science, mathematics, and engineering; good coverage for articles in quantitative social science; good to fair coverage for articles in qualitative social science and humanities; and some coverage of books from major academic publishers. For R users, the [rscopus package](https://cran.r-project.org/package=rscopus) provides (limited) access to the Scopus API, and the [bibliometrix package](https://cran.r-project.org/package=bibliometrix) can be used with datasets downloaded from both Web of Science and Scopus. [VOSviewer](https://www.vosviewer.com/) is a GUI tool for analyzing datasets from Web of Science and other sources.
+
+## Microsoft Academic Search
+
+[Microsoft Academic Search](https://academic.microsoft.com/home) has recently emerged as a competitor to Web of Science and Scopus. Unlike Web of Science and Scopus, Academic Search incorporates "grey literature" from the open web and public book databases such as WorldCat. This means that Academic Search frequently has better coverage than Web of Science and Scopus, especially for works in languages other than English and qualitative social science and humanities. However, this also leads to concerns about data quality. Academic Search has a [free API](https://docs.microsoft.com/en-us/azure/cognitive-services/academic-knowledge/home).
+
+##Crossref API
+
+[Crossref](https://github.com/CrossRef/rest-api-doc) is the primary DOI registration agency. DOI is an identifier widely used with academic publications, including journal articles but increasingly also book chapters and other born-digital scholarly works. In addition, many major academic publishers have registered DOIs for their entire archives. When a DOI is registered, the publisher provides metadata describing the item to Crossref. These metadata can be retrieved quickly, easily, and for free using the Crossref API for virtually any item with a valid DOI. For R users, the [rcrossref package](https://cran.r-project.org/package=rcrossref) provides an elegant interface to this API. Crossref has excellent coverage for recent research across almost all fields, and very good coverage for historical work across most fields. However, Crossref is limited to the metadata provided by publishers, which generally do not include abstract texts or citations.
+
+## JSTOR Data for Research
+
+[JSTOR](https://www.jstor.org/dfr/) is a major repository of scholarly journal and book archives, especially for English-language humanities. The Data for Research portal enables researchers to design and download sets of publication metadata as well as text (generally in the form of term counts). Because of its focus on humanities, JSTOR can have much better coverage than Web of Science and Scopus for these fields, especially for historical works. However, as of Summer 2018, JSTOR had limited DOI coverage, especially for works that were not born digital. This can make it difficult to integrate JSTOR data with data from other sources. For R users, the [jstor package](https://cran.r-project.org/package=jstor) facilitates reading and parsing Data for Research datasets.
+
+## PubMed APIs
+
+[The PubMed APIs](https://www.ncbi.nlm.nih.gov/home/develop/api/) may already be familiar to researchers in biomedical research and genomics. The Entrez set of utilities can be used to search and retrieve publication metadata from the PubMed index. These utilities are all free to use. PubMed's coverage is generally excellent for English-language publications in biomedical journals and related fields, but extremely limited otherwise. A web search returns several results for PubMed-related packages on CRAN, but the author of this toolkit has not used any of them.
+
+# Resources
+
+* For help using an API to collect bibliometric data, contact a [Research Librarian](https://www.library.ucdavis.edu/service/researchsupport/).
+* See blog post by DataLab postdoc Jane Carlen for using bibliometric data from Google Scholar to create a coauthor network in R.
+* For help when there isn’t an API, drop in to DataLab office hours.
+
+# Contributions
+
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits).
+
+This toolkit has been made possible thanks to contributions by:
+
+* [Dan Hicks](https://dhicks.github.io/)
+* [Jared Joseph](https://jnjoseph.com/)
+
+# References
