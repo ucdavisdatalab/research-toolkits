@@ -1,0 +1,221 @@
+---
+title: "UC Davis DataLab Geospatial Toolkit"
+date: "`r Sys.Date()`"
+author: "UC Davis DataLab"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    css: datalab_theme.css
+bibliography: references.bib
+link-citations: TRUE
+csl: apa.csl
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+# Overview
+
+# Text Data Gathering Tools
+
+## Digital Methods Initiative
+
+This website offers a suite of tools for collecting and analyzing internet data, all created at the Digital Methods Initiative at the University of Amsterdam. Tools are generally web-based and user-friendly, where researchers can input URLs they are interested in studying. DMI also provides various tools to analyze, organize, and visualize the collected internet data. All tools include instructions and examples scenarios of use. They have tools in a variety of realms including media analysis (media monitoring, mapping, clouding, comparative analysis), data treatment and visualization, natively digital (The Link, URL, Tag, Domain, PageRank, etc.), specific devices/websites (Google, Yahoo, Wikipedia, Alexa, IssueCrawler, Twitter, Facebook, Amazon, iTunes, Wayback, YouTube, Instagram, Github, etc.), and spherical studies (including the web, news, tag, video, image, code and blogo- spheres)
+
+[Visit Site>>](https://wiki.digitalmethods.net/Dmi/ToolDatabase){rel="noopener noreferrer" target="_blank"}
+
+## Overview
+
+A document mining application to read and analyze sets of documents, including full text search, visualizations, entity detection, topic clustering, and more. The tool includes built-in OCR, document annotation, and word clouds. It also includes tagging and metadata support, and users can write their own plugins using the API. Users can run the program on the public Overview server or download source code from Github to run it on their own machines via command line.
+
+[Visit Site>>](https://blog.overviewdocs.com/){rel="noopener noreferrer" target="_blank"}
+
+# Text Data Cleaning/Prep Tools
+
+## The Sourcecaster
+
+Instructions and tutorials for using the command line for common text cleaning tasks. Useful and time-saving with lots of dependencies (brew, port, wget, tesseract, etc.) for people already familiar with command line. It might have a steeper learning curve for people who are not tech savvy.
+
+[Visit Site>>](http://thomasgpadilla.github.io/sourcecaster/){rel="noopener noreferrer" target="_blank"}
+
+## AntSoftware
+
+This site has several tools for cleaning and prepping text documents, such as AntCorGen (corpus creation tool), AntFileConverter (converts PDF and Word files to plain text), AntFileSplitter (file splitting tool), AntGram (n-gram and p-frame generation tool), EncodeAnt (detects and converts character encodings), SarAnt (batch search and replace tool), and VariAnt (a spelling analysis program). All programs are free and easily downloaded, and the site includes step by step screenshot help pages.
+
+[Visit Site>>](http://www.laurenceanthony.net/software.html){rel="noopener noreferrer" target="_blank"}
+
+## Trifacta
+
+A program that accepts various forms of “messy” data (including JSON and CSV), and attempts do profile your data based on percent of missing, mismatching, inconsistent values, and data categories. Through the free-to-download GUI, users can then more easily clean and enrich datasets and export into a several structured data formats.
+
+[Visit Site>>](https://www.trifacta.com/products/wrangler-editions/#wrangler){rel="noopener noreferrer" target="_blank"}
+
+# Advanced Text Analysis
+
+## Google Word2Vec
+
+A C implementation of the word2vec skip gram and continuous bag of words models for creating word embeddings. This tool takes a text corpus as input and produces the word vectors as output. It can be downloaded from source and used on command line. This is a very powerful tool for many natural language processing problems, but there exist many alternative implementations as well as wrappers to the Google C implementation linked. One such tool is gensim, a python wrapper around this tool.
+
+[Visit Site>>](https://code.google.com/archive/p/word2vec/){rel="noopener noreferrer" target="_blank"}
+
+## Stanford NER
+
+Part of Stanford Core NLP, this is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The webpage provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as python, php, perl, JavaScript, etc.
+
+[Visit Site>>](https://nlp.stanford.edu/software/CRF-NER.shtml){rel="noopener noreferrer" target="_blank"}
+
+## Stanford Sentiment Analysis
+
+Part of Stanford Core NLP, this is a Java implementation with web demo of Stanford’s model for sentiment analysis. The model uses sentence structure to attempt to quantify the general sentiment of a text based on a type of recursive neural network which analyzed Stanford’s Sentiment Treebank dataset. This is a very useful tool and is a much more up to date and robust model for sentiment analysis then previous naive model’s that simply sum the scores of the words in the text without caring for order or grammatical nuance. Users can use a web based live demo to see if the tool is useful for them, and then download the source code via command line.
+
+[Visit Site>>](https://nlp.stanford.edu/sentiment/){rel="noopener noreferrer" target="_blank"}
+
+## Sentiment 140
+
+An API for sentiment analysis on tweets, this tool can do bulk processes of around 5000 per minute and was built from machine learning algorithms. The tool is well documented and seems easy to interface with and parse results. Users can upload JSON and CSV formatted data and use of the tool requires registration.
+
+[Visit Site>>](http://help.sentiment140.com/api){rel="noopener noreferrer" target="_blank"}
+
+## Signature Stylometric System
+
+This is a tool for stylometric analysis and comparison of texts with emphasis on author identification. The tool is well documented and seemingly well designed and implemented. Several corpuses are available with examples of usage available on the website. It seems like a good starting point for any kind of efforts towards author attribution, and the program is downloadable in a self-extracting ZIP file.
+
+[Visit Site>>](http://www.philocomp.net/humanities/signature.htm){rel="noopener noreferrer" target="_blank"}
+
+## Macro-Etyological Analyzer
+
+A python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. A very important tool for people interested in historical word usage and linguistic change.
+
+[Visit Site>>](http://jonreeve.com/2016/06/introducing-macroetym-cli/){rel="noopener noreferrer" target="_blank"}
+
+## TextPlot
+
+A program that converts a document into a network of terms based on cooccurrences with the goal of teasing out information about high-level topic structure of the text. For each term, users can get the set of offsets in the document where the term appears and use the kernel density estimation to compute a probability density function that represents the word’s distribution across the document. Users can also compute the bray-Curtis dissimilarity between the term’s PDF and the PDFs of all other terms in the document to measure the extent to which two words appear in the same locations. Output includes various ways of graphing these measures, including an overall word network. Users can install the source code from Github and can use the program via command line or Python.
+
+[Visit Site>>](https://github.com/davidmcclure/textplot){rel="noopener noreferrer" target="_blank"}
+
+## BookNLP
+
+A natural language processing pipeline developed to run on books and other long (English only) documents. Uses the Stanford Core NLP software, so it requires Java and use of the command line or more advanced programming skills. Includes the ability to do part-of-speech tagging, dependency parsing, named entity recognition, character name clustering, quotation speaker identification, pronominal coreference resolution, and suspersense tagging.
+
+[Visit Site>>](https://github.com/dbamman/book-nlp){rel="noopener noreferrer" target="_blank"}
+
+## FACTORIE
+
+From the command-line, this program provides a framework for probabilistic graphical models, and can do a wide variety of text analysis tasks such as topic modeling, document classification, and part-of-speech tagging. The tutorials and how-to guides are mostly code, and so is recommended for users already familiar with at least one computer programming language. The last update to the software was 2014.
+
+[Visit Site>>](http://factorie.cs.umass.edu/){rel="noopener noreferrer" target="_blank"}
+
+# Text Corpus Exploration Software
+
+## AntConc
+
+A useful tool for exploratory natural language processing tasks, including clusters/N-grams, word frequency lists, and keywords. The software is well documented with several tutorials and easy to set up and use. AntConc is free and requires no downloading, it will launch from the web. It has seven tools users can access: Concordance tool (viewing the results in a KWIC format to see the commonly used words and phrases in a corpus of texts); Concordance Plot tool (plots the search results in a barcode format); File View tool (shows text of individual files); Clusters/N-grams tool (shows clusters based on search condition, or scans corpus for ‘N’ length clusters); Collocates tool (shows the collocates of a search term to investigate non-sequential patterns in language); Word List tool (frequency distribution of all words in the corpus); Keywords List tool (shows which words are unusually frequent in corpus in comparison to a reference corpus).
+
+[Visit Site>>](http://www.laurenceanthony.net/software.html){rel="noopener noreferrer" target="_blank"}
+
+## WordHoard
+
+This is a powerful tool for anyone interested in understanding classic literary texts and the word usage they contain. It implements many core natural language processing methods, designed with close reading in mind and working towards meticulous tagging and metadata retrieval in texts. A very well documented with many examples, this tool is easy to customize with a well-designed and explained scripting system. The current version has the entire cannon of Early Greek epic in the original and in translation, as well as ass of Chaucer, Shakespeare, and Spenser.
+
+[Visit Site>>](http://wordhoard.northwestern.edu/userman/index.html){rel="noopener noreferrer" target="_blank"}
+
+## Sketch Engine
+
+A subscription-based tool aimed at non-programmers that analyzes large corpora to look for common words, phrases, or phenomena, or can perform various types of text analysis including cooccurrence analysis, term extraction, frequency lists, and part-of-speech tagging. The tool includes a 30-day free trial, and then has various per-month prices for different types of researchers (academic and non-academic). Users can upload text files (including metadata) or use the automated built-in tool for downloading relevant texts from the web. The tool is built (and personalized) for translators, terminologists, lexicographers, teachers, students and historians.
+
+[Visit Site>>](https://www.sketchengine.eu/){rel="noopener noreferrer" target="_blank"}
+
+## DfR-Browser
+
+A tool to visualize and explore output from LDA topic models. View options of topics include a grid, scaled, list, and stacked view. Within topics, users can view frequency distributions, topic usage through time, and doc-topic matrices. Users can also access a word index to explore single words across the corpus, as well as topic distributions within documents. The site clearly explains what the tool does, and users can easily download the software via a .zip file.
+
+[Visit Site>>](http://agoldst.github.io/dfr-browser/){rel="noopener noreferrer" target="_blank"}
+
+# Text Corpus Exploration Web Apps
+
+## WordandPhrase
+
+A web interface tool for finding key words and phrases in a text based on their frequency. Users paste in text into interface and get a visualization of collocations and co-occurrence matrices, as well as the ability to import and export the data. The site also provides key word in context and other statistics about the word usage in the source text. However, in its current state, there is no easy way to use the tool on a large corpus and is therefore limited.
+
+[Visit Site>>](https://www.wordandphrase.info/){rel="noopener noreferrer" target="_blank"}
+
+## Lexos
+
+An online tool for cleaning and processing text, and users can upload data in various formats, including .txt, .html, .xml, .sgml, and .lexos. There is also a beta version available where users can use a web scraper to upload data. The tool can clean and separate the uploaded text into chunks and then provide several visualization tools to run on the processed text including word clouds, networks, and word collocation. Once uploaded, users can manage document lists, sorting them by labeled classes, sources, and excerpts. Text cleaning tools include removing punctuation, digits, whitespace, stop words, lemmatization, tokenization, creating a document-term matrix, etc. After visualization, the tool also offers several options for text analysis, including hierarchical clustering and k-means clustering, document similarity comparisons, and topwords. Users can export the data as CSV or tsv.
+
+[Visit Site>>](http://lexos.wheatoncollege.edu/upload){rel="noopener noreferrer" target="_blank"}
+
+## WordTree
+
+An online tool for visualizing the contexts in which certain phrases appear to get a sense of the ultimate structure of the text. This tool provides a novel way for searching a text based on certain phrases or words that appear within. Seems most useful for short texts as opposed to a full corpus and does not provide any analysis output beyond exploring your text visually.
+
+[Visit Site>>](https://www.jasondavies.com/wordtree/){rel="noopener noreferrer" target="_blank"}
+
+## WordSeer
+
+This python webapp for textual analysis combines visualization, information retrieval, sensemaking and natural language processing. After installing the source code via command line, use of WordSeer requires registration, and tools for collaboration are provided. Many standard nlp tools and visualizations are available through the web interface. Users can try out the tool on a test collection before uploading their own documents to see if the tool is right for them.
+
+[Visit Site>>](https://github.com/Wordseer/wordseer/){rel="noopener noreferrer" target="_blank"}
+
+## Voyant-Tools
+
+A web environment that implements many core nlp methods. Users paste in URLs or text and the interface provides various text exploration outputs, including a word cloud, relative frequency graph, word correlations, vocabulary density, and more. Data can be exported, however there is a limitation on the size of the corpus you can process.
+
+[Visit Site>>](https://voyant-tools.org/){rel="noopener noreferrer" target="_blank"}
+
+## In-Browser Topic Modeling
+
+The goal of this program is to make topic modeling accessible to users not familiar with R or Mallet. Users can run the program from a web browser, or download from Github, and can explore pre-loaded data or upload their own dataset (in CSV format). The UI allows users to explore topics by documents, correlations, and time series. Users can also explore the corpus vocabulary by frequency and topic specificity and can easily create custom stopword lists. The best feature of this program is that users can also download CSV formatted files of their topic model results, including document topics, topic words, topic summaries, topic-topic connections, doc-topic graphs (for Gephi) and a complete sampling state.
+
+[Visit Site>>](https://mimno.infosci.cornell.edu/jsLDA/){rel="noopener noreferrer" target="_blank"}
+
+# Dataset Sources
+
+## DPLA Visual Search Prototype
+
+A web portal to many databases of primary texts, images, videos and sound clips, produced by the DPLA (Digital Public Library of America). Its clearly defined and well curated categories (time periods and historical topics) make it useful as a place to find data for a project. Easy to web scrape and to cite, search results are presented graphed by topic area, year, and type of data available.
+
+[Visit Site>>](http://schuyberg.com/dplaviz/#/){rel="noopener noreferrer" target="_blank"}
+
+## HathiTrust
+
+A web portal to many databases of texts, books, and images. Users can download text versions of many of the works, and the site includes works in many languages. HathiTrust interfaces with WorldCat and other tools for finding alternate versions of the text.
+
+[Visit Site>>](https://www.hathitrust.org/){rel="noopener noreferrer" target="_blank"}
+
+# Novelty
+
+## WordWanderer
+
+An experimental web tool for visualization of an imported text. The web interface loads all words in the corpus and provides clickable and draggable options for users to explore the context of words and the relationships between words. No output or analysis function beyond exploring your text visually.
+
+[Visit Site>>](http://wordwanderer.org/){rel="noopener noreferrer" target="_blank"}
+
+## Poem Viewer
+
+A web tool for visualizing the features, form, and style of poems. This is one of the most comprehensive and well-built tools for visualizing the many attributes of poems, where users can visualize phonetics units, attributes, features, and relations, as well as word units and attributes, and semantics relations.
+
+[Visit Site>>](https://oxvii.wordpress.com/2013/04/12/poem-viewer/){rel="noopener noreferrer" target="_blank"}
+
+# Contributions
+
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits){rel="noopener noreferrer" target="_blank"}.
+
+This toolkit has been made possible thanks to contributions by:
+
+* [Sam Pizelo](https://www.samuelpizelo.com/){rel="noopener noreferrer" target="_blank"}
+* [Jared Joseph](https://jnjoseph.com/){rel="noopener noreferrer" target="_blank"}
