@@ -1,0 +1,60 @@
+---
+title: "UC Davis DataLab Technologies Toolkit"
+date: "`r Sys.Date()`"
+author: "UC Davis DataLab"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    css: datalab_theme.css
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+There are many programming languages used in Data Science, including but not limited to:
+
+# High-level Languages
+
+* [R](http://www.r-project.org/) – a free programming language and software environment for statistical computing. It provides a variety of statistical and graphical techniques and is highly extensible. R is popular across research domains for developing statistical software and data analyses, and producing publication quality graphics.
+* [Python](http://www.python.org/) – a free, general-purpose programming language that emphasizes efficiency and code readability. It is object-oriented and often used for web and app development.
+* [MATLAB](http://www.mathworks.com/products/matlab/) – computing environment and proprietary programming language used most commonly in engineering, physics and economics.
+* [Julia](http://julialang.org/) – free dynamic programming language for numerical analysis and computing.
+* [Scala](http://docs.scala-lang.org/) – genera-purpose language combining object-oriented and functional programming. It runs on the Java platform provides language interoperability with Java.
+* [SAS](http://www.sas.com/) – “Statistical Analysis System,” a proprietary software suite for data analytics. It is used by researchers in many domains to munge, mine and analyze data from a variety of sources. It is particularly popular in the health sciences.
+
+# Low-level Languages
+
+* [C++](https://isocpp.org/)
+* [C](http://www.open-std.org/jtc1/sc22/wg14/)
+* [Java](https://www.oracle.com/java/index.html)
+* FORTRAN
+
+# Use-specific Languages
+
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) – primarily used in visualization, dashboards, and mashups for webpages.
+* UNIX shell – interactive command language and a scripting language for controlling the executions of the operating system.
+* Regular Expressions – sequence of symbols and characters used to search for a string or pattern within a text.
+* SQL – Structured Query Language is used to communicate with a database and is the standard for many relational database management systems.
+* [Pig](https://pig.apache.org/) – used with Apache Hadoop for complex data transformations.
+* XPath – XML Path Language is a syntax for defining parts of an XML document.
+
+# Contributions
+
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits).
+
+This toolkit has been made possible thanks to contributions by:
+
+* [Jared Joseph](https://jnjoseph.com/)
