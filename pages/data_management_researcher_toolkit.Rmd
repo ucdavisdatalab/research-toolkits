@@ -110,4 +110,5 @@ This research toolkit is maintained by the UC Davis DataLab, and is open for con
 
 This toolkit has been made possible thanks to contributions by:
 
+* [Sam Pizelo](https://www.samuelpizelo.com/){rel="noopener noreferrer" target="_blank"}
 * [Jared Joseph](https://jnjoseph.com/){rel="noopener noreferrer" target="_blank"}
