@@ -1,5 +1,5 @@
 ---
-title: "UC Davis DataLab Network Toolkit"
+title: "UC Davis DataLab Geospatial Toolkit"
 date: "`r Sys.Date()`"
 author: "UC Davis DataLab"
 output:
