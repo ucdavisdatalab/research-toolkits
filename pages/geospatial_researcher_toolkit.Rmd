@@ -1,0 +1,354 @@
+---
+title: "UC Davis DataLab Network Toolkit"
+date: "`r Sys.Date()`"
+author: "UC Davis DataLab"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    css: datalab_theme.css
+bibliography: references.bib
+link-citations: TRUE
+csl: apa.csl
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+Concepts
+
+Just as statistical concepts are the same, regardless of which software you use to analyze your data, the concepts in the field of geospatial science apply to any software you use. Here are a few resources for learning:
+
+* [A Gentle Introduction to GIS](https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/)
+* [GIS fundamentals: a first text on geographic information systems by Paul Bolstad](https://search.library.ucdavis.edu/permalink/f/t3kr8e/01UCD_ALMA21327592230003126)
+
+# Tools
+
+There are many, many tools that perform geospatial analysis. Which tool is the right tool entirely depends on your goals, your needs, and your familiarity or desire to learn any particular tool. Listed here are a few of the tools commonly used on the UC Davis campus. There are many more. GIS Data Curator, Michele Tobias, is happy to discuss which option meets your needs.
+
+## Desktop GIS & Remote Sensing
+
+Desktop GIS programs have a graphical user interface and analysis processes are guided with forms that you can fill out with inputs, outputs, and necessary parameters.
+
+### QGIS
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Mac, Windows, Linux|Free|[QGIS.org](https://qgis.org/)|
+
+Learning:
+
+* [QGIS Training Manual](https://docs.qgis.org/3.4/en/docs/training_manual/)
+* [QGIS User Guide](https://docs.qgis.org/3.4/en/docs/user_manual/index.html)
+* [Intro to Desktop GIS with QGIS by Michele Tobias](https://github.com/MicheleTobias/Intro-to-Desktop-GIS-with-QGIS)
+
+### ArcGIS & Other ESRI Tools
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows|Free for the 2019 license year to UC Davis affiliates; costly to purchase on your own |[UC Davis IT Service Catalog: ESRI ArcGIS](https://itcatalog.ucdavis.edu/service/arcgis-geographic-software)|
+
+Learning:
+
+Note that logging in through the UCD enterprise system, most of the training materials from ESRI should be free to campus affiliates.
+
+* [ESRI Academy](https://www.esri.com/training/)
+* [Learn ArcGIS](https://learn.arcgis.com/en/)
+
+### GRASS
+
+GRASS can either be run as a standalone graphical user interface, you can access commands with a graphical user interface through QGIS, or it can be run from the command line. GRASS can be a powerful tool for network analysis, image processing, and other more complex processes.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Mac, Windows, Linux|Free|[OSGeo’s GRASS Page](https://grass.osgeo.org/)|
+
+Learning:
+
+* [Documentation](https://grass.osgeo.org/documentation/)
+* [First Time Users](https://grass.osgeo.org/documentation/first-time-users/)
+* [Tutorials](https://grass.osgeo.org/documentation/tutorials/%20Tutorials)
+
+### ERDAS Imagine
+
+ERDAS Imagine is software that focuses on methods related to image data (rasters).
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows|Contact Hexagon Geospatial; cost depends on features needed|[Product Profile](https://www.hexagongeospatial.com/products/power-portfolio/erdas-imagine)|
+
+Learning:
+
+* [Tutorials from Hexagon Geospatial](https://community.hexagongeospatial.com/t5/ERDAS-IMAGINE-Tutorials/tkb-p/KS_ERDAS_IMAGINE_Tutorials)
+
+### ENVI
+
+ENVI is a software that focuses on methods related to image data (rasters).
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Mac, Windows|Contact Chris Derr (Metro IT Cluster)|Chris Derr (Metro IT Cluster) coordinates the campus licences for ENVI|
+
+Learning:
+
+* [Tutorials from Harris Geospatial](https://www.harrisgeospatial.com/Support/Self-Help-Tools/Tutorials)
+
+### eCognition
+
+eCognition is a software that focuses on methods related to image data (rasters).
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows|Contact Trimble|[Trimble’s eCognition Site](http://www.ecognition.com/)|
+
+Learning:
+
+* [Trimble’s eCognition Training Site](http://www.ecognition.com/support/training)
+
+## Spatial Databases
+
+Databases with spatial querying capability can typically run analysis faster than a desktop GIS.
+
+### SpatiaLite
+
+eCognition is a software that focuses on methods related to image data (rasters).
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows, Mac, & Linux|Free|[SpatiaLite Download Page](https://www.gaia-gis.it/fossil/libspatialite/index)|
+
+Learning:
+
+* [Spatial SQL Workshop by Michele Tobias](https://github.com/MicheleTobias/Spatial_SQL)
+* [Installation Instructions](https://github.com/MicheleTobias/Spatial_SQL/blob/master/Install.md)
+
+### PostGIS
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows, Mac, & Linux|Free|[PostGIS Homepage](https://postgis.net/)|
+
+Learning:
+
+* [PostGIS Documentation](https://postgis.net/documentation/)
+
+## Programming
+
+Writing scripts to handle analysis has the benefit of being easy to re-run if you make a mistake in your workflow and the code itself provides documentation of the workflow.
+
+### R & R Studio:
+
+Packages like Raster, sp, & sf are the core of geospatial R.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows, Mac, & Linux|Free|[The R Project](https://www.r-project.org/)|
+
+Learning:
+
+* [R Spatial](https://rspatial.org/)
+* [The Carpentries’ Geospatial Workshop](https://datacarpentry.org/geospatial-workshop/)
+
+### Python
+
+Libraries like geopandas are a good place to get started with working with spatial data in Python.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows, Mac, & Linux|Free|[Python Software Foundation](https://www.python.org/downloads/)|
+
+Learning:
+
+* [GeoPandas Tutorial](http://geopandas.org/)
+* [#maptimeDavis Python Geospatial Workshop Materials](https://github.com/MicheleTobias/MaptimeDavis/tree/master/PythonGeospatial)
+
+### Google Earth Engine
+
+Google Earth Engine is an online remote sensing tool that uses javascript for programming. The platform offers a number of pre-loaded datasets or you can upload your own.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Online|Access is free but an application is required. Usually academic and research usage is accepted.|[Google Earth Engine Access Request Page](https://signup.earthengine.google.com/#!/)|
+
+Learning:
+
+* [#maptimeDavis Google Earth Engine Workshop Materials](https://github.com/MicheleTobias/MaptimeDavis/tree/master/GoogleEarthEngine)
+
+## Commandline Libraries
+
+### GDAL
+
+GDAL (Geospatial Data Abstraction Library) is a software library that translates between file formats. GDAL is the underlying code that allows you to save files in almost all digitial geospatial tools, however, you can also use it directly from the command line to convert files. A note on pronunciation: GDAL is pronounced either “Gee-Doll” or “Goo-Dull”, depending on who you ask.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows, Mac, & Linux|Free|[GDAL Homepage](https://gdal.org/)|
+
+If you have already downloaded another geospatial program (desktop GIS, spatial R packages, etc.), you probably already have GDAL installed, so please investigate that before you install another version as you could break your installations of other software.
+
+Learning:
+
+* [GDAL Tutorial Page](https://gdal.org/tutorials/index.html)
+
+### PDAL
+
+PDAL (Point Data Abstraction Library) is a software library for tanslating and manipulating point cloud data – most commonly we probably think of Lidar data, but PDAL deals with 3 dimensional point data in general. A note on pronunciation: Because the OSGeo maintains that there are two pronunciations of GDAL (see above), there are also two pronunciations of PDAL – “P-Doll” and “Poodle”. The second pronunciation is mainly used to be humorous.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows, Mac, & Linux|Free|[PDAL Homepage](https://pdal.io/)|
+
+Learning:
+
+* [PDAL Tutorial Page](https://pdal.io/tutorial/index.html)
+
+### GRASS
+
+See the Desktop GIS section above for more details. GRASS can also be used from the commandline. See the [GRASS and Shell](https://grasswiki.osgeo.org/wiki/GRASS_and_Shell) page for examples and explanations.
+
+## Web Mapping
+
+Displaying data as an interactive online map can be a good option for sharing data and allowing viewers to explore data at multiple scales. Here are some options for creating interactive maps:
+
+### Leaflet.js
+
+[Project Homepage](https://leafletjs.com/)
+
+### QGIS2Web Plugin for QGIS
+
+A graphical user interface in QGIS that writes html web map code in your choice of OpenLayers or Leaflet, QGIS2Web allows you to add and style layers as you would in QGIS to make a web map with no programming experience necessary.
+
+[Project Homepage](https://github.com/tomchadwin/qgis2web/wiki)
+
+## Photogrammetry & Photo Mosaic Stitching
+
+Low altitude remote sensing platforms typically require many large scale (in the sense of map scale) images to cover a geographic area. To work with this kind of data, we need to stitch these photos together into one scene. Here are a few software options for doing this work.
+
+### Pix4D
+
+Alex Mandel coordinates the EDU licenses of Pix4D. Contact him if you need to purchase a new license.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows|Typically licenses are offered on a subscription (yearly or monthly) basis.|[Pix4D Homepage](https://www.pix4d.com/)|
+
+Learning:
+
+* [Pix4D Training Site](https://www.pix4d.com/services/training-certification)
+
+### Metashape (formerly PhotoScan)
+
+Alex Mandel also coordinates the Metashape/Photoscan licenses.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Windows, Mac, & Linux|Typically licenses are offered on a subscription (yearly or monthly) basis.|[Agisoft Homepage](https://www.agisoft.com/)|
+
+Learning:
+
+* [Agisoft User Manuals](https://www.agisoft.com/downloads/user-manuals/)
+
+### OpenDroneMap (ODM)
+
+OpenDroneMap (ODM) is an open source photogrammetry tool for low-altitude imagery.
+
+|Platforms|Cost|Download|
+|:-|:-|:-|
+|Linux (but the docker method of running it on Windows and Mac is [fairly well documented](https://www.opendronemap.org/docs/)|Free to run the software yourself with paid options for services run by the ODM team.|[ODM Homepage](https://www.opendronemap.org/)|
+
+Learning:
+
+* [ODM Documentation](https://www.opendronemap.org/docs/)
+
+# Campus Resources
+
+## Drop-In Hours
+
+Geospatial Drop-In Hours are now a part of the [DataLab Drop-In Hours](https://datalab.ucdavis.edu/office-hours/).
+
+You can also schedule one-on-one or group consultations with Michele Tobias, GIS Data Curator.
+
+## Geospatial Email List
+
+UC Davis affiliates can sign up for email lists through the [UC Davis Information & Educational Technology’s Sympa list serve manager](https://lists.ucdavis.edu/sympa/). The [Geospatial email list](https://lists.ucdavis.edu/sympa/info/geospatial) is a widely-used list for UC Davis faculty, students, staff, and local community members who work with any type of geospatial data. The list can be used for announcements or questions.
+
+## UC Davis Slack Channels
+
+[UC Davis Slack](https://itcatalog.ucdavis.edu/service/slack) has several channels related to spatial data and tools.
+
+* spatial: the general channel for spatial discussion
+* earth-engine: discussion around Google Earth Engine programming
+* r: a good place to ask spatial-related R questions
+* arcgis: discussion space for ESRI tools
+
+## GIS Workstation & Scanner
+
+The lower level of Shields Library has one GIS workstation that UC Davis students, faculty, researchers, and other staff may to use for a maximum of two hours per day. The workstation room is located near, but outside the Map Room and is open the same hours as the Library. The workstation has the full suite of ArcGIS 10 software (available to campus affiliates) including ArcMap and ArcGIS Pro, as well as QGIS 3 (available to anyone).
+
+An 11″ x 17″ color scanner is available for maps and aerial photography.
+
+Workstation use must comply with [UC Davis Computer Use Policies](https://computerrooms.ucdavis.edu/policies.html) and the [Library Computer Use Policy](https://www.library.ucdavis.edu/library-policies/). GIS software and data licensed by the library may not be used for commercial purposes. Save your data and project files to portable media.
+
+## Classes
+
+Whether you’re just getting started with geospatial technologies or you’re looking for a way to advance your skills, here are some classes to consider at UC Davis. The quarter listed may change. Consult with the schedule of classes or the professor for each class. Please also see the [Geography Graduate Group’s list of Methods, Models, & GIS Depth Courses](https://geography.ucdavis.edu/methods-models-and-gis-science-courses) for a broader list of possible courses. The [UC Davis Continuing & Professional Education](https://extension.ucdavis.edu/subject-areas/geographic-information-systems) (formerly the Extension) also offers courses in GIS aimed at working professionals. The Center for Spatial Sciences maintains [a list of upcoming, current, and past classes](https://spatial.ucdavis.edu/teaching/), including 198/298 group studies. Join the [Geospatial email list](https://lists.ucdavis.edu/sympa/info/geospatial) to get annoucements about upcoming classes and workshops.
+
+* **EAE-10:** From the Wright Brothers to Drones and Quadcopters (Summer)
+* **ECI 16:** Spatial Data Analysis (Spring)
+* **LDA 150 / ABT 150:** Introduction to GIS (Typically taught in Fall, Spring, and a summer Study Abroad course in Bhutan)
+* **ABT 181N:** Concepts and Methods in Geographic Information Systems (alternating Winter quarters with ABT 182)
+* **ABT 182 / HYD 182:** Environmental Analysis using GIS (alternating Winter quarters with ABT 181N)
+* **ERS 185:** Aerial Photo Interpretation and Remote Sensing (Fall)
+* **ERS 186:** Environmental Remote Sensing (Winter)
+* **EPI 223:** Spatial Epidemiology (Spring)
+* **GEO 200CN:** Quantitative Geography – Uses R to explore quantitative geographic methods (Spring)
+* **HYD 273:** Intro to Geostatistics (Fall)
+* **HYD 286:** Advanced Topics in Remote Sensing – Topic for the quarter is chosen by the instructor (Spring)
+
+# Selected Data Sources
+
+## USGS Earth Explorer
+
+The [USGS Earth Explorer](https://earthexplorer.usgs.gov/) is USGS tool for querying and ordering raster geospatial data including satellite images, aerial photographs, and cartographic products. Log in as a guest or as a registered user. Registered users have access to more features than guests do. If you plan on using Earth Explorer frequently, you may wish to register.
+
+## USGS National Map Viewer
+
+The [USGS National Map Viewer](https://viewer.nationalmap.gov/advanced-viewer/) allows users to explore and download vector geospatial data, mainly for the United States.
+
+## Geographic Names Information System
+
+[The Geographic Names Information System (GNIS)](https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names) is the official repository of the United States of America’s domestic geographic names data. The GNIS contains information about physical and cultural geographic features of all types in the United States, associated areas, and Antarctica, current and historical, but not including roads and highways. The database holds the Federally recognized name of each feature and defines the feature location by state, county, USGS topographic map, and geographic coordinates. Other attributes include names or spellings other than the official name, feature designations, feature classification, historical and descriptive information, and for some categories the geometric boundaries.
+Visit Site
+
+## Library of Congress
+
+[Library of Congress’ search tool](https://www.loc.gov/maps/) for digital online maps.
+
+## Cal-Atlas Geospatial Clearinghouse
+
+The [Cal-Atlas Geospatial Clearinghouse](https://cgia.org/cgia-collaboration/gis-data-sharing/cal-atlas-geospatial-clearinghouse/) provides free downloads for frequently used datasets of California, including basemaps, elevation, transportation, political boundaries, scanned USGS topographic maps and 2005 and 2009 aerial photography.
+
+## Data.gov
+
+[Data.gov](https://www.data.gov/) provides public access to high value, machine readable datasets generated by the Executive Branch of the Federal Government. Data.gov has descriptions of the Federal datasets (metadata), information about how to access the datasets, and tools that leverage government datasets. The data catalogs will continue to grow as datasets are added. Federal, Executive Branch data are included in the first version of Data.gov.
+
+# Contributions
+
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits).
+
+This toolkit has been made possible thanks to contributions by:
+
+* [Michele Tobias](https://sites.google.com/site/mtobiasresearch/home)
+* [Jared Joseph](https://jnjoseph.com/)
