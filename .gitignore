@@ -40,3 +40,6 @@ vignettes/*.pdf
 
 # cache directories
 */*_cache/*
+
+# html in pages
+/pages/*.html
