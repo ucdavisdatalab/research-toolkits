@@ -71,19 +71,19 @@ visNetwork(nodes, edges, width = "100%") %>%
 
 ## Gephi
 
-[Gephi](https://gephi.org/) is free and open-source software that allows you to visualize and explore networks. You can input network data (edgelists or matrices) and create customizable visualizations for networks, complex systems, and dynamic and hierarchical graphs. It's quick to get started with, but more difficult to master as it involves learning Gephi's user interface and file formats. Tutorials are available to learn the user interface.
+[Gephi](https://gephi.org/){rel="noopener noreferrer" target="_blank"} is free and open-source software that allows you to visualize and explore networks. You can input network data (edgelists or matrices) and create customizable visualizations for networks, complex systems, and dynamic and hierarchical graphs. It's quick to get started with, but more difficult to master as it involves learning Gephi's user interface and file formats. Tutorials are available to learn the user interface.
 
 ## NodeXL
 
-The free version of [NodeXL](https://archive.codeplex.com/?p=nodexl) allows users to create network graphs from edgelists within Excel, and the Pro version includes more advanced network metrics, text and sentiment analysis, and a report generation tool. Neither version has been updated since 2015 but they are useful for users who don't want to learn a programming language or external UI – all NodeXL tools operate within Excel.
+The free version of [NodeXL](https://archive.codeplex.com/?p=nodexl){rel="noopener noreferrer" target="_blank"} allows users to create network graphs from edgelists within Excel, and the Pro version includes more advanced network metrics, text and sentiment analysis, and a report generation tool. Neither version has been updated since 2015 but they are useful for users who don't want to learn a programming language or external UI – all NodeXL tools operate within Excel.
 
 ## Netlytic
 
-[Netlytic](https://netlytic.org/) is a tool to gather and analyze online conversations from social network sites such as Twitter, Instagram, YouTube, Facebook, or your own dataset. Datasets can be explored and analyzed in Netlytic with a variety of text analysis, category analysis, and network analysis tools (and visualizations), and then exported to other network programs such as Pajek and UCINET, or a CSV format. The program is free for up to five datasets with up to 10,000 records in each. For more and bigger datasets, the site offers several tiers of pricing. The site includes tutorials on using the UI, and [there are also tutorials](https://docs.google.com/document/d/1_EH30ycPj2r6t0vH1QSSBjKJ209qq7-nwz2zAJno8Mk/pub?embedded=true) to integrate Netlytic with R. 
+[Netlytic](https://netlytic.org/) is a tool to gather and analyze online conversations from social network sites such as Twitter, Instagram, YouTube, Facebook, or your own dataset. Datasets can be explored and analyzed in Netlytic with a variety of text analysis, category analysis, and network analysis tools (and visualizations), and then exported to other network programs such as Pajek and UCINET, or a CSV format. The program is free for up to five datasets with up to 10,000 records in each. For more and bigger datasets, the site offers several tiers of pricing. The site includes tutorials on using the UI, and [there are also tutorials](https://docs.google.com/document/d/1_EH30ycPj2r6t0vH1QSSBjKJ209qq7-nwz2zAJno8Mk/pub?embedded=true){rel="noopener noreferrer" target="_blank"} to integrate Netlytic with R. 
 
 ## InfraNodus
 
-[InfraNodus](https://infranodus.com/) is an interactive tool that can be used for free online or downloaded from Github to create a network from text data. Network graphs show main topics, can compare different texts, visualize connections between citations and notes or estimate the bias/opinion of a discourse.
+[InfraNodus](https://infranodus.com/){rel="noopener noreferrer" target="_blank"} is an interactive tool that can be used for free online or downloaded from Github to create a network from text data. Network graphs show main topics, can compare different texts, visualize connections between citations and notes or estimate the bias/opinion of a discourse.
 
 # R Packages
 
@@ -91,32 +91,32 @@ The free version of [NodeXL](https://archive.codeplex.com/?p=nodexl) allows user
 
 ### Statnet
 
-[Statnet](https://statnet.org/) is a family of R packages built for modeling and simulating exponential random graph models. These models allow you to keep some aspects of your network constant, and generate artificial networks withing those constraints. You can then compare your network to the artificial simulations to check for significance against random chance. Some plotting and descriptive tools are also provided. The family includes:
+[Statnet](https://statnet.org/){rel="noopener noreferrer" target="_blank"} is a family of R packages built for modeling and simulating exponential random graph models. These models allow you to keep some aspects of your network constant, and generate artificial networks withing those constraints. You can then compare your network to the artificial simulations to check for significance against random chance. Some plotting and descriptive tools are also provided. The family includes:
 
-* [ergm](https://github.com/statnet/ergm) – Analyze and simulate networks using exponential-family random graph models. 
-* [tergm](https://github.com/statnet/tergm) – Analyze dynamic or evolving network data using temporal exponential random graph models. 
-* [latentnet](https://github.com/statnet/latentnet) – Fit and simulate latent space models of networks.
-* [EpiModel](https://github.com/statnet/EpiModel) –  Tools for simulating mathematical models of infectious disease dynamics.
+* [ergm](https://github.com/statnet/ergm){rel="noopener noreferrer" target="_blank"} – Analyze and simulate networks using exponential-family random graph models. 
+* [tergm](https://github.com/statnet/tergm){rel="noopener noreferrer" target="_blank"} – Analyze dynamic or evolving network data using temporal exponential random graph models. 
+* [latentnet](https://github.com/statnet/latentnet){rel="noopener noreferrer" target="_blank"} – Fit and simulate latent space models of networks.
+* [EpiModel](https://github.com/statnet/EpiModel){rel="noopener noreferrer" target="_blank"} –  Tools for simulating mathematical models of infectious disease dynamics.
 
 ### igraph
 
-[igraph](https://igraph.org/r/) Offers a host of visualization and analysis tools for networks. If you're interested in calculating things like degree distribution and centrality measures this is a good place to start. It has an R and python version and can also be used with Mathematica and C/C++.
+[igraph](https://igraph.org/r/){rel="noopener noreferrer" target="_blank"} Offers a host of visualization and analysis tools for networks. If you're interested in calculating things like degree distribution and centrality measures this is a good place to start. It has an R and python version and can also be used with Mathematica and C/C++.
 
-* [netCoin](https://cran.r-project.org/web/packages/netCoin/index.html) - A package for analyzing coincidence networks (particularly relevant to ecologists), equipped with broadly useful functions to build interactive and easily shareable network visualizations.
+* [netCoin](https://cran.r-project.org/web/packages/netCoin/index.html){rel="noopener noreferrer" target="_blank"} - A package for analyzing coincidence networks (particularly relevant to ecologists), equipped with broadly useful functions to build interactive and easily share-able network visualizations.
 
 ### intergraph
 
-[intergraph](http://mbojan.github.io/intergraph/) provides tools for converting between networks created using the igraph and statnet packages in R.
+[intergraph](http://mbojan.github.io/intergraph/){rel="noopener noreferrer" target="_blank"} provides tools for converting between networks created using the igraph and statnet packages in R.
 
 ## Visualization
 
 ### visNetwork
 
-[visNetwork](https://github.com/datastorm-open/visNetwork) is a great package for turning network plots into interactive html objects. Networks that are not small can be difficult to visualize, and it’s often useful to create interactive plots to expand the amount of data you show. It works well with networks created in igraph.
+[visNetwork](https://github.com/datastorm-open/visNetwork){rel="noopener noreferrer" target="_blank"} is a great package for turning network plots into interactive html objects. Networks that are not small can be difficult to visualize, and it’s often useful to create interactive plots to expand the amount of data you show. It works well with networks created in igraph.
 
 ### ggraph
 
-[ggraph](https://github.com/thomasp85/ggraph) is used for network plotting in R‘s ggplot/tidyverse framework. This package has supplanted the ggnetwork package.
+[ggraph](https://github.com/thomasp85/ggraph){rel="noopener noreferrer" target="_blank"} is used for network plotting in R‘s ggplot/tidyverse framework. This package has supplanted the ggnetwork package.
 
 # Python Modules
 
@@ -124,11 +124,11 @@ The free version of [NodeXL](https://archive.codeplex.com/?p=nodexl) allows user
 
 ### NetworkX
 
-[NetworkX](https://networkx.org/) is by far the most common network analysis tool for python. It the backbone of many other network packages with more specific uses.
+[NetworkX](https://networkx.org/){rel="noopener noreferrer" target="_blank"} is by far the most common network analysis tool for python. It the backbone of many other network packages with more specific uses.
 
 ### igraph
 
-[igraph](https://igraph.org/python/) from R also has a python module.
+[igraph](https://igraph.org/python/){rel="noopener noreferrer" target="_blank"} from R also has a python module.
 
 # Further Reading
 
@@ -138,9 +138,9 @@ The free version of [NodeXL](https://archive.codeplex.com/?p=nodexl) allows user
 
 # Contributions
 
-This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits).
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits){rel="noopener noreferrer" target="_blank"}.
 
 This toolkit has been made possible thanks to contributions by:
 
-* [Jane Carlen](https://jcarlen.github.io/)
-* [Jared Joseph](https://jnjoseph.com/)
+* [Jane Carlen](https://jcarlen.github.io/){rel="noopener noreferrer" target="_blank"}
+* [Jared Joseph](https://jnjoseph.com/){rel="noopener noreferrer" target="_blank"}

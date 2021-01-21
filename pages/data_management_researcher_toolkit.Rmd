@@ -52,15 +52,15 @@ Data management plans should address:
 
 A software carpentry-produced guide to data management, in particular metadata and version control.
 
-[Visit Site](https://v4.software-carpentry.org/data/mgmt.html)
+[Visit Site](https://v4.software-carpentry.org/data/mgmt.html){rel="noopener noreferrer" target="_blank"}
 
 ## DMPtool
 
 UC Davis researchers have access to the DMPtool, a service of the California Digital Library, with their Kerberos login. The tool contains templates from multiple federal and private funders. The tool also permits the user to create an editable document for submission to a funding agency, and can accommodate different versions as funding requirements change.
 
-[Visit the DMPtool webite](https://dmptool.org/)
+[Visit the DMPtool webite](https://dmptool.org/){rel="noopener noreferrer" target="_blank"}
 
-[DMPtool also provides guidance for writing DMPs.](https://dmptool.org/general_guidance)
+[DMPtool also provides guidance for writing DMPs.](https://dmptool.org/general_guidance){rel="noopener noreferrer" target="_blank"}
 
 # Describe Your Research
 
@@ -95,10 +95,10 @@ If you do not have an established convention available to you, consider adopting
 
 Need to get started and organize your research life? Check out:
 
-* [Data management structural_readme_and_naming_conventions](https://www.library.ucdavis.edu/wp-content/uploads/2018/09/structural_readme_and_naming_conventions.txt)
-* [Research data analysis_readme](https://www.library.ucdavis.edu/wp-content/uploads/2018/09/analysis_readme.txt)
+* [Data management structural_readme_and_naming_conventions](https://www.library.ucdavis.edu/wp-content/uploads/2018/09/structural_readme_and_naming_conventions.txt){rel="noopener noreferrer" target="_blank"}
+* [Research data analysis_readme](https://www.library.ucdavis.edu/wp-content/uploads/2018/09/analysis_readme.txt){rel="noopener noreferrer" target="_blank"}
 
-These documents are based on GeorgiaTech Library and [Stanford Library](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming) recommendations.
+These documents are based on GeorgiaTech Library and [Stanford Library](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming){rel="noopener noreferrer" target="_blank"} recommendations.
 
 # Plan to Share & Preserve
 
@@ -106,8 +106,8 @@ The files we work with for analysis may not necessarily be the ideal format for 
 
 # Contributions
 
-This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits).
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits){rel="noopener noreferrer" target="_blank"}.
 
 This toolkit has been made possible thanks to contributions by:
 
-* [Jared Joseph](https://jnjoseph.com/)
+* [Jared Joseph](https://jnjoseph.com/){rel="noopener noreferrer" target="_blank"}
