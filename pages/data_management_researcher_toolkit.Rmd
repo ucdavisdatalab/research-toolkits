@@ -1,0 +1,113 @@
+---
+title: "UC Davis DataLab Data Management Plan Toolkit"
+date: "`r Sys.Date()`"
+author: "UC Davis DataLab"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    css: datalab_theme.css
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+# Overview
+
+>Increase the rigor of your research and make it easier to collaborate (with your peers and your future self!) by employing best practices for data management. Document and keep your data tidy!
+
+We’ve all been there – scratching our head trying to remember which version of the dataset was used to make that plot, what those cryptic variable names mean, what decisions and steps were taken to get from the raw to cleaned data, reformatting the data again (and again) to meet specifications for an archive. A little bit of planning goes a long way in overcoming these and other obstacles in your research. Data management plans are there to help save you time and stress.
+
+For example, using a pre-defined naming schema for your variables and file names makes it much easier to find the right data – and the right version – when you need it. Planning is particularly important in longitudinal studies, studies involving surveys, studies requiring data cleaning, and projects that result in multiple data files, from numeric to text, images and video. 
+
+In case you need additional convincing, creating a plan should not only help your research go more smoothly, but can increase your chances of receiving funding. Most funding agencies now request, and some require, data management plans to accompany proposals. If you have estimated the amount of data you will collect, you will also be able to request and budget funds for curating and managing this critical and often over-looked aspect of your project. 
+
+# How to write a Data Management Plan
+
+Data management plans should address:
+
+* How the data will be collected
+* Type or format of data collected
+* Size of the data
+* How the data will be described (i.e will you be using codebooks, logs, specific metadata standards, ontologies, etc.)
+* Where the data will be stored and backed up (and secured if necessary)
+* How the data will be analyzed
+* How the data will be shared and preserved (or reasons not to do so)
+
+# Helpful resources for preparing a plan
+
+## Software Carpentry Data Management Lesson
+
+A software carpentry-produced guide to data management, in particular metadata and version control.
+
+[Visit Site](https://v4.software-carpentry.org/data/mgmt.html)
+
+## DMPtool
+
+UC Davis researchers have access to the DMPtool, a service of the California Digital Library, with their Kerberos login. The tool contains templates from multiple federal and private funders. The tool also permits the user to create an editable document for submission to a funding agency, and can accommodate different versions as funding requirements change.
+
+[Visit the DMPtool webite](https://dmptool.org/)
+
+[DMPtool also provides guidance for writing DMPs.](https://dmptool.org/general_guidance)
+
+# Describe Your Research
+
+## Metadata
+
+Metadata is information about a data set that conveys how the data were created and explains important factors that are not always apparent from just looking at the data itself.
+
+### Standards
+
+Various government agencies and other organizations have created metadata standards to guide data developers within different research fields to facilitate data sharing and usability. For example, if you are working with sequencing data, in many cases you will be required to submit data to the Sequence Read Archive. Knowing where you’ll deposit the data can help you to collect and prepare the right metadata so that the submission process goes smoothly at the end of your research project. The software you use can also make this easier. For example, many GIS programs will allow you to create basic metadata that resides alongside the spatial and attribute data you create.
+
+When considering what metadata standards to use, select one based on your potential users and what information you need to convey to them. Funding bodies may also set requirements, so checking there along with potential sites for future data deposition are good places to start.
+
+### Controlled Vocabularies
+
+There are many ways to describe a feature or response, which can lead to challenges for data analysis and interpretation. Employing a controlled vocabulary – a list of words or phrases that can be used in response to a question in a survey, or field in a database – can help. This reduces variation in responses, prevents extraneous variants of the same term (such as spelling mistakes or plurals). It can make it easier for participants to provide a response, or assistants to record an observation, if they are selecting from a pre-defined list. Include a ‘data dictionary’ of this vocabulary in your metadata.
+
+## Workflows
+
+Research (and data analysis in particular) can generate a large volume of intermediate files. Document your data generation and analysis workflow throughout the project, noting which files and processes were used to create each subsequent file. 
+
+>Make documenting as you go a habit to save you time and headaches at the end of a project.
+
+Different disciplines have different conventions on how to record this **data documentation**. Some researchers write out a list of steps, while others use a flowchart or a software system. (For example, geospatial researchers can use ArcGIS’ Model Builder.)
+
+If you do not have an established convention available to you, consider adopting a:
+
+* **Protocol** or a standard operating procedure (SOP) to document the actions involved in sample processing and data collection.
+* **Log** to document actions taken to either collect data or analyze a dataset with specific software.
+* **Codebook** to list the codes and meanings assigned to each code used in a research project.
+* **ReadMe** file to describes the files present in a collection, give more information about each file, and/or describe a piece of software or an analysis script.
+
+Need to get started and organize your research life? Check out:
+
+* [Data management structural_readme_and_naming_conventions](https://www.library.ucdavis.edu/wp-content/uploads/2018/09/structural_readme_and_naming_conventions.txt)
+* [Research data analysis_readme](https://www.library.ucdavis.edu/wp-content/uploads/2018/09/analysis_readme.txt)
+
+These documents are based on GeorgiaTech Library and [Stanford Library](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming) recommendations.
+
+# Plan to Share & Preserve
+
+The files we work with for analysis may not necessarily be the ideal format for sharing or storing our data. For example, when sending a shapefile, it can be easy to forget to include one of the multiple files required to properly use the data which could render it useless. When possible, store and share data in open formats (i.e., a format that doesn’t need a specific software to open it, like a .csv compared to an .xls) to make your data more accessible.
+
+# Contributions
+
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits).
+
+This toolkit has been made possible thanks to contributions by:
+
+* [Jared Joseph](https://jnjoseph.com/)
