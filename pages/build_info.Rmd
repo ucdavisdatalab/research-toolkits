@@ -1,0 +1,3 @@
+```{r}
+print(system("git rev-parse --short HEAD", intern = TRUE))
+```

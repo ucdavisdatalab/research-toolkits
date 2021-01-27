@@ -43,3 +43,6 @@ vignettes/*.pdf
 
 # html in pages
 /pages/*.html
+
+# emacs save files
+*~
