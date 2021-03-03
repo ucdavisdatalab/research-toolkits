@@ -1,6 +1,6 @@
 # UC Davis DataLab Research Toolkits
 
-## OVerview
+## Overview
 
 This repository hosts the pages used for research toolkits on the UC Davis DataLab website. Each toolkit is a self-service reference document meant to help researchers learn more about a tool or method regardless of their skill level. Anyone is welcome to contribute to the toolkits by forking this repo, making their contribution, then making a pull request to merge them. 
 
