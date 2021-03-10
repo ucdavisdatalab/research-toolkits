@@ -28,7 +28,6 @@ opts_knit$set(width=75)
 ```
 
 ```{r}
-
 # git images
 git_url <- "../img/mac_finder_1.png"
 git_url2 <- "../img/mac_window_2.png"
@@ -55,6 +54,13 @@ git_url38 <- "../img/win_git_install_20_experimental_options.png"
 git_url39 <- "../img/win_git_install_21_install_progress.png"
 git_url40 <- "../img/win_git_install_22_install_complete.png"
 git_url41 <- "../img/win_git_install_23_deslect_and_finish.png"
+
+# r images
+r_img01 = "../img/win_r_install_1_browser.jpg"
+r_img02 = "../img/win_r_install_2_mirror.jpg"
+r_img03 = "../img/win_r_install_3_type.jpg"
+r_img04 = "../img/win_r_install_4_base.jpg"
+r_img05 = "../img/win_r_install_5_download.jpg"
 ```
 
 # Overview
@@ -226,6 +232,28 @@ If you are not able to successfully install Git on your own, please attend DataL
 * **Interdisciplinary and extensible.** Because anyone can write and share R packages, it provides a framework for integrating approaches across domains, encouraging innovation.
 
 ## R/RStudio on Windows
+
+Follow these step-by-step instructions to install R and RStudio on a Windows machine:
+
+First open your internet browser of choice, and navigate to [https://www.r-project.org/](https://www.r-project.org/){rel="noopener noreferrer" target="_blank"}. Click on **download R**.
+
+![](`r r_img01`)
+
+On the following page, select the link under whatever location is closest to you for the best download speed (though any will work).
+
+![](`r r_img02`)
+
+Next, click the **Download R for Windows** link.
+
+![](`r r_img03`)
+
+Click on the link **base** to go to the download page.
+
+![](`r r_img04`)
+
+Finally, click **Download R X.X.X for Windows** to download the installer.
+
+![](`r r_img05`)
 
 ## R/RStudio on Mac
 
