@@ -61,6 +61,12 @@ r_img02 = "../img/win_r_install_2_mirror.jpg"
 r_img03 = "../img/win_r_install_3_type.jpg"
 r_img04 = "../img/win_r_install_4_base.jpg"
 r_img05 = "../img/win_r_install_5_download.jpg"
+r_img06 = "../img/win_r_install_6_installer.jpg"
+r_img07 = "../img/win_r_install_7_license.jpg"
+r_img08 = "../img/win_r_install_8_location.jpg"
+r_img09 = "../img/win_r_install_9_bits.jpg"
+r_img10 = "../img/win_r_install_10_startup.jpg"
+r_img11 = "../img/win_r_install_11_tasks.jpg"
 ```
 
 # Overview
@@ -254,6 +260,32 @@ Click on the link **base** to go to the download page.
 Finally, click **Download R X.X.X for Windows** to download the installer.
 
 ![](`r r_img05`)
+
+When the download is complete, run the R installer. This will look slightly different depending on your browser.
+
+![](`r r_img06`)
+
+Select your language and then accept the license agreement by hitting **Next >**.
+
+![](`r r_img07`)
+
+Leave the default install location and select **Next >**.
+
+![](`r r_img08`)
+
+If you know what kind of machine you are on, you can specify if you want the 32 or 64 bit version of R. If you do not know, it is safe to install both.
+
+![](`r r_img09`)
+
+Keep the default startup options and hit **Next >**.
+
+![](`r r_img10`)
+
+You most likely will not want an R shortcut on your desktop, as you will almost certainly use RStudio as an interface. You can still have one if you would like. Otherwise, accept the defaults and hit **Next >**.
+
+![](`r r_img11`)
+
+
 
 ## R/RStudio on Mac
 
