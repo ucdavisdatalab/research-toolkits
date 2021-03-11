@@ -285,6 +285,13 @@ You most likely will not want an R shortcut on your desktop, as you will almost 
 
 ![](`r r_img11`)
 
+Wait for the instillation to complete.
+
+![](`r r_img12`)
+
+Once it is done, hit **Finish**. You've now installed R! However, we still need to install RStudio separatly.
+
+![](`r r_img13`)
 
 
 ## R/RStudio on Mac
