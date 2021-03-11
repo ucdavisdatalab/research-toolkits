@@ -67,6 +67,12 @@ r_img08 = "../img/win_r_install_8_location.jpg"
 r_img09 = "../img/win_r_install_9_bits.jpg"
 r_img10 = "../img/win_r_install_10_startup.jpg"
 r_img11 = "../img/win_r_install_11_tasks.jpg"
+r_img12 = "../img/win_r_install_12_wait.jpg"
+r_img13 = "../img/win_r_install_13_finish.jpg"
+r_img14 = "../img/win_r_install_14_rstudio_site.jpg"
+r_img15 = "../img/win_r_install_15_version.jpg"
+r_img16 = "../img/win_r_install_16_rstudio_download.jpg"
+r_img17 = "../img/win_r_install_17_rstudio_installer.jpg"
 ```
 
 # Overview
@@ -289,10 +295,25 @@ Wait for the instillation to complete.
 
 ![](`r r_img12`)
 
-Once it is done, hit **Finish**. You've now installed R! However, we still need to install RStudio separatly.
+Once it is done, hit **Finish**. You've now installed R! However, we still need to install RStudio separately.
 
 ![](`r r_img13`)
 
+Navigate to the RStudio homepage at [https://rstudio.com/](https://rstudio.com/){rel="noopener noreferrer" target="_blank"} and click the download button.
+
+![](`r r_img14`)
+
+Scroll down and select the free version to download. If you are using RStudio for comercial purposes you will need to look into RStudio's licensing terms to see if you need to pay for the pro version.
+
+![](`r r_img15`)
+
+Download the RStudio installer for your machine.
+
+![](`r r_img16`)
+
+Run the installer just as you did for the R download.
+
+![](`r r_img17`)
 
 ## R/RStudio on Mac
 
