@@ -73,6 +73,8 @@ r_img14 = "../img/win_r_install_14_rstudio_site.jpg"
 r_img15 = "../img/win_r_install_15_version.jpg"
 r_img16 = "../img/win_r_install_16_rstudio_download.jpg"
 r_img17 = "../img/win_r_install_17_rstudio_installer.jpg"
+
+r_img91 = "../img/win_r_verify_1.jpg"
 ```
 
 # Overview
@@ -227,7 +229,7 @@ If you are installing Git on a Mac, there is no extra configuration. Simply go t
 
 ## Installation troubleshooting
 
-If you are not able to successfully install Git on your own, please attend DataLab's Virtual Office Hours, which are held every Monday afternoon from 1:30 to 3:00 pm, to get help with your installation. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
+If you are not able to successfully install Git on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
 # R/RStudio
 
@@ -303,7 +305,7 @@ Navigate to the RStudio homepage at [https://rstudio.com/](https://rstudio.com/)
 
 ![](`r r_img14`)
 
-Scroll down and select the free version to download. If you are using RStudio for comercial purposes you will need to look into RStudio's licensing terms to see if you need to pay for the pro version.
+Scroll down and select the free version to download. If you are using RStudio for commercial purposes you will need to look into RStudio's licensing terms to see if you need to pay for the pro version.
 
 ![](`r r_img15`)
 
@@ -317,10 +319,17 @@ Run the installer just as you did for the R download.
 
 ## R/RStudio on Mac
 
+If you are installing R/RStudio on a Mac, there is no extra configuration. Simply go the download pages for [R](https://www.r-project.org/){rel="noopener noreferrer" target="_blank"} and [RStudio](https://rstudio.com/){rel="noopener noreferrer" target="_blank"} and choose the latest version for mac. Run the installer package when it is finished downloading.
+
 ## Verifying your install
+
+Once you have installed **both** R and RStudio, you should be able to run RStudio on your machine. You can verify your install is working by opening RStudio and typing `paste("Hello World!")` into the console as shown below. If the code runs you should see a response that says `[1] Hello World!`. If that works you are all set!
+
+![](`r r_img91`)
 
 ## Installation troubleshooting
 
+If you are not able to successfully install R/RStudio on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
 # Contributions
 
