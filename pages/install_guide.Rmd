@@ -134,7 +134,6 @@ This is a rudimentary form of version control that relies completely on the huma
 
 If you would like more information on how Git works, read more in the [Git Book](https://git-scm.com/book/en/v2){rel="noopener noreferrer" target="_blank"} for free.
 
-
 ## Git on Windows
 
 Follow these step-by-step instructions if you're installing Git on a Windows machine:
@@ -232,11 +231,9 @@ Keep the default values on the "Configuration extra options" page by keeping "En
 
 ![](`r git_url37`)
 
-
 Make sure that no options are checked in the "Configuring experimental options" page and hit **Install**:
 
 ![](`r git_url38`)
-
 
 After you hit this **Install** button as per above, you will see an install progress screen like the one below:
 
@@ -296,7 +293,7 @@ If you are not able to successfully install the Linux Subsystem for Windows on y
 
 ## Introduction
 
-OpenRefine is an open source tool used to clean and pre-process messy data. While most people are familiar with data cleaning in their coding tool of choice (R, Python, Julia, etc.), OpenRefine is designed to provide powerful cleaning capabilities with minimal overhead.
+OpenRefine is an open source tool used to clean and pre-process messy data. While most people are familiar with data cleaning in their coding tool of choice (R, Python, Julia, etc.), OpenRefine is designed to provide powerful cleaning capabilities with minimal overhead. One of the most helpful capabilities of OpenRefine is the ability to check for possible duplicates and misspellings of text data using it's text facet tools.
 
 ## OpenRefine on Windows
 
@@ -321,6 +318,8 @@ The OpenRefine executable will start a terminal window, and shortly after launch
 ![](`r or_img05`)
 
 ## OpenRefine on Mac
+
+If you are installing OpenRefine on a Mac, there is no extra configuration. Simply go the [download page for OpenRefine](https://openrefine.org/download.html){rel="noopener noreferrer" target="_blank"} and choose the latest version for mac. Run the installer package when it is finished downloading. If you receive an error regarding the app being from an unidentified developer, please [follow the instructions here](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac){rel="noopener noreferrer" target="_blank"}.
 
 ## Verifying your install
 
