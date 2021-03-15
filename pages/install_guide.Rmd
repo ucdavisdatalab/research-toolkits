@@ -55,6 +55,14 @@ git_url39 <- "../img/win_git_install_21_install_progress.png"
 git_url40 <- "../img/win_git_install_22_install_complete.png"
 git_url41 <- "../img/win_git_install_23_deslect_and_finish.png"
 
+# OpenRefine images
+
+or_img01 = "../img/win_or_install_1.jpg"
+or_img02 = "../img/win_or_install_2.jpg"
+or_img03 = "../img/win_or_install_3.jpg"
+or_img04 = "../img/win_or_install_4.jpg"
+or_img05 = "../img/win_or_install_5.jpg"
+
 # r images
 r_img01 = "../img/win_r_install_1_browser.jpg"
 r_img02 = "../img/win_r_install_2_mirror.jpg"
@@ -73,13 +81,40 @@ r_img14 = "../img/win_r_install_14_rstudio_site.jpg"
 r_img15 = "../img/win_r_install_15_version.jpg"
 r_img16 = "../img/win_r_install_16_rstudio_download.jpg"
 r_img17 = "../img/win_r_install_17_rstudio_installer.jpg"
-
 r_img91 = "../img/win_r_verify_1.jpg"
 ```
 
 # Overview
 
 This toolkit will walk you through installing some of the most common data science tools used at the UC Davis DataLab and beyond. Use the sidebar on the left to navigate to the specific program you would like to install. If you are taking a class or workshop using these tools, please install them prior to attending.
+
+# Anaconda (Python)
+
+## Introduction
+
+## Anaconda on Windows
+
+## Anaconda on Mac
+
+## Verifying your install
+
+## Installation troubleshooting
+
+If you are not able to successfully install Anaconda on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
+
+# DBeaver (SQL Database)
+
+## Introduction
+
+## DBeaver on Windows
+
+## DBeaver on Mac
+
+## Verifying your install
+
+## Installation troubleshooting
+
+If you are not able to successfully install DBeaver on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
 # Git
 
@@ -231,6 +266,70 @@ If you are installing Git on a Mac, there is no extra configuration. Simply go t
 
 If you are not able to successfully install Git on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
+# Jupyter Notebooks
+
+## Introduction
+
+## Jupyter on Windows
+
+## Jupyter on Mac
+
+## Verifying your install
+
+## Installation troubleshooting
+
+If you are not able to successfully install Jupyter Notebooks on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
+
+# Linux Subsystem for Windows (LSW; a.k.a. Command Line)
+
+## Introduction
+
+## LSW on Windows
+
+## Verifying your install
+
+## Installation troubleshooting
+
+If you are not able to successfully install the Linux Subsystem for Windows on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
+
+# OpenRefine
+
+## Introduction
+
+OpenRefine is an open source tool used to clean and pre-process messy data. While most people are familiar with data cleaning in their coding tool of choice (R, Python, Julia, etc.), OpenRefine is designed to provide powerful cleaning capabilities with minimal overhead.
+
+## OpenRefine on Windows
+
+Open your web browser of choice and navigate to the OpenRefine homepage at [https://openrefine.org/](https://openrefine.org/){rel="noopener noreferrer" target="_blank"}. Click on the download button in the left sidebar.
+
+![](`r or_img01`)
+
+On the download page, scroll to the latest version of OpenRefine and select the **Windows kit**. If you are unsure if you have Java installed on your system, choose the **Windows kit with embedded Java** instead.
+
+![](`r or_img02`)
+
+Once the download has completed, open the zip and move the contents to a convenient location on your computer.
+
+![](`r or_img03`)
+
+Open the resulting directory, and double click on the **openrefine.exe** executable.
+
+![](`r or_img04`)
+
+The OpenRefine executable will start a terminal window, and shortly after launch a tab in your default web browser with the OpenRefine interface.
+ 
+![](`r or_img05`)
+
+## OpenRefine on Mac
+
+## Verifying your install
+
+TODO - need data
+
+## Installation troubleshooting
+
+If you are not able to successfully install OpenRefine on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
+
 # R/RStudio
 
 ## Introduction
@@ -319,7 +418,7 @@ Run the installer just as you did for the R download.
 
 ## R/RStudio on Mac
 
-If you are installing R/RStudio on a Mac, there is no extra configuration. Simply go the download pages for [R](https://www.r-project.org/){rel="noopener noreferrer" target="_blank"} and [RStudio](https://rstudio.com/){rel="noopener noreferrer" target="_blank"} and choose the latest version for mac. Run the installer package when it is finished downloading.
+If you are installing R/RStudio on a Mac, there is no extra configuration. Simply go the download pages for [R](https://www.r-project.org/){rel="noopener noreferrer" target="_blank"} and [RStudio](https://rstudio.com/){rel="noopener noreferrer" target="_blank"} and choose the latest version for mac. Run the installer package when it is finished downloading. If you receive an error regarding the app being from an unidentified developer, please [follow the instructions here](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac){rel="noopener noreferrer" target="_blank"}.
 
 ## Verifying your install
 
