@@ -56,7 +56,6 @@ git_url40 <- "../img/win_git_install_22_install_complete.png"
 git_url41 <- "../img/win_git_install_23_deslect_and_finish.png"
 
 # OpenRefine images
-
 or_img01 = "../img/win_or_install_1.jpg"
 or_img02 = "../img/win_or_install_2.jpg"
 or_img03 = "../img/win_or_install_3.jpg"
@@ -82,6 +81,17 @@ r_img15 = "../img/win_r_install_15_version.jpg"
 r_img16 = "../img/win_r_install_16_rstudio_download.jpg"
 r_img17 = "../img/win_r_install_17_rstudio_installer.jpg"
 r_img91 = "../img/win_r_verify_1.jpg"
+
+# R Tools
+rt_img01 = "../img/win_rt_install_1.jpg"
+rt_img02 = "../img/win_rt_install_2.jpg"
+rt_img03 = "../img/win_rt_install_3.jpg"
+rt_img04 = "../img/win_rt_install_4.jpg"
+rt_img05 = "../img/win_rt_install_5.jpg"
+rt_img06 = "../img/win_rt_install_6.jpg"
+rt_img07 = "../img/win_rt_install_7.jpg"
+rt_img08 = "../img/win_rt_install_8.jpg"
+rt_img10 = "../img/win_rt_install_10.jpg"
 ```
 
 # Overview
@@ -213,11 +223,9 @@ Leave the default "Checkout Windows-style, commit Unix-style line endings" selec
 
 ![](`r git_url33`)
 
-
 Keep the default "Use MinTTY (the default terminal of MSYS2)" selected on the "Configuring the terminal emulator to use with Git Bash" window and hit **Next**:
 
 ![](`r git_url34`)
-
 
 Keep the default value of "Default (fast-forward or merge)" on the "Choose the default behavior of 'git pull'" page and hit **Next**:
 
@@ -428,6 +436,55 @@ Once you have installed **both** R and RStudio, you should be able to run RStudi
 ## Installation troubleshooting
 
 If you are not able to successfully install R/RStudio on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
+
+# R Tools
+
+## Introduction
+
+R Tools is a bundle of programs on Windows that allows R to build packages from local source files, rather than installing through CRAN. The vast majority of the time this is unnecessary, but some circumstances require it. Mac users do not need to install R Tools. 
+## RTools on Windows
+
+First, navigate to the R tools website at [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/){rel="noopener noreferrer" target="_blank"}.
+
+![](`r rt_img01`)
+
+Scroll down to the download links and select the **rtoolsXX-x86_64.exe** link.
+
+![](`r rt_img02`)
+
+Once the download has finished, run the R tools installer.
+
+![](`r rt_img03`)
+
+On the first page of the installer, select a custom location if you would like, but otherwise press **Next >**.
+
+![](`r rt_img04`)
+
+Leave the defaults for the additional tasks and hit **Next >**.
+
+![](`r rt_img05`)
+
+On the next page, hit the install button and wait for it to complete.
+
+![](`r rt_img06`)
+
+One the install is done, press **Finish**. You're not done yet though!
+
+![](`r rt_img07`)
+
+In order for R to make use of R tools, you need to add it to the `PATH` that R looks for tools on. To do this, open R or R Studio and type `writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")` in the console and press enter.
+
+![](`r rt_img08`)
+
+## Verifying your install
+
+To verify R tools was installed successfully, first restart R to assure you are in a clean environment. You can do this by closing and re-opening your R or RStudio window. Afterwards, type `Sys.which("make")` (case sensitive!) into the console. If you see `"C:\\rtools40\\usr\\bin\\make.exe"` as a result you are all good!
+
+![](`r rt_img10`)
+
+## Installation troubleshooting
+
+If you are not able to successfully install R Tools on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
 # Contributions
 
