@@ -82,6 +82,14 @@ r_img16 = "../img/win_r_install_16_rstudio_download.jpg"
 r_img17 = "../img/win_r_install_17_rstudio_installer.jpg"
 r_img91 = "../img/win_r_verify_1.jpg"
 
+# R packages
+rpkg_img01 = "../img/win_r_pkg_1.jpg"
+rpkg_img02 = "../img/win_r_pkg_2.jpg"
+rpkg_img03 = "../img/win_r_pkg_3.jpg"
+rpkg_img04 = "../img/win_r_pkg_4.jpg"
+rpkg_img05 = "../img/win_r_pkg_5.jpg"
+rpkg_img06 = "../img/win_r_pkg_6.jpg"
+
 # R Tools
 rt_img01 = "../img/win_rt_install_1.jpg"
 rt_img02 = "../img/win_rt_install_2.jpg"
@@ -436,6 +444,50 @@ Once you have installed **both** R and RStudio, you should be able to run RStudi
 ## Installation troubleshooting
 
 If you are not able to successfully install R/RStudio on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
+
+# R Packages
+
+## Introduction
+
+R packages are community made functions that automate or expand the things you can do in the R language. The process for installing them is largely the same for both Windows and Mac. There are three main methods for installing R packages. You can install them from the Comprehensive R Archive Network (CRAN) from within R, from another online source like [Github](https://github.com/){rel="noopener noreferrer" target="_blank"}, or from files on your local machine. We will cover each of these methods here.
+
+## Packages from CRAN
+
+The vast majority to packages in R can be installed from CRAN. You will need the name of the package you want to install. Once you have the name (case sensitive!), you can download it from within R using the `install.packages()` function in the R console.
+
+For example, if you wanted to install the `skimr` package, you would enter `install.packages("skimr")`. Note that you do need to put the package name in quotes, and that it is case sensitive. You can install multiple packages at a time by passing a vector of package names to `install.packages()`, for example: `install.packages(c("skimr", "corrplot"))`.
+
+You can test if the packages installed correctly by calling it in R using the `library()` function. 
+
+## Pacakges from Github
+
+Not all packages are available on CRAN, especially very new or very old packages. For these you will most likely need to install them from an online repository, the most common of which is [Github](https://github.com/){rel="noopener noreferrer" target="_blank"}. There are some R packages that make this process easy. We will use the `remotes` package.
+
+First install the `remotes` package by running `install.packages("remotes")` in the R console. If it installed correctly, you will see `package ‘remotes’ successfully unpacked and MD5 sums checked`.
+
+![](`r rpkg_img01`)
+
+Once `remotes` is installed, you can install packages directly from an online repository. We will use `remotes`'s `install_github()` function to demonstrate. Let's try installing the handy [`wordcountaddin`](https://github.com/benmarwick/wordcountaddin){rel="noopener noreferrer" target="_blank"} for RStudio. First navigate to the package page on Github: [https://github.com/benmarwick/wordcountaddin](https://github.com/benmarwick/wordcountaddin){rel="noopener noreferrer" target="_blank"}.
+
+![](`r rpkg_img02`)
+
+Most packages that need to be installed from an online source will give you the code to do so in the readme of their repository. Another common package for installing from online repositories is called `devtools`, but this package contains many other functions we don't need for this task. You can replace `devtools` with `remotes` almost all of the time.
+
+![](`r rpkg_img03`)
+
+For our case, type `remotes::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)` into the console and hit enter. You may be asked if you would like to update other packages. Enter `1` to try and update all. If this doesn't work, you can enter the command again and try `3` to ignore these updates.
+
+![](`r rpkg_img04`)
+
+Read the resulting install output. As long as it does not indicate anything failed to install, you're done!
+
+![](`r rpkg_img05`)
+
+You can now use the helpful `wordcountaddin`! You can find it in the **Addins** dropdown above the editor pane.
+
+![](`r rpkg_img06`)
+
+## Packages from Source
 
 # R Tools
 
