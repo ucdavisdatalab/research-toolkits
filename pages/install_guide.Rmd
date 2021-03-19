@@ -89,6 +89,9 @@ rpkg_img03 = "../img/win_r_pkg_3.jpg"
 rpkg_img04 = "../img/win_r_pkg_4.jpg"
 rpkg_img05 = "../img/win_r_pkg_5.jpg"
 rpkg_img06 = "../img/win_r_pkg_6.jpg"
+rpkg_img07 = "../img/win_r_pkg_7.jpg"
+rpkg_img08 = "../img/win_r_pkg_8.jpg"
+rpkg_img09 = "../img/win_r_pkg_9.jpg"
 
 # R Tools
 rt_img01 = "../img/win_rt_install_1.jpg"
@@ -487,7 +490,23 @@ You can now use the helpful `wordcountaddin`! You can find it in the **Addins** 
 
 ![](`r rpkg_img06`)
 
-## Packages from Source
+## Packages from Local Source
+
+On occasion it will be necessary to install an R package from a local **source** `.tar.gz` file. You would need to download this file yourself, then install it. For example, let's download then install the `mgcv` package from [https://cran.r-project.org/web/packages/mgcv/index.html](https://cran.r-project.org/web/packages/mgcv/index.html){rel="noopener noreferrer" target="_blank"}. First navigate to that page, and click on the download link next to **package source**.
+
+![](`r rpkg_img07`)
+
+Once the `.tar.gz` file is downloaded, leave it as it is, do not decompress it. Instead, find the file on your system and take note of it's location. On Windows you can shift-right click on it, then select **Copy as path**.
+
+![](`r rpkg_img08`)
+
+In your R console, type in `install.packages("path/to/your/source_file.tar.gz", repos = NULL, type = "source")`. R will start installing the package from the local copy.
+
+Two things to note for Windows users:
+1. You will need to have installed R tools on your machine. There is a guide for that lower in this document.
+2. If you are on windows, you will need to make sure your file path uses forward slashes (`/`) rather than back slashes (`\`).
+
+![](`r rpkg_img09`)
 
 # R Tools
 
