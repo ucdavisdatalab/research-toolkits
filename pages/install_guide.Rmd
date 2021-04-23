@@ -62,7 +62,15 @@ or_img03 = "../img/win_or_install_3.jpg"
 or_img04 = "../img/win_or_install_4.jpg"
 or_img05 = "../img/win_or_install_5.jpg"
 
-# r images
+# Python Modules
+pm_conda_1 = "../img/pm_conda_1.jpg"
+pm_conda_2 = "../img/pm_conda_2.jpg"
+pm_pip_1 = "../img/pm_pip_1.jpg"
+pm_python_1 = "../img/pm_python_1.jpg"
+pm_python_2 = "../img/pm_python_2.jpg"
+pm_python_3 = "../img/pm_python_3.jpg"
+
+# r/r studio
 r_img01 = "../img/win_r_install_1_browser.jpg"
 r_img02 = "../img/win_r_install_2_mirror.jpg"
 r_img03 = "../img/win_r_install_3_type.jpg"
@@ -348,6 +356,54 @@ TODO - need data
 
 If you are not able to successfully install OpenRefine on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
+# Python Modules
+
+## Introduction
+
+Python modules are extensions to the basic capabilities of Python. You can install modules from the terminal where you call Python.
+
+## Installing Modules using Conda
+
+If you are using Anaconda, it is recommended you install modules from conda sources to ensure compatibility. First, start a terminal using the Python environment you want to install the module in.
+
+**(Optional)** If you are using a graphical interface, use the Anaconda Navigator to launch a terminal of your chosen environment.
+
+![](`r pm_conda_1`)
+
+Once you are in the terminal of your chosen environment, you can install any module you know the name of using `conda install <module name>`.
+
+![](`r pm_conda_2`)
+
+`conda` will then search its repositories for a module matching the name you provided. Note that if you are looking for a module python said was missing in an error code, it may not be the same name you need to use when installing! You will need to search online if the install fails because it says there is no module of that name.
+
+## Installing Modules using Pip
+
+If you are not using conda, or conda could not find a module, you will need to use `pip` to install modules. First, start a terminal using the Python environment you want to install the module in.
+
+Once you are in the terminal of your chosen environment, you can install any module you know the name of using `pip install <module name>`.
+
+![](`r pm_pip_1`)
+
+`pip` will then search its repositories for a module matching the name you provided. Note that if you are looking for a module python said was missing in an error code, it may not be the same name you need to use when installing! You will need to search online if the install fails because it says there is no module of that name.
+
+## Verifying your install
+
+Regardless of your installation method, you can test if a module was successfully installed by doing the following. First, activate Python by entering `python` in the terminal which is in the environment you installed the module into. You know you are in `python` if you see the welcome message and your input changes into `>>>`.
+
+![](`r pm_python_1`)
+
+Once you have activated python, you can test if your module was installed by trying to import it. To import a module enter `import <module name>` in python.
+
+![](`r pm_python_2`)
+
+If you did not get an error, your module is successfully installed! You can also give modules an alias when importing for easier use.
+
+![](`r pm_python_3`)
+
+## Installation troubleshooting
+
+If you are not able to successfully install OpenRefine on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
+
 # R/RStudio
 
 ## Introduction
@@ -503,7 +559,9 @@ Once the `.tar.gz` file is downloaded, leave it as it is, do not decompress it. 
 In your R console, type in `install.packages("path/to/your/source_file.tar.gz", repos = NULL, type = "source")`. R will start installing the package from the local copy.
 
 Two things to note for Windows users:
+
 1. You will need to have installed R tools on your machine. There is a guide for that lower in this document.
+
 2. If you are on windows, you will need to make sure your file path uses forward slashes (`/`) rather than back slashes (`\`).
 
 ![](`r rpkg_img09`)
