@@ -61,6 +61,12 @@ or_img02 = "../img/win_or_install_2.jpg"
 or_img03 = "../img/win_or_install_3.jpg"
 or_img04 = "../img/win_or_install_4.jpg"
 or_img05 = "../img/win_or_install_5.jpg"
+or_img06 = "../img/win_or_install_6.jpg"
+or_img07 = "../img/win_or_install_7.jpg"
+or_img08 = "../img/win_or_install_8.jpg"
+or_img09 = "../img/win_or_install_9.jpg"
+or_img10 = "../img/win_or_install_10.jpg"
+or_img11 = "../img/win_or_install_11.jpg"
 
 # Python Modules
 pm_conda_1 = "../img/pm_conda_1.jpg"
@@ -350,7 +356,29 @@ If you are installing OpenRefine on a Mac, there is no extra configuration. Simp
 
 ## Verifying your install
 
-TODO - need data
+To verify everything is working, first start Openrefine. It will open a page in your browser of choice that resembles the following.
+
+![](`r or_img06`)
+
+Click the `Choose Files` button, and enter [this dataset](https://raw.githubusercontent.com/ucdavisdatalab/research-toolkits/main/data/job_board_errors.csv) (you can just put in the URL). Click `Next`.
+
+![](`r or_img07`)
+
+Openrefine will load in the data and present you with a preview. The defaults should be fine. Click `Create Project` in the upper right hand corner.
+
+![](`r or_img08`)
+
+You will then be presented with the Openrefine working area. Click the arrow next to the `What sector ...` column and select `Facet -> Text facet`.
+
+![](`r or_img09`)
+
+In the left hand menu, click the `Cluster` button.
+
+![](`r or_img10`)
+
+In the following menu, for method select `nearest neighbor`. Openrefine will look through that column for any strings that are similar, and show you. This can be helpful for finding typos. Here, we see there are two misspellings of "Academia". Click the Check-box in the `Merge?` column, then select `Merge Selected & Close`. Openrefine will change all strings in the `Values in Cluster` column to match the `New Cell Value`. If that all worked, Openrefine is working!
+
+![](`r or_img11`)
 
 ## Installation troubleshooting
 
