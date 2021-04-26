@@ -388,7 +388,7 @@ If you are not able to successfully install OpenRefine on your own, please atten
 
 ## Introduction
 
-Python modules are extensions to the basic capabilities of Python. You can install modules from the terminal where you call Python.
+Python modules are extensions to the basic capabilities of Python. You can install modules from the terminal where you call Python. The same proces will apply regardless of your operating system.
 
 ## Installing Modules using Conda
 
