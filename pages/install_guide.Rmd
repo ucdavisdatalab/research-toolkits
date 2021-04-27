@@ -28,6 +28,18 @@ opts_knit$set(width=75)
 ```
 
 ```{r}
+# anaconda images
+anaconda_1 = "../img/win_anaconda_1.jpg"
+anaconda_2 = "../img/win_anaconda_2.jpg"
+anaconda_3 = "../img/win_anaconda_3.jpg"
+anaconda_4 = "../img/win_anaconda_4.jpg"
+anaconda_5 = "../img/win_anaconda_5.jpg"
+anaconda_6 = "../img/win_anaconda_6.jpg"
+anaconda_7 = "../img/win_anaconda_7.jpg"
+anaconda_8 = "../img/win_anaconda_8.jpg"
+anaconda_9 = "../img/win_anaconda_9.jpg"
+anaconda_10 = "../img/win_anaconda_10.jpg"
+
 # git images
 git_url <- "../img/mac_finder_1.png"
 git_url2 <- "../img/mac_window_2.png"
@@ -127,7 +139,49 @@ This toolkit will walk you through installing some of the most common data scien
 
 ## Introduction
 
+[Anaconda](https://www.anaconda.com/#) is a pre-built environment manager for python. These environments let you keep several separate installations of python on your machine, negating the risk of module versions and incompatibilities ruining your project. The environment are also easily exportable, letting you to easily share them with collaborators.
+
 ## Anaconda on Windows
+
+To install [Anaconda](https://www.anaconda.com/#) on windows, first navigate to their site, select products, then individual edition.
+
+![](`r anaconda_1`)
+
+Scroll down on this page and near the bottom you will be able to select your preferred download (or click the download button). Most modern Windows computers can make use of the 64-Bit installer.
+
+![](`r anaconda_2`)
+
+Once the download has finished, run the executable.
+
+![](`r anaconda_3`)
+
+The setup will walk you through the process of installing Anaconda on your computer. First hit the `Next` button.
+
+![](`r anaconda_4`)
+
+On the following screen hit `I Agree`.
+
+![](`r anaconda_5`)
+
+Next choose whether you want to install Anaconda for everyone, or just yourself. This doesn't matter if you are the only one that uses your computer.
+
+![](`r anaconda_6`)
+
+Select where you would like to install Anaconda. In most cases the default is fine.
+
+![](`r anaconda_7`)
+
+On the Advanced Option page, it is recommended you leave both these options unchecked unless you have a reason not to. Hit Install!
+
+![](`r anaconda_8`)
+
+Anaconda will then start installing on your system. When it is finished, press Next.
+
+![](`r anaconda_9`)
+
+One the next page it will prompt you to download PyCharm. PyCharm is an interactive environment some use to write their python code. You do not need to install this now. Press Next to continue. On the next page you can choose to view tutorials if you would like, but your install is completed!
+
+![](`r anaconda_10`)
 
 ## Anaconda on Mac
 
