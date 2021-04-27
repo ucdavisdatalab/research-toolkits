@@ -39,6 +39,9 @@ anaconda_7 = "../img/win_anaconda_7.jpg"
 anaconda_8 = "../img/win_anaconda_8.jpg"
 anaconda_9 = "../img/win_anaconda_9.jpg"
 anaconda_10 = "../img/win_anaconda_10.jpg"
+anaconda_11 = "../img/win_anaconda_11.jpg"
+anaconda_12 = "../img/win_anaconda_12.jpg"
+anaconda_13 = "../img/win_anaconda_13.jpg"
 
 # git images
 git_url <- "../img/mac_finder_1.png"
@@ -186,6 +189,18 @@ One the next page it will prompt you to download PyCharm. PyCharm is an interact
 ## Anaconda on Mac
 
 ## Verifying your install
+
+To verify Anaconda is working on your system, launch the Anaconda Navigator from your programs menu. This should start the main navigator window seen below.
+
+![](`r anaconda_11`)
+
+From here, click on the Environments tab in the left sidebar. On the next screen, mouse over an environment and press the play button, and select `Open with Python`. If this is your first time using python, you may only see one environment called `base (root)` in the environments pane.
+
+![](`r anaconda_12`)
+
+If a python window successfully launches, you should be good to go!
+
+![](`r anaconda_13`)
 
 ## Installation troubleshooting
 
