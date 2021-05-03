@@ -43,33 +43,6 @@ anaconda_11 = "../img/win_anaconda_11.jpg"
 anaconda_12 = "../img/win_anaconda_12.jpg"
 anaconda_13 = "../img/win_anaconda_13.jpg"
 
-# git images
-git_url <- "../img/mac_finder_1.png"
-git_url2 <- "../img/mac_window_2.png"
-git_url19 <- "../img/win_git_install_1_browser.png"
-git_url20 <- "../img/win_git_install_2_git page.png"
-git_url21 <- "../img/win_git_install_3_downloading.png"
-git_url22 <- "../img/win_git_install_4_run_open.png"
-git_url23 <- "../img/win_git_install_5_allow_changes.png"
-git_url24 <- "../img/win_git_install_6_license.png"
-git_url25 <- "../img/win_git_install_7_install_location.png"
-git_url26 <- "../img/win_git_install_8_default_components.png"
-git_url27 <- "../img/win_git_install_9_checked_components.png"
-git_url28 <- "../img/win_git_install_10_start_menu.png"
-git_url29 <- "../img/win_git_install_11_editor.png"
-git_url30 <- "../img/win_git_install_12_initial_branch.png"
-git_url31 <- "../img/win_git_install_13_path.png"
-git_url32 <- "../img/win_git_install_14_HTTPS_openssl.png"
-git_url33 <- "../img/win_git_install_15_line_ending.png"
-git_url34 <- "../img/win_git_install_16_terminal_emulator.png"
-git_url35 <- "../img/win_git_install_17_git_pull.png"
-git_url36 <- "../img/win_git_install_18_credential_helper.png"
-git_url37 <- "../img/win_git_install_19_extra_options.png"
-git_url38 <- "../img/win_git_install_20_experimental_options.png"
-git_url39 <- "../img/win_git_install_21_install_progress.png"
-git_url40 <- "../img/win_git_install_22_install_complete.png"
-git_url41 <- "../img/win_git_install_23_deslect_and_finish.png"
-
 # OpenRefine images
 or_img01 = "../img/win_or_install_1.jpg"
 or_img02 = "../img/win_or_install_2.jpg"
@@ -206,7 +179,7 @@ If a python window successfully launches, you should be good to go!
 
 If you are not able to successfully install Anaconda on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
-# DBeaver (SQL Database)
+# DBeaver (SQL Database Viewer)
 
 ## Introduction
 
@@ -220,150 +193,7 @@ If you are not able to successfully install Anaconda on your own, please attend 
 
 If you are not able to successfully install DBeaver on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
-# Git
 
-## Introduction
-
-Git is a ubiquitous software for *version control*. Version control describes a process of storing and organizing multiple versions (or copies) of documents that you create. Approaches to version control range from simple to complex and can involve the use of various human workflows and/or software applications to accomplish the overall goal of storing and managing multiple versions of the same document(s).  
-
-Most people have a folder/directory somewhere on their computer that looks something like this:
-
-![](`r git_url`)
-
-Or perhaps, this:
-
-![](`r git_url2`)
-
-This is a rudimentary form of version control that relies completely on the human workflow of saving multiple versions of a file. This system works minimally well, in that it does provide you with a history of file versions theoretically organized by their time sequence. But this filesystem method provides no information about how the file has changed from version to version, why you might have saved a particular version, or specifically how the various versions are related. This human-managed filesystem approach is more subject to error than software-assisted version control systems. It is not uncommon for users to make mistakes when naming file versions, or to go back and edit files out of sequence. Software-assisted version control systems such as Git were designed to solve this problem.
-
-If you would like more information on how Git works, read more in the [Git Book](https://git-scm.com/book/en/v2){rel="noopener noreferrer" target="_blank"} for free.
-
-## Git on Windows
-
-Follow these step-by-step instructions if you're installing Git on a Windows machine:
-
-First, launch a web browser, the image below shows the Microsoft Edge browser:
-
-![](`r git_url19`) 
-
-Next, navigate to the following Git download URL in your browser [https://git-scm/com/downloads](https://git-scm.com/downloads){rel="noopener noreferrer" target="_blank"}:
-
-![](`r git_url20`) 
-
-Select "Windows" from the Downloads portion of the Git webpage. Git will display the following page and automatically being downloading the correct version of the Git software.  If the download doesn't start automatically, click on the "Click here to download manually link":
-
-![](`r git_url21`) 
-
-When the download is complete, open/Run the downloaded file (will look different in different browsers, but everyone should know how to do this):
-
-![](`r git_url22`) 
-
-A screen will appear asking for permissions for the Git application to make changes to your device.  Click on the **Yes** button:
-
-![](`r git_url23`) 
-
-Click **Next** to accept the user license:
-
-![](`r git_url24`) 
-
-Leave the default "Destination Location" unchanged (usually C:\\Program Files\\Git) and hit **Next**
-
-![](`r git_url25`)
-
-You will see a screen like the one below asking you to "Select Components":
-
-![](`r git_url26`)
-
-Leave all of the default components selected and also check the boxes next to "Additional Icons" and it's sub-item, "On the Desktop". Your completed configurations window should have the following components selected:
-
-```
-Additional Icons 
-	-> On the Desktop
-Windows Explorer integration
-	-> Git Bash Here
-	-> Git GUI Here
-Git LFS (Large File Support)
-Associate .git* configuration files with default text editor
-Associate .sh files to be run with Bash
-```
-
-And should look like this:
-
-![](`r git_url27`)
-
-After verifying that you have the necessary components selected as per above, hit **Next**.
-
-The next screen will ask you to "Select a Start Menu Folder." Keep the default value of Git and hit **Next**:
-
-![](`r git_url28`)
-
-Leave the default "Use Vim (the ubiquitous text editor) as Git's default editor" selected on the "Choosing the default editor used by Git" screen and hit **Next**:
-
-![](`r git_url29`)
-
-On the next screen, leave the default "let Git decide" option selected and hit **Next**:
-
-![](`r git_url30`)
-
-Leave the default "Git from the command line and also from 3rd-party software" selected and hit **Next**:
-
-![](`r git_url31`)
-
-On the next "Choosing HTTPS transport backend" page leave the default "Use the OpenSSL library" option selected and hit **Next**:
-
-![](`r git_url32`)
-
-Leave the default "Checkout Windows-style, commit Unix-style line endings" selected on the next page and hit **Next**:
-
-![](`r git_url33`)
-
-Keep the default "Use MinTTY (the default terminal of MSYS2)" selected on the "Configuring the terminal emulator to use with Git Bash" window and hit **Next**:
-
-![](`r git_url34`)
-
-Keep the default value of "Default (fast-forward or merge)" on the "Choose the default behavior of 'git pull'" page and hit **Next**:
-
-![](`r git_url35`)
-
-Keep the default value of "Git Credential Manager Core" on the "Choose a credential helper" page and hit **Next**:
-
-![](`r git_url36`)
-
-Keep the default values on the "Configuration extra options" page by keeping "Enable file system caching" checked and "Enable symbolic links" unchecked and then hit **Next**:
-
-![](`r git_url37`)
-
-Make sure that no options are checked in the "Configuring experimental options" page and hit **Install**:
-
-![](`r git_url38`)
-
-After you hit this **Install** button as per above, you will see an install progress screen like the one below:
-
-![](`r git_url39`)
-
-When the install is complete, a new, "Completing the Git Setup Wizard" window like the one below will appear:
-
-![](`r git_url40`)
-
-Make sure that all of the options on this window are unchecked as in the image below and then hit the **Finish** button:
-
-![](`r git_url41`)
-
-This will complete your installation process.
-
-*Windows users should verify that when downloading Git for Windows they have also installed Git Bash, which is necessary for working with Git in command line.*
-
-## Git on Mac
-
-If you are installing Git on a Mac, there is no extra configuration. Simply go the git download page at [https://git-scm.com/downloads](https://git-scm.com/downloads){rel="noopener noreferrer" target="_blank"} and choose the latest version for mac, and run the installer package when it is finished downloading. If you get an “unknown developer” warning during the install process, follow the instructions at the beginning of the video at [https://www.youtube.com/watch?v=__kr-Ew5kbE](https://www.youtube.com/watch?v=__kr-Ew5kbE){rel="noopener noreferrer" target="_blank"} to help you work through this problem.
-
-## Verifying your install
-
-**Whether you're installing on Windows or Mac, note that unlike most applications that you've installed before, you will not find a "Git" application in your programs or applications directory once the installation is complete.** As long as you don't get an explicit error message during the installation process, you can assume that the software was successfully installed. Git is a command-line application with which you interact using the command-line, which we'll cover during the interactive session. If you're already familiar with using command line, you can verify your install by opening the terminal (for Windows that will be Git Bash in your programs menu) and type *git --version*. You should then see a response of your installed version (e.g., git version 2.12.2.windows.2, or git version 2.12.2.mac.2), and not the error "command not found."
-
-## Installation troubleshooting
-
-If you are not able to successfully install Git on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
 # Jupyter Notebooks
 
@@ -378,18 +208,6 @@ If you are not able to successfully install Git on your own, please attend DataL
 ## Installation troubleshooting
 
 If you are not able to successfully install Jupyter Notebooks on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
-
-# Linux Subsystem for Windows (LSW; a.k.a. Command Line)
-
-## Introduction
-
-## LSW on Windows
-
-## Verifying your install
-
-## Installation troubleshooting
-
-If you are not able to successfully install the Linux Subsystem for Windows on your own, please attend DataLab's Virtual Office Hours. Click [here](https://datalab.ucdavis.edu/office-hours/){rel="noopener noreferrer" target="_blank"} for more information and to receive a Zoom link.
 
 # OpenRefine
 
@@ -463,7 +281,7 @@ Python modules are extensions to the basic capabilities of Python. You can insta
 
 If you are using Anaconda, it is recommended you install modules from conda sources to ensure compatibility. First, start a terminal using the Python environment you want to install the module in.
 
-**(Optional)** If you are using a graphical interface, use the Anaconda Navigator to launch a terminal of your chosen environment.
+**(Optional)** If you are using Anaconda, use the Anaconda Navigator to launch a terminal of your chosen environment.
 
 ![](`r pm_conda_1`)
 
