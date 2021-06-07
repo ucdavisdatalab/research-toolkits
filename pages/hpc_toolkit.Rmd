@@ -1,0 +1,187 @@
+---
+title: "UC Davis DataLab High Performance Computing Toolkit (WIP)"
+date: "`r Sys.Date()`"
+author: "UC Davis DataLab"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    css: datalab_theme.css
+---
+
+```{r setup, include=FALSE}
+
+
+```
+
+QUESTIONS:
+
+-   Will my relative paths work in the slurm examples?
+
+# Overview
+
+This guide is a quick overview of High Performance Computing (HPC) at UC Davis. It has taken heavily from several other resources, listed below. A more comprehensive guide is under construction, and is set to be released this summer.
+
+If you need to talk with someone now, look into the `#hpc` channel on the [UC Davis slack](https://ucdavis.slack.com/), or email the [HPC helpdesk](hpc-help@ucdavis.edu).
+
+**Consulted Resources**
+
+-   <https://mcmaurer.github.io/farm-cluster-intro/>
+-   <https://wiki.cse.ucdavis.edu/farm_guide>
+-   <https://hpc.ucdavis.edu/cluster-helpsupport>
+-   <https://github.com/RILAB/lab-docs/wiki/Using-Farm>
+-   <https://github.com/ngs-docs/2020-GGG298/tree/master/Week7-Slurm_and_Farm_cluster_for_doing_analysis>
+-   <https://github.com/carpentries-incubator/hpc-intro>
+-   <https://github.com/carpentries-incubator/introduction-to-conda-for-data-scientists>
+
+## High Performance Computing at UC Davis
+
+There are several HPC environments at UC Davis, but all of them require accounts to use. If you already have a sponsor, you can request an account [here](https://wiki.cse.ucdavis.edu/cgi-bin/index2.pl) after you have generated a SSH key (see next section, \#). If you do not, you will need to look into if you qualify for any of the following cluster environments.
+
+**Cluster Environments:**
+
+| Name                                                            | Sponsor                                                                                                                | Status                                                                                                                |
+|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| Atomate                                                         | UCD Health                                                                                                             |                                                                                                                       |
+| Cardio                                                          | UCD Health                                                                                                             | [Status](http://stats.cse.ucdavis.edu/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=cardio&tab=m&vn=&hide-hf=false)  |
+| Crick                                                           | College of Biological Sciences                                                                                         | [Status](http://stats.cse.ucdavis.edu/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=crick&tab=m&vn=&hide-hf=false)   |
+| Demon                                                           | College of Letters and Science                                                                                         | [Status](http://stats.cse.ucdavis.edu/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=demon&tab=m&vn=&hide-hf=false)   |
+| [FARM](https://wiki.cse.ucdavis.edu/support/systems/farm)       | College of Letters and Science                                                                                         | [Status](http://stats.cse.ucdavis.edu/ganglia/?r=hour&s=descending&c=Agri)                                            |
+| [Gauss](https://wiki.cse.ucdavis.edu/support/systems/gauss)     | College of Letters and Science                                                                                         | [Status](http://stats.cse.ucdavis.edu/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=gauss&tab=m&vn=&hide-hf=false)   |
+| [HPC1](https://wiki.cse.ucdavis.edu/support/systems/hpc1)       | [College of Engineering](https://technology.engineering.ucdavis.edu/services/research/high-performance-computing-hpc/) | [Status](http://stats.cse.ucdavis.edu/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=hpc1&tab=m&vn=&hide-hf=false)    |
+| HPC2                                                            | College of Engineering                                                                                                 |                                                                                                                       |
+| Impact                                                          | College of Letters and Science                                                                                         | [Status](http://stats.cse.ucdavis.edu/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=impact&tab=m&vn=&hide-hf=false)  |
+| LSSC0                                                           | [Bioinformatics Core](https://bioinformatics.ucdavis.edu/hpc-overview)                                                 |                                                                                                                       |
+| [Peloton](https://wiki.cse.ucdavis.edu/support/systems/peloton) | [College of Letters and Science](https://mps-cluster.ucdavis.edu/)                                                     | [Status](http://stats.cse.ucdavis.edu/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=peloton&tab=m&vn=&hide-hf=false) |
+
+# Connecting to a Server
+
+To connect to a server you will need to have a terminal on your local machine which you will use to connect to the remote one. Linux and Macs already have a terminal built in, Windows users can follow our install guides (INSERT LINK) to get a terminal running on their machines.
+
+## (Maybe) Generating an SSH Key
+
+It is expected you will use an SSH keypair to connect to any of the previously mentioned servers. A keypair is a pair of files which allow a server to identify you when you try to connect; it's like an added layer of security beyond a password. If you use a service like github, there is a good chance you already have a keypair. **DO NOT GENERATE A NEW ONE**. If you do, all services which rely on your current keypair will stop working if you overwrite it. There is no way to undo this.
+
+To check if you already have a keypair in the default location, enter `cat ~/.ssh/id_rsa.pub` in your terminal and press enter. If it displays some text starting with `ssh-rsa`, you already have a keypair and should proceed to the next step.
+
+If text starting with `ssh-rsa` does not appear, you will need to make a keypair. To generate a keypair, open your terminal and enter `ssh-keygen`. When it prompts for a location accept the default by pressing enter. It will then ask if you want to add a password. It is always more secure to have a password. As you type nothing will appear on screen, this is normal. You will be asked to enter it twice to confirm. Make sure you do not forget it, as if you do *there is no way to figure it out*.
+
+## Requesting Access
+
+Once you have a keypair, you will need to upload the public part of it to request an account on a cluster server. You can find the request form [here](https://wiki.cse.ucdavis.edu/cgi-bin/index2.pl). Make sure you upload the **PUBLIC** half of your keypair. It should be located at `~/.ssh/id_rsa.pub`. You will also need to select what server you are requesting access to, and who your sponsor is.
+
+## Logging On
+
+Once you have received confirmation that your account has been created, you can try to log on. It may be helpful to create an ssh profile. To do this, enter `nano ~/.ssh/config`. This will start the `nano` text editor. In this new text file, copy the following, filling in the information inside the brackets.
+
+    Host <SHORT SERVER NAME>
+       HostName <IP ADDRESS OF SERVER>
+       User <YOUR USER NAME>
+
+Once you are done, hit ctrl-x to exit and save. Now, you should be able to enter `ssh <SHORT SERVER NAME>` and connect to the server!
+
+# Using a Remote Server
+
+Once you can log in to the remote server, you can navigate around your home directory as normal. However, the process of running your code will be slightly different. These servers are cluster servers because they have access to several workers on which to run jobs. The server you actually log in to is just the coordinator, or *head node*, for these workers, and shouldn't be used for any jobs. We will cover how to send jobs to the workers in a moment, for now let's cover getting files onto the server.
+
+## Moving Files
+
+You will need to copy your files from your machine to the remote server before you can use it. There are two common ways to do this: using a dedicated FTP program like [FileZilla](https://filezilla-project.org/) or using the command line.
+
+[FileZilla](https://filezilla-project.org/) is a free, multi-platform tool for copying files. If you would like to use it, download it from their site and follow their tutorial [here](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)).
+
+To copy files using the command line, you could either use `scp` or `rsync`. `scp` works like a normal copy/paste, while `rsync` keeps track of copied files, and will only copy files again if they have been updated. `rsync` has the added benefit of being able to resume where it left off if there is an interruption. To move files, navigate to their location on your local machine with your terminal. Once there either of the following will recursively copy a directory to your home directory on the server.
+
+    scp -r <LOCAL DIRECTORY LOCATION> <SHORT SERVER NAME>:~/
+    rsync -avzeP 'ssh -p 22' <LOCAL DIRECTORY LOCATION> <SHORT SERVER NAME>:~/
+
+## Running Jobs
+
+The server you connect to should not be used for running any jobs. Rather, this coordinator *head node* is used to send tasks to the worker *compute nodes* within the cluster. A common piece of software for this coordination is called [`slurm`](https://slurm.schedmd.com/), and we will go over the basics of using it here. It is possible the server you are using does not use `slurm`, in which case you will need to follow the documentation for that software.
+
+First, take a look at the current state of affairs on the cluster by using `sinfo`. This will let us see the nodes on the server, and what they are doing. If you would like to see the jobs that are in the work queue, you can use `squeue` instead. If your job is running, you can kill it using `scancel <JOBID>`.
+
+Before we can start working on jobs, it is recommended you make a directory for each project. A template is provided here. It is important for you to make these directories, as `slurm` cannot make them for you. **If you don't make them, your job will fail silently.**
+
+    ~/
+    ├─<PROJECT NAME>\
+    | ├─data\
+    | ├─slurm_sripts\
+    | ├─scripts\
+    | ├─logs\
+    | ├─.gitignore
+    | ├─README.md
+    ├─Foo\
+    ├─Bar\
+
+After you have your project directory set up, you can start making scripts for your jobs. Keep these in the `slurm_scripts` directory. You will need to create bash scripts which you will enter into the job queue. These scripts will call other pieces of code to be run, and must have a specific format with metadata for `slurm` to read. This is included in the headers of the script with `#SBATCH`. The flags afterwards are the same you can pass when entering the command in the terminal; a list of others are presented below. Here is an example header:
+
+###### Code {.lcol_2}
+
+    #!/bin/bash -l
+    #SBATCH -D ../
+    #SBATCH -o ../logs/log1-stdout-%j.txt
+    #SBATCH -e ../logs/log1-stderr-%j.txt
+    #SBATCH -J MY_JOB
+    #SBATCH -t 24:00:00
+    set -u
+
+    <PUT YOUR CODE HERE>
+
+###### Key {.rcol_2}
+
+    Run this as a bash script
+    Set the project root directory
+    Set the output location for your stanard output
+    Set the output location for your stanard errors
+    Name your job
+    Max runtime? (here is 24 hours)
+    Error if un-named variables called
+
+    Whatever your code is,
+    most likely calling R or python
+
+##### 
+
+You can send this script to be run by the compute nodes by calling `sbatch -p <PARTITION NAME> <YOUR SCRIPT>`. You should know what partitions you have access to run things on, but you can see the list again using `sinfo`. Once you hit enter, you should see your job in the queue using `squeue`. If that is not the case, time to check your logs in the `logs` directory (maybe good to do that anyway!).
+
+## Running Interactively
+
+Some times you just need to try things yourself. You can open a bash terminal for 2 hours by entering `srun -t 2:00:00 --pty /bin/bash`. To open an interactive R session on a compute node, enter `srun -p <PARTITION NAME> -t 2:00:00 --pty R`. These will open an interactive terminal for you, limited to 2 hours. You can change the time, but you will be kicked off when it runs out!
+
+## Additional Arguments
+
+There are a few other options you might want to pass along when you run a batch or interactive job. Just add these the the command when you run them.
+
+-   `--mem=<number>Gb` = request a certain amount of memory
+
+-   `-c <number>` = request a certain number of CPUs
+
+-   `--mail-user=<YOUR EMAIL> --mail-type=<ARGUMENT>` = Mail you according to the argument you provide, valid options include:
+
+    -   `ALL`
+
+    -   `BEGIN`
+
+    -   `END`
+
+    -   `FAIL`
+
+    -   `REQUEUE`
+
+    -   `TIME_LIMIT`
+
+    -   `TIME_LIMIT_90`
+
+    -   `TIME_LIMIT_80`
+
+    -   `TIME_LIMIT_50`
+
+    -   `ARRAY_TASKS`
+
+# Contributions
+
+This research toolkit is maintained by the UC Davis DataLab, and is open for contribution. See how you can contribute on the [Github repo](https://github.com/ucdavisdatalab/research-toolkits){rel="noopener noreferrer" target="_blank"}.
+
+This toolkit has been made possible thanks to contributions by:
+
+-   [Jared Joseph](https://jnjoseph.com/){rel="noopener noreferrer" target="_blank"}
