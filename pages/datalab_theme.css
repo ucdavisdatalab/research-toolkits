@@ -45,3 +45,15 @@ h1, h2, h3, h4, h5, h6, legend {
   padding-left: 22px ;
   text-indent: -22px ;
 }
+
+.lcol_2{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.rcol_2{
+  float: right;
+  width: 50%;
+  text-align: left;
+
+.colossal{ font-size: 220% }
