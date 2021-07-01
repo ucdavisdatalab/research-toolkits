@@ -13,10 +13,6 @@ output:
 
 ```
 
-QUESTIONS:
-
--   Will my relative paths work in the slurm examples?
-
 # Overview
 
 This guide is a quick overview of High Performance Computing (HPC) at UC Davis. It has taken heavily from several other resources, listed below. A more comprehensive guide is under construction, and is set to be released this summer.
