@@ -6,6 +6,9 @@ output:
   rmdformats::readthedown:
     highlight: kate
     css: datalab_theme.css
+bibliography: references.bib
+link-citations: TRUE
+csl: apa.csl
 ---
 
 ```{r setup, include=FALSE}
