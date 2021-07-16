@@ -7,7 +7,7 @@
 
         <meta name="author" content="UC Davis DataLab" />
     
-        <meta name="date" content="2021-07-01" />
+        <meta name="date" content="2021-07-16" />
     
     <title>UC Davis DataLab Text and NLP Toolkit</title>
 
@@ -126,61 +126,50 @@
     <h2><a href="#content">UC Davis DataLab Text and NLP Toolkit</a></h2>
     <div id="toc">
       <ul>
-      <li><a href="#text-data-gathering-tools">Text Data Gathering Tools</a>
-      <ul>
-      <li><a href="#digital-methods-initiative">Digital Methods Initiative</a></li>
       <li><a href="#overview">Overview</a></li>
-      </ul></li>
-      <li><a href="#text-data-cleaningprep-tools">Text Data Cleaning/Prep Tools</a>
+      <li><a href="#natural-language-processing-nlp-concepts">Natural Language Processing (NLP) Concepts</a></li>
+      <li><a href="#natural-language-processing-nlp-pre-processing">Natural Language Processing (NLP) Pre-Processing</a>
       <ul>
-      <li><a href="#the-sourcecaster">The Sourcecaster</a></li>
-      <li><a href="#antsoftware">AntSoftware</a></li>
-      <li><a href="#trifacta">Trifacta</a></li>
+      <li><a href="#lowercase-everything">Lowercase Everything</a></li>
+      <li><a href="#stopword-removal">Stopword Removal</a></li>
+      <li><a href="#tokenization">Tokenization</a></li>
+      <li><a href="#stemming">Stemming</a></li>
+      <li><a href="#lemmatization">Lemmatization</a></li>
+      <li><a href="#part-of-speech-tagging">Part of Speech Tagging</a></li>
       </ul></li>
-      <li><a href="#advanced-text-analysis">Advanced Text Analysis</a>
+      <li><a href="#natural-language-processing-nlp-measures">Natural Language Processing (NLP) Measures</a>
       <ul>
-      <li><a href="#google-word2vec">Google Word2Vec</a></li>
-      <li><a href="#stanford-ner">Stanford NER</a></li>
-      <li><a href="#stanford-sentiment-analysis">Stanford Sentiment Analysis</a></li>
-      <li><a href="#sentiment-140">Sentiment 140</a></li>
-      <li><a href="#signature-stylometric-system">Signature Stylometric System</a></li>
-      <li><a href="#macro-etyological-analyzer">Macro-Etyological Analyzer</a></li>
-      <li><a href="#textplot">TextPlot</a></li>
-      <li><a href="#booknlp">BookNLP</a></li>
-      <li><a href="#factorie">FACTORIE</a></li>
+      <li><a href="#word-frequency">Word Frequency</a></li>
+      <li><a href="#co-occurrence">Co-occurrence</a></li>
+      <li><a href="#named-entity-recognition-ner">Named Entity Recognition (NER)</a></li>
+      <li><a href="#sentiment-analysis">Sentiment Analysis</a></li>
+      <li><a href="#term-frequency-inverse-document-frequency-tf-idf">Term Frequency Inverse Document Frequency (TF-IDF)</a></li>
+      <li><a href="#topic-models">Topic Models</a></li>
+      <li><a href="#word-embeddings">Word Embeddings</a></li>
       </ul></li>
-      <li><a href="#text-corpus-exploration-software">Text Corpus Exploration Software</a>
+      <li><a href="#tools-for-nlp">Tools for NLP</a>
       <ul>
-      <li><a href="#antconc">AntConc</a></li>
-      <li><a href="#wordhoard">WordHoard</a></li>
-      <li><a href="#sketch-engine">Sketch Engine</a></li>
-      <li><a href="#dfr-browser">DfR-Browser</a></li>
+      <li><a href="#programatic-tools">Programatic Tools</a></li>
+      <li><a href="#text-data-gathering-tools">Text Data Gathering Tools</a></li>
+      <li><a href="#text-data-cleaningprep-tools">Text Data Cleaning/Prep Tools</a></li>
+      <li><a href="#text-analysis">Text Analysis</a></li>
+      <li><a href="#text-corpus-exploration-software">Text Corpus Exploration Software</a></li>
+      <li><a href="#text-corpus-exploration-web-apps">Text Corpus Exploration Web Apps</a></li>
+      <li><a href="#qualitative-data-analysis-qda-suites">Qualitative Data Analysis (QDA) Suites</a></li>
+      <li><a href="#dataset-sources">Dataset Sources</a></li>
       </ul></li>
-      <li><a href="#text-corpus-exploration-web-apps">Text Corpus Exploration Web Apps</a>
+      <li><a href="#novelties">Novelties</a>
       <ul>
-      <li><a href="#wordandphrase">WordandPhrase</a></li>
-      <li><a href="#lexos">Lexos</a></li>
-      <li><a href="#wordtree">WordTree</a></li>
-      <li><a href="#wordseer">WordSeer</a></li>
-      <li><a href="#voyant-tools">Voyant-Tools</a></li>
-      <li><a href="#in-browser-topic-modeling">In-Browser Topic Modeling</a></li>
-      </ul></li>
-      <li><a href="#dataset-sources">Dataset Sources</a>
-      <ul>
-      <li><a href="#dpla-visual-search-prototype">DPLA Visual Search Prototype</a></li>
-      <li><a href="#hathitrust">HathiTrust</a></li>
-      </ul></li>
-      <li><a href="#novelty">Novelty</a>
-      <ul>
-      <li><a href="#wordwanderer">WordWanderer</a></li>
       <li><a href="#poem-viewer">Poem Viewer</a></li>
+      <li><a href="#nonsense-laboratory">Nonsense Laboratory</a></li>
+      <li><a href="#wordwanderer">WordWanderer</a></li>
       </ul></li>
       <li><a href="#contributions">Contributions</a></li>
       </ul>
     </div>
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
                   <p class="author"><span class="glyphicon glyphicon-user"></span> UC Davis DataLab</p>
-                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-07-01</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-07-16</p>
           </div>
    </div>
      
@@ -190,165 +179,274 @@
    
 <!-- Don't indent these lines or it will mess pre blocks indentation --> 
 <div id="main">
-<div id="text-data-gathering-tools" class="section level1">
-<h1>Text Data Gathering Tools</h1>
-<div id="digital-methods-initiative" class="section level2">
-<h2>Digital Methods Initiative</h2>
-<p>This website offers a suite of tools for collecting and analyzing internet data, all created at the Digital Methods Initiative at the University of Amsterdam. Tools are generally web-based and user-friendly, where researchers can input URLs they are interested in studying. DMI also provides various tools to analyze, organize, and visualize the collected internet data. All tools include instructions and examples scenarios of use. They have tools in a variety of realms including media analysis (media monitoring, mapping, clouding, comparative analysis), data treatment and visualization, natively digital (The Link, URL, Tag, Domain, PageRank, etc.), specific devices/websites (Google, Yahoo, Wikipedia, Alexa, IssueCrawler, Twitter, Facebook, Amazon, iTunes, Wayback, YouTube, Instagram, Github, etc.), and spherical studies (including the web, news, tag, video, image, code and blogo- spheres)</p>
-<p><a href="https://wiki.digitalmethods.net/Dmi/ToolDatabase" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="overview" class="section level1">
+<h1>Overview</h1>
+<p>This page will provide you with a few basic concepts and tools for working with text data. Natural Language Processing (NLP) is a discipline of its own, so if you plan to use these methods of your own research, please consider this a starting point only. That being said, this page should give you the vocabulary required to start researching the concepts that are of interest to you and your project.</p>
+<p>Natural Language Processing (NLP) is a combination of linguistics, computer science, data science, and statistics which can be used to create models to understand large collections of text called a <em>corpus</em>. Natural language refers to language people use, as opposed to something like a coding language. NLP is sometimes called computationally assisted “distant reading” of a corpus, as opposed to the “close read” by reading all of the documents personally. Nevertheless, good NLP projects still involve a manual read of your corpus, at least some of it. Ultimately, the adage “garbage in, garbage out” still applies, and you need to check your corpus for garbage.</p>
 </div>
-<div id="overview" class="section level2">
-<h2>Overview</h2>
-<p>A document mining application to read and analyze sets of documents, including full text search, visualizations, entity detection, topic clustering, and more. The tool includes built-in OCR, document annotation, and word clouds. It also includes tagging and metadata support, and users can write their own plugins using the API. Users can run the program on the public Overview server or download source code from Github to run it on their own machines via command line.</p>
-<p><a href="https://blog.overviewdocs.com/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="natural-language-processing-nlp-concepts" class="section level1">
+<h1>Natural Language Processing (NLP) Concepts</h1>
+<p>NLP contains many methods within it. These can range from simple counts of words across a corpus, to processing the corpus to find salient themes and the documents that discuss them. Before you can pick any method though, you need to make some decisions about how you will represent your text as data. This includes how you will select and clean your text, as well as picking the unit of analysis. We will give a quick overview of these steps here, but please check out our <a href="https://datalab.ucdavis.edu/archive/" rel="noopener noreferrer" target="_blank">workshop archive</a> for NLP workshops and other resources which can better prepare you to take advantage of NLP methods in your work.</p>
+<p>As with all data sets, you must keep in mind what you are actually sampling when you collect text data. For example, while twitter may provide ready access to social media data through their api, it is still only a snapshot of twitter users, not a generalizable corpus of all humanity. The same is true when you get newspapers from an archive or transcripts from speeches. It will always just be once slice of all that was ever said or written.</p>
+<p>In terms of data cleaning, several decisions must be made before most common analyses can be run. Even if you are simply interested in how many times the word “Follow” appears in a corpus, you need to decide things like:</p>
+<ol style="list-style-type: decimal">
+<li>Does capitalization matter? Is Follow a proper term?</li>
+<li>Does the tense of the word matter? Does Follow == Following == Followed?</li>
+<li>Does the word or a phrase with the word matter? Do you care about “Follow” or “Current Follow Count?”</li>
+</ol>
+<p>You must also decide what the unit of analysis for your project will be. Are you looking at books in a subject area, or chapters in those books, or paragraphs in those chapters? Depending on the analysis, the unit of comparison can have a large effect on outcomes. For example the co-occurrence of the terms “University” and “California” may be small if you are looking within sentences, but much higher if you expand the scope to paragraphs.</p>
 </div>
+<div id="natural-language-processing-nlp-pre-processing" class="section level1">
+<h1>Natural Language Processing (NLP) Pre-Processing</h1>
+<p>Text data is typically cleaned and standardized before any analyses. Here we will cover some of the most common cleaning steps. Note that you often will not perform all of these steps depending on your project! It is possible to ruin your analyses with over-cleaning. Think carefully about how each process will interact with your research question.</p>
+<div id="lowercase-everything" class="section level2">
+<h2>Lowercase Everything</h2>
+<p>One of the most common cleaning steps is setting all of your text to lowercase. This is typically done as a machine will consider words with capital letters as different words than those with lowercase. For example, “Hello” and “hello” will be considered different words. If you are doing anything where the number of occurrences of a word matters, your count will now be artificially split in half. Conversely, if you have proper nouns in your data that would not be detected as such if lowercase (say dune the terrain feature and Dune the book), lowercasing everything would make the proper noun disappear from your data.</p>
 </div>
-<div id="text-data-cleaningprep-tools" class="section level1">
-<h1>Text Data Cleaning/Prep Tools</h1>
-<div id="the-sourcecaster" class="section level2">
-<h2>The Sourcecaster</h2>
-<p>Instructions and tutorials for using the command line for common text cleaning tasks. Useful and time-saving with lots of dependencies (brew, port, wget, tesseract, etc.) for people already familiar with command line. It might have a steeper learning curve for people who are not tech savvy.</p>
-<p><a href="http://thomasgpadilla.github.io/sourcecaster/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="stopword-removal" class="section level2">
+<h2>Stopword Removal</h2>
+<p>Stopwords are the connective tissue of language; words like “the,” “a,” “to” etc. While these words are important for readers to understand the sentence, they don’t contain any meaning of themselves, and are general not useful for basic text analysis. Keeping them in your analysis can actually be detrimental, as they over-inflate the number of words in your corpus, messing with the denominator of many calculations. More advanced tools do make use of them for charting sentence structure, but it is generally recommended you remove them otherwise. There are pre-made stopword lists included in most text analysis software. It may sometimes be prudent to alter this list however. If a word is particularly common in your text you may want to remove it. On the other hand if a common word has a particular meaning in your context, you may want to make sure it is preserved.</p>
 </div>
-<div id="antsoftware" class="section level2">
-<h2>AntSoftware</h2>
-<p>This site has several tools for cleaning and prepping text documents, such as AntCorGen (corpus creation tool), AntFileConverter (converts PDF and Word files to plain text), AntFileSplitter (file splitting tool), AntGram (n-gram and p-frame generation tool), EncodeAnt (detects and converts character encodings), SarAnt (batch search and replace tool), and VariAnt (a spelling analysis program). All programs are free and easily downloaded, and the site includes step by step screenshot help pages.</p>
-<p><a href="http://www.laurenceanthony.net/software.html" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="tokenization" class="section level2">
+<h2>Tokenization</h2>
+<p>In NLP parlance, a token is the unit by which you are analyzing your data. The most intuitive way to tokenize is by word, where each word in your text becomes a distinct item. However, there ar cases where instead you may want to break your text into <em>n-grams</em>, or rolling chunks of <em>n</em> length. For example, if you have the sentence, “The NLP guide was helpful” you could tokenize it in the following ways:</p>
+<ul>
+<li>Word: “The,” “NLP,” “guide,” “was,” “helpful”</li>
+<li>bi-gram: “The NLP,” “NLP guide,” “guide was,” “was helpful”</li>
+<li>tri-gram: “The NLP guide,” “NLP guide was,” “guide was helpful”</li>
+<li>etc.</li>
+</ul>
 </div>
-<div id="trifacta" class="section level2">
-<h2>Trifacta</h2>
-<p>A program that accepts various forms of “messy” data (including JSON and CSV), and attempts do profile your data based on percent of missing, mismatching, inconsistent values, and data categories. Through the free-to-download GUI, users can then more easily clean and enrich datasets and export into a several structured data formats.</p>
-<p><a href="https://www.trifacta.com/products/wrangler-editions/#wrangler" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="stemming" class="section level2">
+<h2>Stemming</h2>
+<p>Stemming is one way to standardize words such that different forms of a word are turned into the same token. For example, if you have “run,” “running,” and “ran” in your text, you would want to covert them into one token because they all convey the same meaning. Stemming simply cuts off prefixes and suffixes of words according to a dictionary to try and accomplish that standardization. So:</p>
+<ul>
+<li>run | -&gt; run</li>
+<li>run | ning -&gt; run</li>
+<li>ran | -&gt; ran</li>
+</ul>
+<p>In this example, “ran” would not be appropriately converted. While in actuality most stemming algorithms with most likely catch such a common word, stemming trades precision for speed in most cases. If your corpus contains novel language, it may be best to look at lemmatization instead.</p>
 </div>
+<div id="lemmatization" class="section level2">
+<h2>Lemmatization</h2>
+<p>Lemmatization wants to accomplish the same ends as stemming–standardizing tokens–but typically is more comprehensive at the cost of speed/computational usage. While some lemmatization algorithms start with a dictionary lookup for common words, many then take another pass at the input using part of speech tagging and language rules to try and catch more words that may be missed using the dictionary strategy. It will then try to reduce the word to its “lemma” or base form, sometimes changing words entirely to achieve this. For this reason, lemmatization will catch more words like “ran” where the required change is more than the removal of a prefix or suffix.</p>
+<ul>
+<li>run -&gt; run</li>
+<li>running -&gt; run</li>
+<li>ran -&gt; run</li>
+</ul>
 </div>
-<div id="advanced-text-analysis" class="section level1">
-<h1>Advanced Text Analysis</h1>
-<div id="google-word2vec" class="section level2">
-<h2>Google Word2Vec</h2>
-<p>A C implementation of the word2vec skip gram and continuous bag of words models for creating word embeddings. This tool takes a text corpus as input and produces the word vectors as output. It can be downloaded from source and used on command line. This is a very powerful tool for many natural language processing problems, but there exist many alternative implementations as well as wrappers to the Google C implementation linked. One such tool is gensim, a python wrapper around this tool.</p>
-<p><a href="https://code.google.com/archive/p/word2vec/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="stanford-ner" class="section level2">
-<h2>Stanford NER</h2>
-<p>Part of Stanford Core NLP, this is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The webpage provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as python, php, perl, JavaScript, etc.</p>
-<p><a href="https://nlp.stanford.edu/software/CRF-NER.shtml" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="stanford-sentiment-analysis" class="section level2">
-<h2>Stanford Sentiment Analysis</h2>
-<p>Part of Stanford Core NLP, this is a Java implementation with web demo of Stanford’s model for sentiment analysis. The model uses sentence structure to attempt to quantify the general sentiment of a text based on a type of recursive neural network which analyzed Stanford’s Sentiment Treebank dataset. This is a very useful tool and is a much more up to date and robust model for sentiment analysis then previous naive model’s that simply sum the scores of the words in the text without caring for order or grammatical nuance. Users can use a web based live demo to see if the tool is useful for them, and then download the source code via command line.</p>
-<p><a href="https://nlp.stanford.edu/sentiment/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="sentiment-140" class="section level2">
-<h2>Sentiment 140</h2>
-<p>An API for sentiment analysis on tweets, this tool can do bulk processes of around 5000 per minute and was built from machine learning algorithms. The tool is well documented and seems easy to interface with and parse results. Users can upload JSON and CSV formatted data and use of the tool requires registration.</p>
-<p><a href="http://help.sentiment140.com/api" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="signature-stylometric-system" class="section level2">
-<h2>Signature Stylometric System</h2>
-<p>This is a tool for stylometric analysis and comparison of texts with emphasis on author identification. The tool is well documented and seemingly well designed and implemented. Several corpuses are available with examples of usage available on the website. It seems like a good starting point for any kind of efforts towards author attribution, and the program is downloadable in a self-extracting ZIP file.</p>
-<p><a href="http://www.philocomp.net/humanities/signature.htm" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="macro-etyological-analyzer" class="section level2">
-<h2>Macro-Etyological Analyzer</h2>
-<p>A python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. A very important tool for people interested in historical word usage and linguistic change.</p>
-<p><a href="http://jonreeve.com/2016/06/introducing-macroetym-cli/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="textplot" class="section level2">
-<h2>TextPlot</h2>
-<p>A program that converts a document into a network of terms based on cooccurrences with the goal of teasing out information about high-level topic structure of the text. For each term, users can get the set of offsets in the document where the term appears and use the kernel density estimation to compute a probability density function that represents the word’s distribution across the document. Users can also compute the bray-Curtis dissimilarity between the term’s PDF and the PDFs of all other terms in the document to measure the extent to which two words appear in the same locations. Output includes various ways of graphing these measures, including an overall word network. Users can install the source code from Github and can use the program via command line or Python.</p>
-<p><a href="https://github.com/davidmcclure/textplot" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="booknlp" class="section level2">
-<h2>BookNLP</h2>
-<p>A natural language processing pipeline developed to run on books and other long (English only) documents. Uses the Stanford Core NLP software, so it requires Java and use of the command line or more advanced programming skills. Includes the ability to do part-of-speech tagging, dependency parsing, named entity recognition, character name clustering, quotation speaker identification, pronominal coreference resolution, and suspersense tagging.</p>
-<p><a href="https://github.com/dbamman/book-nlp" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="factorie" class="section level2">
-<h2>FACTORIE</h2>
-<p>From the command-line, this program provides a framework for probabilistic graphical models, and can do a wide variety of text analysis tasks such as topic modeling, document classification, and part-of-speech tagging. The tutorials and how-to guides are mostly code, and so is recommended for users already familiar with at least one computer programming language. The last update to the software was 2014.</p>
-<p><a href="http://factorie.cs.umass.edu/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="part-of-speech-tagging" class="section level2">
+<h2>Part of Speech Tagging</h2>
+<p>Part of speech tagging is just what it sounds like. It goes through the words in your corpus and tags them with metadata indicating if it things they are nouns, verbs, adjectives, etc. Being a NLP tool, it goes into much finer detail, with one of the more common lists of tags being the <a href="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html" rel="noopener noreferrer" target="_blank">Penn Treebank</a>. Different NLP tools will use different tag lists, so make sure to research which one will be applied to your corpus.</p>
 </div>
 </div>
-<div id="text-corpus-exploration-software" class="section level1">
-<h1>Text Corpus Exploration Software</h1>
-<div id="antconc" class="section level2">
-<h2>AntConc</h2>
-<p>A useful tool for exploratory natural language processing tasks, including clusters/N-grams, word frequency lists, and keywords. The software is well documented with several tutorials and easy to set up and use. AntConc is free and requires no downloading, it will launch from the web. It has seven tools users can access: Concordance tool (viewing the results in a KWIC format to see the commonly used words and phrases in a corpus of texts); Concordance Plot tool (plots the search results in a barcode format); File View tool (shows text of individual files); Clusters/N-grams tool (shows clusters based on search condition, or scans corpus for ‘N’ length clusters); Collocates tool (shows the collocates of a search term to investigate non-sequential patterns in language); Word List tool (frequency distribution of all words in the corpus); Keywords List tool (shows which words are unusually frequent in corpus in comparison to a reference corpus).</p>
-<p><a href="http://www.laurenceanthony.net/software.html" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="natural-language-processing-nlp-measures" class="section level1">
+<h1>Natural Language Processing (NLP) Measures</h1>
+<p>While the ways to measure text are as numerous as texts themselves, there are a few common measures that are used often. We will list them here and provide a brief explanation fo their utility.</p>
+<div id="word-frequency" class="section level2">
+<h2>Word Frequency</h2>
+<p>Word frequency is the simplest measure of text. It combines all of your textual data into a single, un-ordered “bag of words” and counts how often each word appears. The base idea is that if a word occurs more frequently, it will be more important.</p>
 </div>
-<div id="wordhoard" class="section level2">
-<h2>WordHoard</h2>
-<p>This is a powerful tool for anyone interested in understanding classic literary texts and the word usage they contain. It implements many core natural language processing methods, designed with close reading in mind and working towards meticulous tagging and metadata retrieval in texts. A very well documented with many examples, this tool is easy to customize with a well-designed and explained scripting system. The current version has the entire cannon of Early Greek epic in the original and in translation, as well as ass of Chaucer, Shakespeare, and Spenser.</p>
-<p><a href="http://wordhoard.northwestern.edu/userman/index.html" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="co-occurrence" class="section level2">
+<h2>Co-occurrence</h2>
+<p>Co-occurrence of specific terms may be of interest for your question. For example if you are interested in how a policy is portrayed in newspapers, you may look for the co-occurrence of that policy name and reaction words such as “support” or “oppose.”</p>
 </div>
-<div id="sketch-engine" class="section level2">
-<h2>Sketch Engine</h2>
-<p>A subscription-based tool aimed at non-programmers that analyzes large corpora to look for common words, phrases, or phenomena, or can perform various types of text analysis including cooccurrence analysis, term extraction, frequency lists, and part-of-speech tagging. The tool includes a 30-day free trial, and then has various per-month prices for different types of researchers (academic and non-academic). Users can upload text files (including metadata) or use the automated built-in tool for downloading relevant texts from the web. The tool is built (and personalized) for translators, terminologists, lexicographers, teachers, students and historians.</p>
-<p><a href="https://www.sketchengine.eu/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="named-entity-recognition-ner" class="section level2">
+<h2>Named Entity Recognition (NER)</h2>
+<p>Named Entity Recognition (NER) searches through a text to find proper nouns or other words that can help understand a text. A common use is to search though a piece of text for the proper nouns, time words (time and date), and locations to try and understand the context of the text. This can be helpful for categorizing texts based on the subjects included in them. These tags can be used to build further models, for example counting the number of business entities in a piece of text.</p>
 </div>
-<div id="dfr-browser" class="section level2">
-<h2>DfR-Browser</h2>
-<p>A tool to visualize and explore output from LDA topic models. View options of topics include a grid, scaled, list, and stacked view. Within topics, users can view frequency distributions, topic usage through time, and doc-topic matrices. Users can also access a word index to explore single words across the corpus, as well as topic distributions within documents. The site clearly explains what the tool does, and users can easily download the software via a .zip file.</p>
-<p><a href="http://agoldst.github.io/dfr-browser/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="sentiment-analysis" class="section level2">
+<h2>Sentiment Analysis</h2>
+<p>Sentiment analysis looks though a text and tried to apply numerical scores to how positive or negative it things the text is. Typically higher scores means a happier or more positive bit of text, while negative scores can mean anger or rage. More nuanced scoring exists, where it instead counts the number of words with specific emotional meaning, such as joy, fear, hate, etc. Most sentiment analyses are rather naive, just counting the number of words with emotional weight. Some more advanced methods are becoming more popular, the most crucial of which allows for negation words to affect the score. For example, a simple could would consider “I am not happy” and positive, rather than negative, if it could not understand the negation of “not” in that sentence.</p>
 </div>
+<div id="term-frequency-inverse-document-frequency-tf-idf" class="section level2">
+<h2>Term Frequency Inverse Document Frequency (TF-IDF)</h2>
+<p>A term frequency inverse document frequency (TF-IDF) matrix creates a weighted score for how important a term is per document in a corpus. The first is the ‘term frequency (TF)’ - how often the word appeared within that document. It makes intuitive sense that if a word appears many times in a document, that the document is about something related to that term. The second attribute is the ‘inverse document frequency (IDF)’ - a measure of what proportion of the documents the word appeared in. If a word appears in all documents, its weight should be reduced. Conversely, if a word appears only in few documents, it should be highly weighted for those documents.</p>
+<p>The formula for TF-IDF is: <code>tfidf(t,d,D) = tf(t,d) * idf(t,D)</code></p>
 </div>
-<div id="text-corpus-exploration-web-apps" class="section level1">
-<h1>Text Corpus Exploration Web Apps</h1>
-<div id="wordandphrase" class="section level2">
-<h2>WordandPhrase</h2>
-<p>A web interface tool for finding key words and phrases in a text based on their frequency. Users paste in text into interface and get a visualization of collocations and co-occurrence matrices, as well as the ability to import and export the data. The site also provides key word in context and other statistics about the word usage in the source text. However, in its current state, there is no easy way to use the tool on a large corpus and is therefore limited.</p>
-<p><a href="https://www.wordandphrase.info/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="topic-models" class="section level2">
+<h2>Topic Models</h2>
+<p>Topic models use the TF-IDF matrix discussed above to cluster a corpus by perceived topics, typically by using latent Dirichlet allocation (LDA). The generated topics are clusters of tokens that frequently co-occur, with each topic providing a score for how prevalent that topic is for each document in the corpus. This allows you to see what topics are most common, and what documents are exemplars of a particular topic. These topic prevelances can then be used as another data point for further analyses, such as showing how topic importance changes over time, between authors, or after significant events.</p>
 </div>
-<div id="lexos" class="section level2">
-<h2>Lexos</h2>
-<p>An online tool for cleaning and processing text, and users can upload data in various formats, including .txt, .html, .xml, .sgml, and .lexos. There is also a beta version available where users can use a web scraper to upload data. The tool can clean and separate the uploaded text into chunks and then provide several visualization tools to run on the processed text including word clouds, networks, and word collocation. Once uploaded, users can manage document lists, sorting them by labeled classes, sources, and excerpts. Text cleaning tools include removing punctuation, digits, whitespace, stop words, lemmatization, tokenization, creating a document-term matrix, etc. After visualization, the tool also offers several options for text analysis, including hierarchical clustering and k-means clustering, document similarity comparisons, and topwords. Users can export the data as CSV or tsv.</p>
-<p><a href="http://lexos.wheatoncollege.edu/upload" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="wordtree" class="section level2">
-<h2>WordTree</h2>
-<p>An online tool for visualizing the contexts in which certain phrases appear to get a sense of the ultimate structure of the text. This tool provides a novel way for searching a text based on certain phrases or words that appear within. Seems most useful for short texts as opposed to a full corpus and does not provide any analysis output beyond exploring your text visually.</p>
-<p><a href="https://www.jasondavies.com/wordtree/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="wordseer" class="section level2">
-<h2>WordSeer</h2>
-<p>This python webapp for textual analysis combines visualization, information retrieval, sensemaking and natural language processing. After installing the source code via command line, use of WordSeer requires registration, and tools for collaboration are provided. Many standard nlp tools and visualizations are available through the web interface. Users can try out the tool on a test collection before uploading their own documents to see if the tool is right for them.</p>
-<p><a href="https://github.com/Wordseer/wordseer/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="voyant-tools" class="section level2">
-<h2>Voyant-Tools</h2>
-<p>A web environment that implements many core nlp methods. Users paste in URLs or text and the interface provides various text exploration outputs, including a word cloud, relative frequency graph, word correlations, vocabulary density, and more. Data can be exported, however there is a limitation on the size of the corpus you can process.</p>
-<p><a href="https://voyant-tools.org/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
-</div>
-<div id="in-browser-topic-modeling" class="section level2">
-<h2>In-Browser Topic Modeling</h2>
-<p>The goal of this program is to make topic modeling accessible to users not familiar with R or Mallet. Users can run the program from a web browser, or download from Github, and can explore pre-loaded data or upload their own dataset (in CSV format). The UI allows users to explore topics by documents, correlations, and time series. Users can also explore the corpus vocabulary by frequency and topic specificity and can easily create custom stopword lists. The best feature of this program is that users can also download CSV formatted files of their topic model results, including document topics, topic words, topic summaries, topic-topic connections, doc-topic graphs (for Gephi) and a complete sampling state.</p>
-<p><a href="https://mimno.infosci.cornell.edu/jsLDA/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="word-embeddings" class="section level2">
+<h2>Word Embeddings</h2>
+<p>Word embeddings are one of the more abstract yet powerful ways to understand a corpus of text. Embeddings are numerical representations of a word, generated by examining each word in the context of all other words in a corpus. This comparison allows words to be “mapped” as a point in a cloud with other words, with words clustered together in this cloud having similar meaning, and allows for analysis of how those meanings changed over time. While very abstracted from the text, this method has achieved some very interesting results. It has also shown how bias is baked in to language, revealing how some words are implicitly gendered.</p>
 </div>
 </div>
-<div id="dataset-sources" class="section level1">
-<h1>Dataset Sources</h1>
-<div id="dpla-visual-search-prototype" class="section level2">
-<h2>DPLA Visual Search Prototype</h2>
-<p>A web portal to many databases of primary texts, images, videos and sound clips, produced by the DPLA (Digital Public Library of America). Its clearly defined and well curated categories (time periods and historical topics) make it useful as a place to find data for a project. Easy to web scrape and to cite, search results are presented graphed by topic area, year, and type of data available.</p>
-<p><a href="http://schuyberg.com/dplaviz/#/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="tools-for-nlp" class="section level1">
+<h1>Tools for NLP</h1>
+<p>The following are some tools you can use for NLP. Many of these tools have been implemented in larger data analysis suites like python and R as packages, so it would be unusual to use them standalone. If this is the case, the tool is marked with an asterisks (*) next to it’s name. We will first go over tools within R and Python, and then highlight some stand alone applications that might be helpful if you are not familiar with either of those languages.</p>
+<div id="programatic-tools" class="section level2">
+<h2>Programatic Tools</h2>
+<p>These tools are packages within established programming languages, namely R or Python. Most of the workshops at the DataLab uses one of these languages, and they are very common among academics. Learning these tools will first require knowledge of the language they are implemented in however.</p>
+<div id="python-nlp-tools" class="section level3">
+<h3>Python NLP Tools</h3>
+<div id="natural-language-toolkit-nltk" class="section level4">
+<h4>Natural Language Toolkit (NLTK)</h4>
+<p><a href="https://www.nltk.org/" rel="noopener noreferrer" target="_blank">Natural Language Toolkit (NLTK)</a> has been a stable for NLP for years. It is a fully featured environment for text collection, cleaning, and modeling. Because of its prevalence, there are numerous guides online on how to use the tools NLTK provides.</p>
 </div>
-<div id="hathitrust" class="section level2">
-<h2>HathiTrust</h2>
-<p>A web portal to many databases of texts, books, and images. Users can download text versions of many of the works, and the site includes works in many languages. HathiTrust interfaces with WorldCat and other tools for finding alternate versions of the text.</p>
-<p><a href="https://www.hathitrust.org/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="spacy" class="section level4">
+<h4>SpaCy</h4>
+<p><a href="https://spacy.io/" rel="noopener noreferrer" target="_blank">SpaCy</a> is relatively new, but has been rapidly gaining popularity. It aims to be a fully featured suite of tools like NLTK, but build on an updated (and much faster) architecture.</p>
 </div>
 </div>
-<div id="novelty" class="section level1">
-<h1>Novelty</h1>
-<div id="wordwanderer" class="section level2">
-<h2>WordWanderer</h2>
-<p>An experimental web tool for visualization of an imported text. The web interface loads all words in the corpus and provides clickable and draggable options for users to explore the context of words and the relationships between words. No output or analysis function beyond exploring your text visually.</p>
-<p><a href="http://wordwanderer.org/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<div id="r-nlp-tools" class="section level3">
+<h3>R NLP Tools</h3>
+<div id="quanteda" class="section level4">
+<h4>quanteda</h4>
+<p><a href="https://quanteda.io/" rel="noopener noreferrer" target="_blank">quanteda</a> is a newer text analysis suite for R, similar to NLTK or SpaCy for python. You can perform data management, cleaning, and analysis through the main tool and its companion packages.</p>
 </div>
+<div id="spacyr" class="section level4">
+<h4>Spacyr</h4>
+<p><a href="https://spacyr.quanteda.io/" rel="noopener noreferrer" target="_blank">Spacyr</a> is a R wrapper around the python SpaCy suite. It ports many of the SpaCy features to R, but relies on python running in the background.</p>
+</div>
+<div id="stringr" class="section level4">
+<h4>Stringr</h4>
+<p><a href="https://stringr.tidyverse.org/" rel="noopener noreferrer" target="_blank">Stringr</a> is a mainstay for working with text in R, though mainly for manipulation rather than analyses. It provides easy functions for searching through and manipulating strings.</p>
+</div>
+<div id="text2vec" class="section level4">
+<h4>text2vec</h4>
+<p><a href="http://text2vec.org/" rel="noopener noreferrer" target="_blank">text2vec</a> is primary used for text modeling, and supports topic modeling, word embeddings, and text similarity testing. It is built on C++ and is thus fast and memory efficient.</p>
+</div>
+<div id="tidytext" class="section level4">
+<h4>tidytext</h4>
+<p><a href="https://juliasilge.github.io/tidytext/" rel="noopener noreferrer" target="_blank">tidytext</a> is the tidyverse entry into R NLP. It works well with other tidyverse packages, and is notable for its built in topic model capabilities.</p>
+</div>
+<div id="tm" class="section level4">
+<h4>tm</h4>
+<p><a href="https://tm.r-forge.r-project.org/" rel="noopener noreferrer" target="_blank">tm</a> is a classic NLP package for R, and is often used as a dependency for other packages. It can be used to ingest text data into R from a variety of sources, create a unified corpus object, and perform large scale transformations. You can mass clean white space or lowercase, or create your own cleaning functions. You can also perform transformations such as TFIDF.</p>
+</div>
+</div>
+</div>
+<div id="text-data-gathering-tools" class="section level2">
+<h2>Text Data Gathering Tools</h2>
+<div id="digital-methods-initiative" class="section level3">
+<h3>Digital Methods Initiative</h3>
+<p><a href="https://wiki.digitalmethods.net/Dmi/ToolDatabase" rel="noopener noreferrer" target="_blank">Digital Methods Initiative</a> offers a suite of tools for collecting and analyzing internet data, all created at the Digital Methods Initiative at the University of Amsterdam. Tools are generally web-based and user-friendly, where researchers can input URLs they are interested in studying. DMI also provides various tools to analyze, organize, and visualize the collected internet data. All tools include instructions and examples scenarios of use. They have tools in a variety of realms including media analysis (media monitoring, mapping, clouding, comparative analysis), data treatment and visualization, natively digital (The Link, URL, Tag, Domain, PageRank, etc.), specific devices/websites (Google, Yahoo, Wikipedia, Alexa, IssueCrawler, Twitter, Facebook, Amazon, iTunes, Wayback, YouTube, Instagram, Github, etc.), and spherical studies (including the web, news, tag, video, image, code and blogo-spheres)</p>
+</div>
+</div>
+<div id="text-data-cleaningprep-tools" class="section level2">
+<h2>Text Data Cleaning/Prep Tools</h2>
+<div id="the-sourcecaster" class="section level3">
+<h3>The Sourcecaster</h3>
+<p><a href="http://thomasgpadilla.github.io/sourcecaster/" rel="noopener noreferrer" target="_blank">The Sourcecaster</a> collects instructions and tutorials for using the command line for common text cleaning tasks. Useful and time-saving with lots of dependencies (brew, port, wget, tesseract, etc.) for people already familiar with command line. It might have a steeper learning curve for people who are not tech savvy.</p>
+</div>
+<div id="antsoftware" class="section level3">
+<h3>AntSoftware</h3>
+<p><a href="http://www.laurenceanthony.net/software.html" rel="noopener noreferrer" target="_blank">AntSoftware</a> has several tools for cleaning and prepping text documents, such as AntCorGen (corpus creation tool), AntFileConverter (converts PDF and Word files to plain text), AntFileSplitter (file splitting tool), AntGram (n-gram and p-frame generation tool), EncodeAnt (detects and converts character encodings), SarAnt (batch search and replace tool), and VariAnt (a spelling analysis program). All programs are free and easily downloaded, and the site includes step by step screenshot help pages.</p>
+</div>
+</div>
+<div id="text-analysis" class="section level2">
+<h2>Text Analysis</h2>
+<div id="stanford-ner" class="section level3">
+<h3>Stanford NER *</h3>
+<p>Part of Stanford Core NLP, <a href="https://nlp.stanford.edu/software/CRF-NER.shtml" rel="noopener noreferrer" target="_blank">Stanford NER</a> is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The web page provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as python, php, perl, JavaScript, etc.</p>
+</div>
+<div id="stanford-sentiment-analysis" class="section level3">
+<h3>Stanford Sentiment Analysis *</h3>
+<p>Part of Stanford Core NLP, <a href="https://nlp.stanford.edu/sentiment/" rel="noopener noreferrer" target="_blank">Stanford Sentiment Analysis</a> is a Java implementation with web demo of Stanford’s model for sentiment analysis. The model uses sentence structure to attempt to quantify the general sentiment of a text based on a type of recursive neural network which analyzed Stanford’s Sentiment Treebank dataset. This is a very useful tool and is a much more up to date and robust model for sentiment analysis then previous naive model’s that simply sum the scores of the words in the text without caring for order or grammatical nuance. Users can use a web based live demo to see if the tool is useful for them, and then download the source code via command line.</p>
+</div>
+<div id="sentiment-140" class="section level3">
+<h3>Sentiment 140</h3>
+<p><a href="http://help.sentiment140.com/api" rel="noopener noreferrer" target="_blank">Sentiment 140</a> is an API for sentiment analysis on tweets, this tool can do bulk processes of around 5000 per minute and was built from machine learning algorithms. The tool is well documented and seems easy to interface with and parse results. Users can upload JSON and CSV formatted data and use of the tool requires registration.</p>
+</div>
+<div id="signature-stylometric-system" class="section level3">
+<h3>Signature Stylometric System</h3>
+<p><a href="http://www.philocomp.net/texts/signature.htm" rel="noopener noreferrer" target="_blank">Signature Stylometric System</a> is a tool for stylometric analysis and comparison of texts with emphasis on author identification. The tool is well documented and seemingly well designed and implemented. Several corpuses are available with examples of usage available on the website. It seems like a good starting point for any kind of efforts towards author attribution, and the program is downloadable in a self-extracting ZIP file.</p>
+</div>
+<div id="macro-etyological-analyzer" class="section level3">
+<h3>Macro-Etyological Analyzer *</h3>
+<p><a href="http://jonreeve.com/2016/06/introducing-macroetym-cli/" rel="noopener noreferrer" target="_blank">Macro-Etyological Analyzer</a> is a python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. A very important tool for people interested in historical word usage and linguistic change.</p>
+</div>
+<div id="textplot" class="section level3">
+<h3>TextPlot *</h3>
+<p><a href="https://github.com/davidmcclure/textplot" rel="noopener noreferrer" target="_blank">TextPlot</a> is a program that converts a document into a network of terms based on co-occurrences with the goal of teasing out information about high-level topic structure of the text. For each term, users can get the set of offsets in the document where the term appears and use the kernel density estimation to compute a probability density function that represents the word’s distribution across the document. Users can also compute the bray-Curtis dissimilarity between the term’s PDF and the PDFs of all other terms in the document to measure the extent to which two words appear in the same locations. Output includes various ways of graphing these measures, including an overall word network. Users can install the source code from Github and can use the program via command line or Python.</p>
+</div>
+<div id="booknlp" class="section level3">
+<h3>BookNLP</h3>
+<p><a href="https://github.com/dbamman/book-nlp" rel="noopener noreferrer" target="_blank">BookNLP</a> A natural language processing pipeline developed to run on books and other long (English only) documents. Uses the Stanford Core NLP software, so it requires Java and use of the command line or more advanced programming skills. Includes the ability to do part-of-speech tagging, dependency parsing, named entity recognition, character name clustering, quotation speaker identification, pronominal coreference resolution, and suspersense tagging.</p>
+</div>
+<div id="factorie" class="section level3">
+<h3>FACTORIE</h3>
+<p>From the command-line, <a href="http://factorie.cs.umass.edu/" rel="noopener noreferrer" target="_blank">FACTORIE</a> provides a framework for probabilistic graphical models, and can do a wide variety of text analysis tasks such as topic modeling, document classification, and part-of-speech tagging. The tutorials and how-to guides are mostly code, and so is recommended for users already familiar with at least one computer programming language. The last update to the software was 2014.</p>
+</div>
+</div>
+<div id="text-corpus-exploration-software" class="section level2">
+<h2>Text Corpus Exploration Software</h2>
+<div id="overview-1" class="section level3">
+<h3>Overview</h3>
+<p><a href="https://www.overviewdocs.com/" rel="noopener noreferrer" target="_blank">Overview</a> is a document mining application to read and analyze sets of documents, including full text search, visualizations, entity detection, topic clustering, and more. The tool includes built-in OCR, document annotation, and word clouds. It also includes tagging and metadata support, and users can write their own plugins using the API. Users can run the program on the public Overview server or download source code from Github to run it on their own machines via command line.</p>
+</div>
+<div id="antconc" class="section level3">
+<h3>AntConc</h3>
+<p><a href="http://www.laurenceanthony.net/software.html" rel="noopener noreferrer" target="_blank">AntConc</a> is a useful tool for exploratory natural language processing tasks, including clusters/N-grams, word frequency lists, and keywords. The software is well documented with several tutorials and easy to set up and use. AntConc is free and requires no downloading, it will launch from the web. It has seven tools users can access: Concordance tool (viewing the results in a KWIC format to see the commonly used words and phrases in a corpus of texts); Concordance Plot tool (plots the search results in a barcode format); File View tool (shows text of individual files); Clusters/N-grams tool (shows clusters based on search condition, or scans corpus for ‘N’ length clusters); Collocates tool (shows the collocates of a search term to investigate non-sequential patterns in language); Word List tool (frequency distribution of all words in the corpus); Keywords List tool (shows which words are unusually frequent in corpus in comparison to a reference corpus).</p>
+</div>
+<div id="wordhoard" class="section level3">
+<h3>WordHoard</h3>
+<p><a href="http://wordhoard.northwestern.edu/userman/index.html" rel="noopener noreferrer" target="_blank">WordHoard</a> is a powerful tool for anyone interested in understanding classic literary texts and the word usage they contain. It implements many core natural language processing methods, designed with close reading in mind and working towards meticulous tagging and metadata retrieval in texts. A very well documented with many examples, this tool is easy to customize with a well-designed and explained scripting system. The current version has the entire cannon of Early Greek epic in the original and in translation, as well as ass of Chaucer, Shakespeare, and Spenser.</p>
+</div>
+<div id="sketch-engine" class="section level3">
+<h3>Sketch Engine</h3>
+<p><a href="https://www.sketchengine.eu/" rel="noopener noreferrer" target="_blank">Sketch Engine</a> is a subscription-based tool aimed at non-programmers that analyzes large corpora to look for common words, phrases, or phenomena, or can perform various types of text analysis including co-occurrence analysis, term extraction, frequency lists, and part-of-speech tagging. The tool includes a 30-day free trial, and then has various per-month prices for different types of researchers (academic and non-academic). Users can upload text files (including metadata) or use the automated built-in tool for downloading relevant texts from the web. The tool is built (and personalized) for translators, terminologists, lexicographers, teachers, students and historians.</p>
+</div>
+<div id="dfr-browser" class="section level3">
+<h3>DfR-Browser</h3>
+<p><a href="http://agoldst.github.io/dfr-browser/" rel="noopener noreferrer" target="_blank">DfR-Browser</a> is a tool to visualize and explore output from LDA topic models. View options of topics include a grid, scaled, list, and stacked view. Within topics, users can view frequency distributions, topic usage through time, and doc-topic matrices. Users can also access a word index to explore single words across the corpus, as well as topic distributions within documents. The site clearly explains what the tool does, and users can easily download the software via a .zip file.</p>
+</div>
+</div>
+<div id="text-corpus-exploration-web-apps" class="section level2">
+<h2>Text Corpus Exploration Web Apps</h2>
+<div id="wordandphrase" class="section level3">
+<h3>WordandPhrase</h3>
+<p><a href="https://www.wordandphrase.info/" rel="noopener noreferrer" target="_blank">WordandPhrase</a> is a web interface tool for finding key words and phrases in a text based on their frequency. Users paste in text into interface and get a visualization of collocations and co-occurrence matrices, as well as the ability to import and export the data. The site also provides key word in context and other statistics about the word usage in the source text. However, in its current state, there is no easy way to use the tool on a large corpus and is therefore limited.</p>
+</div>
+<div id="lexos" class="section level3">
+<h3>Lexos</h3>
+<p><a href="http://lexos.wheatoncollege.edu/upload" rel="noopener noreferrer" target="_blank">Lexos</a> is an online tool for cleaning and processing text, and users can upload data in various formats, including .txt, .html, .xml, .sgml, and .lexos. There is also a beta version available where users can use a web scraper to upload data. The tool can clean and separate the uploaded text into chunks and then provide several visualization tools to run on the processed text including word clouds, networks, and word collocation. Once uploaded, users can manage document lists, sorting them by labeled classes, sources, and excerpts. Text cleaning tools include removing punctuation, digits, whitespace, stop words, lemmatization, tokenization, creating a document-term matrix, etc. After visualization, the tool also offers several options for text analysis, including hierarchical clustering and k-means clustering, document similarity comparisons, and topwords. Users can export the data as CSV or tsv.</p>
+</div>
+<div id="wordtree" class="section level3">
+<h3>WordTree</h3>
+<p><a href="https://www.jasondavies.com/wordtree/" rel="noopener noreferrer" target="_blank">WordTree</a> is an online tool for visualizing the contexts in which certain phrases appear to get a sense of the ultimate structure of the text. This tool provides a novel way for searching a text based on certain phrases or words that appear within. Seems most useful for short texts as opposed to a full corpus and does not provide any analysis output beyond exploring your text visually.</p>
+</div>
+<div id="wordseer" class="section level3">
+<h3>WordSeer *</h3>
+<p><a href="https://github.com/Wordseer/wordseer/" rel="noopener noreferrer" target="_blank">WordSeer</a> is a python webapp for textual analysis combines visualization, information retrieval, sensemaking and natural language processing. After installing the source code via command line, use of WordSeer requires registration, and tools for collaboration are provided. Many standard nlp tools and visualizations are available through the web interface. Users can try out the tool on a test collection before uploading their own documents to see if the tool is right for them.</p>
+</div>
+<div id="voyant-tools" class="section level3">
+<h3>Voyant-Tools</h3>
+<p><a href="https://voyant-tools.org/" rel="noopener noreferrer" target="_blank">Voyant-Tools</a> is a web environment that implements many core nlp methods. Users paste in URLs or text and the interface provides various text exploration outputs, including a word cloud, relative frequency graph, word correlations, vocabulary density, and more. Data can be exported, however there is a limitation on the size of the corpus you can process.</p>
+</div>
+<div id="in-browser-topic-modeling" class="section level3">
+<h3>In-Browser Topic Modeling</h3>
+<p>The goal of <a href="https://mimno.infosci.cornell.edu/jsLDA/" rel="noopener noreferrer" target="_blank">In-Browser Topic Modeling</a> is to make topic modeling accessible to users not familiar with R or Mallet. Users can run the program from a web browser, or download from Github, and can explore pre-loaded data or upload their own dataset (in CSV format). The UI allows users to explore topics by documents, correlations, and time series. Users can also explore the corpus vocabulary by frequency and topic specificity and can easily create custom stopword lists. The best feature of this program is that users can also download CSV formatted files of their topic model results, including document topics, topic words, topic summaries, topic-topic connections, doc-topic graphs (for Gephi) and a complete sampling state.</p>
+</div>
+</div>
+<div id="qualitative-data-analysis-qda-suites" class="section level2">
+<h2>Qualitative Data Analysis (QDA) Suites</h2>
+<p>Qualitative Data Analysis (QDA) tools are often used by researchers to code and manage interviews or other textual documents. The advantage of these software suites is that they typically do not require coding knowledge. However, this often means they are commercial products with subscription fees or licensing agreements. The University of Surrey keeps an up to date list of many QDA platforms, as well a their relative advantages and disadvantages. <a href="https://www.surrey.ac.uk/computer-assisted-qualitative-data-analysis/resources/choosing-appropriate-caqdas-package">You can see their list of QDA software options here</a>.</p>
+</div>
+<div id="dataset-sources" class="section level2">
+<h2>Dataset Sources</h2>
+<div id="hathitrust" class="section level3">
+<h3>HathiTrust</h3>
+<p><a href="https://www.hathitrust.org/" rel="noopener noreferrer" target="_blank">HathiTrust</a> is a web portal to many databases of texts, books, and images. Users can download text versions of many of the works, and the site includes works in many languages. HathiTrust interfaces with WorldCat and other tools for finding alternate versions of the text.</p>
+</div>
+</div>
+</div>
+<div id="novelties" class="section level1">
+<h1>Novelties</h1>
 <div id="poem-viewer" class="section level2">
 <h2>Poem Viewer</h2>
-<p>A web tool for visualizing the features, form, and style of poems. This is one of the most comprehensive and well-built tools for visualizing the many attributes of poems, where users can visualize phonetics units, attributes, features, and relations, as well as word units and attributes, and semantics relations.</p>
-<p><a href="https://oxvii.wordpress.com/2013/04/12/poem-viewer/" rel="noopener noreferrer" target="_blank">Visit Site&gt;&gt;</a></p>
+<p><a href="https://oxvii.wordpress.com/2013/04/12/poem-viewer/" rel="noopener noreferrer" target="_blank">Poem Viewer</a> is a web tool for visualizing the features, form, and style of poems. This is one of the most comprehensive and well-built tools for visualizing the many attributes of poems, where users can visualize phonetics units, attributes, features, and relations, as well as word units and attributes, and semantics relations.</p>
+</div>
+<div id="nonsense-laboratory" class="section level2">
+<h2>Nonsense Laboratory</h2>
+<p><a href="https://artsexperiments.withgoogle.com/nonsense-laboratory/" rel="noopener noreferrer" target="_blank">Nonsense Laboratory</a> has a number of machine learning power language novelties, like mixing together words to create new ones, or finding new ways to spell words that elicit different accents when spoken.</p>
+</div>
+<div id="wordwanderer" class="section level2">
+<h2>WordWanderer</h2>
+<p><a href="http://wordwanderer.org/" rel="noopener noreferrer" target="_blank">WordWanderer</a> is an experimental web tool for visualization of an imported text. The web interface loads all words in the corpus and provides clickable and draggable options for users to explore the context of words and the relationships between words. No output or analysis function beyond exploring your text visually.</p>
 </div>
 </div>
 <div id="contributions" class="section level1">
