@@ -57,7 +57,7 @@ One of the most common cleaning steps is setting all of your text to lowercase. 
 
 ## Stopword Removal
 
-Stopwords are the connective tissue of language; words like "the", "a", "to" etc. While these words are important for readers to understand the sentence, they don't contain any meaning of themselves, and are general not useful for basic text analysis. Keeping them in your analysis can actually be detrimental, as they overinflate the number of words in your corpus, messing with the denominator of many calculations. More advanced tools do make use of them for charting sentence structure, but it is generally recommended you remove them otherwise. There are pre-made stopword lists included in most text analysis software. It may sometimes be prudent to alter this list however. If a word is particularly common in your text you may want to remove it. On the other hand if a common word has a particular meaning in your context, you may want to make sure it is preserved.
+Stopwords are the connective tissue of language; words like "the", "a", "to" etc. While these words are important for readers to understand the sentence, they don't contain any meaning of themselves, and are general not useful for basic text analysis. Keeping them in your analysis can actually be detrimental, as they over-inflate the number of words in your corpus, messing with the denominator of many calculations. More advanced tools do make use of them for charting sentence structure, but it is generally recommended you remove them otherwise. There are pre-made stopword lists included in most text analysis software. It may sometimes be prudent to alter this list however. If a word is particularly common in your text you may want to remove it. On the other hand if a common word has a particular meaning in your context, you may want to make sure it is preserved.
 
 ## Tokenization
 
@@ -80,7 +80,7 @@ In this example, "ran" would not be appropriately converted. While in actuality 
 
 ## Lemmatization
 
-Lemmatization wants to accomplish the same ends as stemming--standardizing tokens--but typically is more comprehensive at the cost of speed/computational usage. While some lemmatization algorithms start with a dictionary lookup for common words, many then take another pass at the input using part of speech tagging and language rules to try and catch more words that may be missed using the dictonary strategy. It will then try to reduce the word to its "lemma" or base form, sometimes changing words entirely to achieve this. For this reason, lemmatization will catch more words like "ran" where the required change is more than the removal of a prefix or suffix.
+Lemmatization wants to accomplish the same ends as stemming--standardizing tokens--but typically is more comprehensive at the cost of speed/computational usage. While some lemmatization algorithms start with a dictionary lookup for common words, many then take another pass at the input using part of speech tagging and language rules to try and catch more words that may be missed using the dictionary strategy. It will then try to reduce the word to its "lemma" or base form, sometimes changing words entirely to achieve this. For this reason, lemmatization will catch more words like "ran" where the required change is more than the removal of a prefix or suffix.
 
 * run -> run
 * running -> run
@@ -126,7 +126,47 @@ Word embeddings are one of the more abstract yet powerful ways to understand a c
 
 # Tools for NLP
 
-The following are some tools you can use for NLP. Many of these tools have been implemented in larger data analysis suites like python and R as packages, so it would be rather unusual to use them standalone. If this is the case, the tool is marked with an asterisks (*) next to it's name.
+The following are some tools you can use for NLP. Many of these tools have been implemented in larger data analysis suites like python and R as packages, so it would be unusual to use them standalone. If this is the case, the tool is marked with an asterisks (*) next to it's name. We will first go over tools within R and Python, and then highlight some stand alone applications that might be helpful if you are not familiar with either of those languages.
+
+## Programatic Tools
+
+These tools are packages within established programming languages, namely R or Python. Most of the workshops at the DataLab uses one of these languages, and they are very common among academics. Learning these tools will first require knowledge of the language they are implemented in however.
+
+### Python NLP Tools
+
+#### Natural Language Toolkit (NLTK)
+
+[Natural Language Toolkit (NLTK)](https://www.nltk.org/){rel="noopener noreferrer" target="_blank"} has been a stable for NLP for years. It is a fully featured environment for text collection, cleaning, and modeling. Because of its prevalence, there are numerous guides online on how to use the tools NLTK provides. 
+
+#### SpaCy
+
+[SpaCy](https://spacy.io/){rel="noopener noreferrer" target="_blank"} is relatively new, but has been rapidly gaining popularity. It aims to be a fully featured suite of tools like NLTK, but build on an updated (and much faster) architecture.
+
+### R NLP Tools
+
+#### quanteda
+
+[quanteda](https://quanteda.io/){rel="noopener noreferrer" target="_blank"} is a newer text analysis suite for R, similar to NLTK or SpaCy for python. You can perform data management, cleaning, and analysis through the main tool and its companion packages. 
+
+#### Spacyr
+
+[Spacyr](https://spacyr.quanteda.io/){rel="noopener noreferrer" target="_blank"} is a R wrapper around the python SpaCy suite. It ports many of the SpaCy features to R, but relies on python running in the background.
+
+#### Stringr
+
+[Stringr](https://stringr.tidyverse.org/){rel="noopener noreferrer" target="_blank"} is a mainstay for working with text in R, though mainly for manipulation rather than analyses. It provides easy functions for searching through and manipulating strings.
+
+#### text2vec
+
+[text2vec](http://text2vec.org/){rel="noopener noreferrer" target="_blank"} is primary used for text modeling, and supports topic modeling, word embeddings, and text similarity testing. It is built on C++ and is thus fast and memory efficient.
+
+#### tidytext
+
+[tidytext](https://juliasilge.github.io/tidytext/){rel="noopener noreferrer" target="_blank"} is the tidyverse entry into R NLP. It works well with other tidyverse packages, and is notable for its built in topic model capabilities.
+
+#### tm
+
+[tm](https://tm.r-forge.r-project.org/){rel="noopener noreferrer" target="_blank"} is a classic NLP package for R, and is often used as a dependency for other packages. It can be used to ingest text data into R from a variety of sources, create a unified corpus object, and perform large scale transformations. You can mass clean white space or lowercase, or create your own cleaning functions. You can also perform transformations such as TFIDF.
 
 ## Text Data Gathering Tools
 
@@ -148,7 +188,7 @@ The following are some tools you can use for NLP. Many of these tools have been 
 
 ### Stanford NER *
 
-Part of Stanford Core NLP, [Stanford NER](https://nlp.stanford.edu/software/CRF-NER.shtml){rel="noopener noreferrer" target="_blank"} is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The webpage provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as python, php, perl, JavaScript, etc.
+Part of Stanford Core NLP, [Stanford NER](https://nlp.stanford.edu/software/CRF-NER.shtml){rel="noopener noreferrer" target="_blank"} is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The web page provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as python, php, perl, JavaScript, etc.
 
 ### Stanford Sentiment Analysis *
 
@@ -168,7 +208,7 @@ Part of Stanford Core NLP, [Stanford Sentiment Analysis](https://nlp.stanford.ed
 
 ### TextPlot *
 
-[TextPlot](https://github.com/davidmcclure/textplot){rel="noopener noreferrer" target="_blank"} is a program that converts a document into a network of terms based on cooccurrences with the goal of teasing out information about high-level topic structure of the text. For each term, users can get the set of offsets in the document where the term appears and use the kernel density estimation to compute a probability density function that represents the word’s distribution across the document. Users can also compute the bray-Curtis dissimilarity between the term’s PDF and the PDFs of all other terms in the document to measure the extent to which two words appear in the same locations. Output includes various ways of graphing these measures, including an overall word network. Users can install the source code from Github and can use the program via command line or Python.
+[TextPlot](https://github.com/davidmcclure/textplot){rel="noopener noreferrer" target="_blank"} is a program that converts a document into a network of terms based on co-occurrences with the goal of teasing out information about high-level topic structure of the text. For each term, users can get the set of offsets in the document where the term appears and use the kernel density estimation to compute a probability density function that represents the word’s distribution across the document. Users can also compute the bray-Curtis dissimilarity between the term’s PDF and the PDFs of all other terms in the document to measure the extent to which two words appear in the same locations. Output includes various ways of graphing these measures, including an overall word network. Users can install the source code from Github and can use the program via command line or Python.
 
 ### BookNLP
 
@@ -194,7 +234,7 @@ From the command-line, [FACTORIE](http://factorie.cs.umass.edu/){rel="noopener n
 
 ### Sketch Engine
 
-[Sketch Engine](https://www.sketchengine.eu/){rel="noopener noreferrer" target="_blank"} is a subscription-based tool aimed at non-programmers that analyzes large corpora to look for common words, phrases, or phenomena, or can perform various types of text analysis including cooccurrence analysis, term extraction, frequency lists, and part-of-speech tagging. The tool includes a 30-day free trial, and then has various per-month prices for different types of researchers (academic and non-academic). Users can upload text files (including metadata) or use the automated built-in tool for downloading relevant texts from the web. The tool is built (and personalized) for translators, terminologists, lexicographers, teachers, students and historians.
+[Sketch Engine](https://www.sketchengine.eu/){rel="noopener noreferrer" target="_blank"} is a subscription-based tool aimed at non-programmers that analyzes large corpora to look for common words, phrases, or phenomena, or can perform various types of text analysis including co-occurrence analysis, term extraction, frequency lists, and part-of-speech tagging. The tool includes a 30-day free trial, and then has various per-month prices for different types of researchers (academic and non-academic). Users can upload text files (including metadata) or use the automated built-in tool for downloading relevant texts from the web. The tool is built (and personalized) for translators, terminologists, lexicographers, teachers, students and historians.
 
 ### DfR-Browser
 
@@ -238,13 +278,19 @@ Qualitative Data Analysis (QDA) tools are often used by researchers to code and 
 
 # Novelties
 
+## Poem Viewer
+
+[Poem Viewer](https://oxvii.wordpress.com/2013/04/12/poem-viewer/){rel="noopener noreferrer" target="_blank"} is a web tool for visualizing the features, form, and style of poems. This is one of the most comprehensive and well-built tools for visualizing the many attributes of poems, where users can visualize phonetics units, attributes, features, and relations, as well as word units and attributes, and semantics relations.
+
+## Nonsense Laboratory
+
+[Nonsense Laboratory](https://artsexperiments.withgoogle.com/nonsense-laboratory/){rel="noopener noreferrer" target="_blank"} has a number of machine learning power language novelties, like mixing together words to create new ones, or finding new ways to spell words that elicit different accents when spoken. 
+
 ## WordWanderer
 
 [WordWanderer](http://wordwanderer.org/){rel="noopener noreferrer" target="_blank"} is an experimental web tool for visualization of an imported text. The web interface loads all words in the corpus and provides clickable and draggable options for users to explore the context of words and the relationships between words. No output or analysis function beyond exploring your text visually.
 
-## Poem Viewer
 
-[Poem Viewer](https://oxvii.wordpress.com/2013/04/12/poem-viewer/){rel="noopener noreferrer" target="_blank"} is a web tool for visualizing the features, form, and style of poems. This is one of the most comprehensive and well-built tools for visualizing the many attributes of poems, where users can visualize phonetics units, attributes, features, and relations, as well as word units and attributes, and semantics relations.
 
 # Contributions
 
