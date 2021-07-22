@@ -77,7 +77,7 @@ Stemming is one way to standardize words such that different forms of a word are
 * run | ning -> run
 * ran | -> ran
 
-In this example, "ran" would not be appropriately converted. While in actuality most stemming algorithms with most likely catch such a common word, stemming trades precision for speed in most cases. If your corpus contains novel language, it may be best to look at lemmatization instead. [NOT SURE WHAT YOU MEAN BY NOVEL LANGUAGE]
+In this example, "ran" would not be appropriately converted. While in actuality most stemming algorithms with most likely catch such a common word, stemming trades precision for speed in most cases. If your corpus contains novel language that is not likely to be present in commonly used model, it may be best to look at lemmatization instead.
 
 ## Lemmatization
 
