@@ -7,7 +7,7 @@
 
         <meta name="author" content="UC Davis DataLab" />
     
-        <meta name="date" content="2021-07-16" />
+        <meta name="date" content="2021-07-22" />
     
     <title>UC Davis DataLab Text and NLP Toolkit</title>
 
@@ -135,7 +135,7 @@
       <li><a href="#tokenization">Tokenization</a></li>
       <li><a href="#stemming">Stemming</a></li>
       <li><a href="#lemmatization">Lemmatization</a></li>
-      <li><a href="#part-of-speech-tagging">Part of Speech Tagging</a></li>
+      <li><a href="#part-of-speech-tagging">Part-of-Speech Tagging</a></li>
       </ul></li>
       <li><a href="#natural-language-processing-nlp-measures">Natural Language Processing (NLP) Measures</a>
       <ul>
@@ -169,7 +169,7 @@
     </div>
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
                   <p class="author"><span class="glyphicon glyphicon-user"></span> UC Davis DataLab</p>
-                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-07-16</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-07-22</p>
           </div>
    </div>
      
@@ -182,54 +182,55 @@
 <div id="overview" class="section level1">
 <h1>Overview</h1>
 <p>This page will provide you with a few basic concepts and tools for working with text data. Natural Language Processing (NLP) is a discipline of its own, so if you plan to use these methods of your own research, please consider this a starting point only. That being said, this page should give you the vocabulary required to start researching the concepts that are of interest to you and your project.</p>
-<p>Natural Language Processing (NLP) is a combination of linguistics, computer science, data science, and statistics which can be used to create models to understand large collections of text called a <em>corpus</em>. Natural language refers to language people use, as opposed to something like a coding language. NLP is sometimes called computationally assisted “distant reading” of a corpus, as opposed to the “close read” by reading all of the documents personally. Nevertheless, good NLP projects still involve a manual read of your corpus, at least some of it. Ultimately, the adage “garbage in, garbage out” still applies, and you need to check your corpus for garbage.</p>
+<p>Natural Language Processing (NLP) is a combination of linguistics, computer science, data science, and statistics, which uses models of language to understand large collections of text, called <em>corpora</em>. Here, “natural language” refers to language people use (in contrast with something like a “coding language,” for example). In the digital humanities, NLP is sometimes referred to as “distant reading,” to distinguish it from the kind of “close reading” that typically marks literary interpretation. Good NLP projects, however, still involve plenty of manual reading, at least in part. Ultimately, the adage “garbage in, garbage out” still applies to NLP, and much of this work involves iteratively comparing data-driven analysis of a corpus with human-led reading.</p>
 </div>
 <div id="natural-language-processing-nlp-concepts" class="section level1">
 <h1>Natural Language Processing (NLP) Concepts</h1>
-<p>NLP contains many methods within it. These can range from simple counts of words across a corpus, to processing the corpus to find salient themes and the documents that discuss them. Before you can pick any method though, you need to make some decisions about how you will represent your text as data. This includes how you will select and clean your text, as well as picking the unit of analysis. We will give a quick overview of these steps here, but please check out our <a href="https://datalab.ucdavis.edu/archive/" rel="noopener noreferrer" target="_blank">workshop archive</a> for NLP workshops and other resources which can better prepare you to take advantage of NLP methods in your work.</p>
-<p>As with all data sets, you must keep in mind what you are actually sampling when you collect text data. For example, while twitter may provide ready access to social media data through their api, it is still only a snapshot of twitter users, not a generalizable corpus of all humanity. The same is true when you get newspapers from an archive or transcripts from speeches. It will always just be once slice of all that was ever said or written.</p>
-<p>In terms of data cleaning, several decisions must be made before most common analyses can be run. Even if you are simply interested in how many times the word “Follow” appears in a corpus, you need to decide things like:</p>
+<p>NLP involves many methods. These can range from simple counts of words across a corpus, to processing the corpus to find salient themes and the documents that discuss them. Before you can pick a method though, you need to make some decisions about how you will represent your text as data. This includes how you will select and clean your text, as well as picking the unit of analysis. We will give a quick overview of these steps here, but please check out our <a href="https://datalab.ucdavis.edu/archive/" rel="noopener noreferrer" target="_blank">workshop archive</a> for NLP workshops and other resources that can better prepare you to take advantage of NLP methods in your work.</p>
+<p>As with all data sets, you must keep in mind what you are actually sampling when you collect text data. For example, while Twitter may provide ready access to social media data through their API, it is still only a snapshot of Twitter users, not a generalizable corpus of all humanity. The same is true when you get newspapers from an archive or transcripts from speeches: it will always be just one slice of all that has ever been said or written. Readers interested in how they might frame their research with these caveats in mind are encouraged to consult research that employs data-driven approaches to book history and bibliography.</p>
+<p>After you have selected a corpus, you’ll likely need to clean it. Even the most common NLP analyses involve substantial data cleaning and preprocessing. Consider, for example, a scenario in which you are interested in simply counting the number of times “Follow” appears in your corpus. You would need to decide things like:</p>
 <ol style="list-style-type: decimal">
 <li>Does capitalization matter? Is Follow a proper term?</li>
 <li>Does the tense of the word matter? Does Follow == Following == Followed?</li>
-<li>Does the word or a phrase with the word matter? Do you care about “Follow” or “Current Follow Count?”</li>
+<li>Does the word or a phrase with the word matter? Do you care about “Follow” or “Current Follow Count”?</li>
 </ol>
 <p>You must also decide what the unit of analysis for your project will be. Are you looking at books in a subject area, or chapters in those books, or paragraphs in those chapters? Depending on the analysis, the unit of comparison can have a large effect on outcomes. For example the co-occurrence of the terms “University” and “California” may be small if you are looking within sentences, but much higher if you expand the scope to paragraphs.</p>
 </div>
 <div id="natural-language-processing-nlp-pre-processing" class="section level1">
 <h1>Natural Language Processing (NLP) Pre-Processing</h1>
-<p>Text data is typically cleaned and standardized before any analyses. Here we will cover some of the most common cleaning steps. Note that you often will not perform all of these steps depending on your project! It is possible to ruin your analyses with over-cleaning. Think carefully about how each process will interact with your research question.</p>
+<p>Here we will cover some of the most common cleaning steps in NLP. Note however that you may not need to perform all of them; they are project-dependent, and it is possible to ruin your analyses with over-cleaning. Think carefully about how each process will affect your research question and remember, too, that, as with all data cleaning, textual preprocessing is an iterative process.</p>
 <div id="lowercase-everything" class="section level2">
 <h2>Lowercase Everything</h2>
-<p>One of the most common cleaning steps is setting all of your text to lowercase. This is typically done as a machine will consider words with capital letters as different words than those with lowercase. For example, “Hello” and “hello” will be considered different words. If you are doing anything where the number of occurrences of a word matters, your count will now be artificially split in half. Conversely, if you have proper nouns in your data that would not be detected as such if lowercase (say dune the terrain feature and Dune the book), lowercasing everything would make the proper noun disappear from your data.</p>
+<p>One of the most common cleaning steps involves setting all your text to lowercase. This is typically done because a computer will consider capitalized letters to be different from their lowercase forms. For example, “Hello” and “hello” are, in a computational sense, different words, and you would need to choose one or the other to get a computer to count them as the same. While this is a fairly straightforward example, there are plenty of edge cases, which can throw off the meaning of the text you want to analyze. Consider the difference between “dune,” the terrain feature, and <em>Dune</em>, the book: converting both words to lowercase would make the proper noun disappear from your data!</p>
 </div>
 <div id="stopword-removal" class="section level2">
 <h2>Stopword Removal</h2>
-<p>Stopwords are the connective tissue of language; words like “the,” “a,” “to” etc. While these words are important for readers to understand the sentence, they don’t contain any meaning of themselves, and are general not useful for basic text analysis. Keeping them in your analysis can actually be detrimental, as they over-inflate the number of words in your corpus, messing with the denominator of many calculations. More advanced tools do make use of them for charting sentence structure, but it is generally recommended you remove them otherwise. There are pre-made stopword lists included in most text analysis software. It may sometimes be prudent to alter this list however. If a word is particularly common in your text you may want to remove it. On the other hand if a common word has a particular meaning in your context, you may want to make sure it is preserved.</p>
+<p>Stopwords are the connective tissue of language; the term covers words like “the”, “a”, “to”, etc. But while such words are integral to the way we understand the meaning of a sentence, they are so context-specific that they often contain very little meaning in and of themselves. Because of this, stopwords are generally not very useful for basic text analysis. In fact, keeping them in your corpus can actually be detrimental: they over-inflate the number of words in your corpus, throwing off the denominator of many calculations. More advanced NLP methods do make use of these words for charting sentence structure, but it is generally recommended that you remove them otherwise. Often, pre-made stopword lists come included with text analysis software; one of the most popular lists is the <a href="http://dhworkshop.pbworks.com/w/file/105416844/Buckley-Salton-stopword-list.txt" rel="noopener noreferrer" target="_blank">Buckley-Salton</a> list. But sometimes it may also be prudent to alter a list. If a word is particularly common in your text, you may want to remove it. On the other hand, if a common word has a particular meaning in your context, you may want to make sure it is preserved.</p>
 </div>
 <div id="tokenization" class="section level2">
 <h2>Tokenization</h2>
-<p>In NLP parlance, a token is the unit by which you are analyzing your data. The most intuitive way to tokenize is by word, where each word in your text becomes a distinct item. However, there ar cases where instead you may want to break your text into <em>n-grams</em>, or rolling chunks of <em>n</em> length. For example, if you have the sentence, “The NLP guide was helpful” you could tokenize it in the following ways:</p>
+<p>In NLP parlance, a “token” is the unit by which you are analyzing your data. The most intuitive way to tokenize is by word, where each word in your text becomes a distinct item. However, there are cases where, instead of words, you may want to break your text into <em>n-grams</em>, or rolling chunks of <em>n</em> length. For example, if you have the sentence, “The NLP guide was helpful” you could tokenize it in the following ways:</p>
 <ul>
-<li>Word: “The,” “NLP,” “guide,” “was,” “helpful”</li>
-<li>bi-gram: “The NLP,” “NLP guide,” “guide was,” “was helpful”</li>
-<li>tri-gram: “The NLP guide,” “NLP guide was,” “guide was helpful”</li>
+<li>word: “The”, “NLP”, “guide”, “was”, “helpful”</li>
+<li>bi-gram: “The NLP”, “NLP guide”, “guide was”, “was helpful”</li>
+<li>tri-gram: “The NLP guide”, “NLP guide was”, “guide was helpful”</li>
+<li>letter bi-gram: “Th”, “he”, “eN”, “NL”, “LP”, etc.</li>
 <li>etc.</li>
 </ul>
 </div>
 <div id="stemming" class="section level2">
 <h2>Stemming</h2>
-<p>Stemming is one way to standardize words such that different forms of a word are turned into the same token. For example, if you have “run,” “running,” and “ran” in your text, you would want to covert them into one token because they all convey the same meaning. Stemming simply cuts off prefixes and suffixes of words according to a dictionary to try and accomplish that standardization. So:</p>
+<p>Stemming is one way to standardize words such that different forms of a word are turned into the same token. For example, if you have “run”, “running”, and “ran” in your text, you may want to covert them into one token because they all convey the same meaning. To try and accomplish that standardization, stemming cuts off prefixes and suffices of words, typically doing so on the basis of a syllable-driven splitting algorithm. So:</p>
 <ul>
 <li>run | -&gt; run</li>
 <li>run | ning -&gt; run</li>
 <li>ran | -&gt; ran</li>
 </ul>
-<p>In this example, “ran” would not be appropriately converted. While in actuality most stemming algorithms with most likely catch such a common word, stemming trades precision for speed in most cases. If your corpus contains novel language, it may be best to look at lemmatization instead.</p>
+<p>In this example, “ran” would not be appropriately converted. While in actuality most stemming algorithms with most likely catch such a common word, stemming trades precision for speed in most cases. If your corpus contains novel language, it may be best to look at lemmatization instead. [NOT SURE WHAT YOU MEAN BY NOVEL LANGUAGE]</p>
 </div>
 <div id="lemmatization" class="section level2">
 <h2>Lemmatization</h2>
-<p>Lemmatization wants to accomplish the same ends as stemming–standardizing tokens–but typically is more comprehensive at the cost of speed/computational usage. While some lemmatization algorithms start with a dictionary lookup for common words, many then take another pass at the input using part of speech tagging and language rules to try and catch more words that may be missed using the dictionary strategy. It will then try to reduce the word to its “lemma” or base form, sometimes changing words entirely to achieve this. For this reason, lemmatization will catch more words like “ran” where the required change is more than the removal of a prefix or suffix.</p>
+<p>Lemmatization wants to accomplish the same ends as stemming–standardizing tokens–but it is typically more comprehensive (at the cost of speed/computational usage). While some lemmatization algorithms start with a dictionary lookup for common words, many then take another pass at the input using part-of-speech tagging (see below) and language rules to try and catch more words that may be missed using the dictionary strategy. It will then try to reduce the word to its “lemma” or base form, sometimes changing words entirely to achieve this. For this reason, lemmatization will catch more words like “ran” where the required change is more than the removal of a prefix or suffix.</p>
 <ul>
 <li>run -&gt; run</li>
 <li>running -&gt; run</li>
@@ -237,8 +238,8 @@
 </ul>
 </div>
 <div id="part-of-speech-tagging" class="section level2">
-<h2>Part of Speech Tagging</h2>
-<p>Part of speech tagging is just what it sounds like. It goes through the words in your corpus and tags them with metadata indicating if it things they are nouns, verbs, adjectives, etc. Being a NLP tool, it goes into much finer detail, with one of the more common lists of tags being the <a href="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html" rel="noopener noreferrer" target="_blank">Penn Treebank</a>. Different NLP tools will use different tag lists, so make sure to research which one will be applied to your corpus.</p>
+<h2>Part-of-Speech Tagging</h2>
+<p>Part-of-speech (POS) tagging is just what it sounds like: the process goes through the words in your corpus and tags them with metadata, indicating whether those words are nouns, verbs, adjectives, etc. Being a NLP tool, POS tagging goes into much finer detail, with one of the more common lists of tags being the <a href="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html" rel="noopener noreferrer" target="_blank">Penn Treebank</a>. Different NLP tools will use different tag lists, so make sure to research which one will be applied to your corpus.</p>
 </div>
 </div>
 <div id="natural-language-processing-nlp-measures" class="section level1">
@@ -246,37 +247,37 @@
 <p>While the ways to measure text are as numerous as texts themselves, there are a few common measures that are used often. We will list them here and provide a brief explanation fo their utility.</p>
 <div id="word-frequency" class="section level2">
 <h2>Word Frequency</h2>
-<p>Word frequency is the simplest measure of text. It combines all of your textual data into a single, un-ordered “bag of words” and counts how often each word appears. The base idea is that if a word occurs more frequently, it will be more important.</p>
+<p>Word frequency is the simplest measure of text. It combines all of your textual data into a single, un-ordered “bag of words” and counts how often each word appears. The basic idea is that if a word occurs more frequently, it will be more important.</p>
 </div>
 <div id="co-occurrence" class="section level2">
 <h2>Co-occurrence</h2>
-<p>Co-occurrence of specific terms may be of interest for your question. For example if you are interested in how a policy is portrayed in newspapers, you may look for the co-occurrence of that policy name and reaction words such as “support” or “oppose.”</p>
+<p>Co-occurrence of specific terms may be of interest for your question. For example, if you are interested in how a policy is portrayed in newspapers, you may look for the co-occurrence of that policy name and reaction words such as “support” or “oppose.”</p>
 </div>
 <div id="named-entity-recognition-ner" class="section level2">
 <h2>Named Entity Recognition (NER)</h2>
-<p>Named Entity Recognition (NER) searches through a text to find proper nouns or other words that can help understand a text. A common use is to search though a piece of text for the proper nouns, time words (time and date), and locations to try and understand the context of the text. This can be helpful for categorizing texts based on the subjects included in them. These tags can be used to build further models, for example counting the number of business entities in a piece of text.</p>
+<p>Named Entity Recognition (NER) searches through a text to find proper nouns, concepts, and other such words that can help us understand what a text is about. A common use is to search though a piece of text for the proper nouns, time words (time and date), and locations to try and understand the context of the text. This can be helpful for categorizing texts based on the subjects included in them. These tags can be used to build further models, for example counting the number of business entities in a piece of text.</p>
 </div>
 <div id="sentiment-analysis" class="section level2">
 <h2>Sentiment Analysis</h2>
-<p>Sentiment analysis looks though a text and tried to apply numerical scores to how positive or negative it things the text is. Typically higher scores means a happier or more positive bit of text, while negative scores can mean anger or rage. More nuanced scoring exists, where it instead counts the number of words with specific emotional meaning, such as joy, fear, hate, etc. Most sentiment analyses are rather naive, just counting the number of words with emotional weight. Some more advanced methods are becoming more popular, the most crucial of which allows for negation words to affect the score. For example, a simple could would consider “I am not happy” and positive, rather than negative, if it could not understand the negation of “not” in that sentence.</p>
+<p>Sentiment analysis looks though a text and tried to apply numerical scores to how positive or negative it things the text is. Typically higher scores means a happier, or more positive, bit of text, while negative scores can mean anger or rage. More nuanced scoring exists, where it instead counts the number of words with specific emotional meaning, such as joy, fear, hate, etc. Most sentiment analyses are rather naive, just counting the number of words with emotional weight. Some more advanced methods are becoming more popular, the most crucial of which allows for negation words to affect the score (note that many negation words are also stopwords, which adds a layer of complexity). For example, a simple sentiment analysis might consider “I am not happy” to be positive, rather than negative, if it could not understand the negation of “not” in that sentence.</p>
 </div>
 <div id="term-frequency-inverse-document-frequency-tf-idf" class="section level2">
 <h2>Term Frequency Inverse Document Frequency (TF-IDF)</h2>
-<p>A term frequency inverse document frequency (TF-IDF) matrix creates a weighted score for how important a term is per document in a corpus. The first is the ‘term frequency (TF)’ - how often the word appeared within that document. It makes intuitive sense that if a word appears many times in a document, that the document is about something related to that term. The second attribute is the ‘inverse document frequency (IDF)’ - a measure of what proportion of the documents the word appeared in. If a word appears in all documents, its weight should be reduced. Conversely, if a word appears only in few documents, it should be highly weighted for those documents.</p>
+<p>A term frequency inverse document frequency (TF-IDF) matrix creates a weighted score for how important a term is per document in a corpus. The first is the ‘term frequency (TF),’ or how often the word appeared within that document. It makes intuitive sense that if a word appears many times in a document, that the document is about something related to that term. The second attribute is the ‘inverse document frequency (IDF),’ a measure of what proportion of the documents the word appeared in. If a word appears in all documents, its weight should be reduced. Conversely, if a word appears only in few documents, it should be highly weighted for those documents.</p>
 <p>The formula for TF-IDF is: <code>tfidf(t,d,D) = tf(t,d) * idf(t,D)</code></p>
 </div>
 <div id="topic-models" class="section level2">
 <h2>Topic Models</h2>
-<p>Topic models use the TF-IDF matrix discussed above to cluster a corpus by perceived topics, typically by using latent Dirichlet allocation (LDA). The generated topics are clusters of tokens that frequently co-occur, with each topic providing a score for how prevalent that topic is for each document in the corpus. This allows you to see what topics are most common, and what documents are exemplars of a particular topic. These topic prevelances can then be used as another data point for further analyses, such as showing how topic importance changes over time, between authors, or after significant events.</p>
+<p>Topic models use the TF-IDF matrix discussed above to cluster a corpus by perceived topics, which closely correspond to what human readers would call themes. The generated topics are clusters of tokens that frequently co-occur, with each topic providing a score for how prevalent that topic is for each document in the corpus. This allows you to see what topics are most common and what documents are exemplars of a particular topic. Prevalent topics can then be used as another data point for further analyses, such as showing how topic importance changes over time, between authors, or after significant events.</p>
 </div>
 <div id="word-embeddings" class="section level2">
 <h2>Word Embeddings</h2>
-<p>Word embeddings are one of the more abstract yet powerful ways to understand a corpus of text. Embeddings are numerical representations of a word, generated by examining each word in the context of all other words in a corpus. This comparison allows words to be “mapped” as a point in a cloud with other words, with words clustered together in this cloud having similar meaning, and allows for analysis of how those meanings changed over time. While very abstracted from the text, this method has achieved some very interesting results. It has also shown how bias is baked in to language, revealing how some words are implicitly gendered.</p>
+<p>Word embeddings extend the logic of topic modeling with contextual information about words in a corpus. Embeddings are numerical representations of a word, generated by counting each word in the context of all other words in a corpus. This comparison allows words to be “mapped” as vectors in a high-dimensional space, wherein words clustered together have similar meaning. While very abstracted from the text, this method has achieved some very interesting results. It has also shown how bias is baked in to language, revealing how some words are implicitly gendered.</p>
 </div>
 </div>
 <div id="tools-for-nlp" class="section level1">
 <h1>Tools for NLP</h1>
-<p>The following are some tools you can use for NLP. Many of these tools have been implemented in larger data analysis suites like python and R as packages, so it would be unusual to use them standalone. If this is the case, the tool is marked with an asterisks (*) next to it’s name. We will first go over tools within R and Python, and then highlight some stand alone applications that might be helpful if you are not familiar with either of those languages.</p>
+<p>The following are some tools you can use for NLP. Many of them have been implemented as packages in larger data analysis suites like Python and R, though there are also standalone tools. If the latter is the case, the tool is marked with an asterisks (*) next to its name. We will first go over tools within R and Python, and then highlight some stand alone applications that might be helpful if you are not familiar with either of those languages.</p>
 <div id="programatic-tools" class="section level2">
 <h2>Programatic Tools</h2>
 <p>These tools are packages within established programming languages, namely R or Python. Most of the workshops at the DataLab uses one of these languages, and they are very common among academics. Learning these tools will first require knowledge of the language they are implemented in however.</p>
@@ -284,30 +285,34 @@
 <h3>Python NLP Tools</h3>
 <div id="natural-language-toolkit-nltk" class="section level4">
 <h4>Natural Language Toolkit (NLTK)</h4>
-<p><a href="https://www.nltk.org/" rel="noopener noreferrer" target="_blank">Natural Language Toolkit (NLTK)</a> has been a stable for NLP for years. It is a fully featured environment for text collection, cleaning, and modeling. Because of its prevalence, there are numerous guides online on how to use the tools NLTK provides.</p>
+<p><a href="https://www.nltk.org/" rel="noopener noreferrer" target="_blank">Natural Language Toolkit (NLTK)</a> has been a staple for NLP for years. It is a fully featured environment for text collection, cleaning, and some modeling. Because of its prevalence, there are numerous guides online on how to use the tools NLTK provides.</p>
 </div>
 <div id="spacy" class="section level4">
 <h4>SpaCy</h4>
-<p><a href="https://spacy.io/" rel="noopener noreferrer" target="_blank">SpaCy</a> is relatively new, but has been rapidly gaining popularity. It aims to be a fully featured suite of tools like NLTK, but build on an updated (and much faster) architecture.</p>
+<p><a href="https://spacy.io/" rel="noopener noreferrer" target="_blank">SpaCy</a> is relatively new but has been rapidly gaining popularity. It aims to be a fully featured suite of tools like NLTK, but builds on an updated (and much faster) architecture.</p>
 </div>
+<div id="gensim" class="section level4">
+<h4>Gensim</h4>
+<p>The <a href="https://radimrehurek.com/gensim/" rel="noopener noreferrer" target="_blank">Gensim</a> library offers numerous methods for producing advanced linguistic models, including topic models and word embeddings. While it offers minimal support for features like POS tagging, the package’s expansive offering of models has made it a common tool for higher-level text analysis.</p>
+</div>
+</div>
+<div id="scikit-learn" class="section level3">
+<h3>scikit-learn</h3>
+<p>Among <a href="https://scikit-learn.org/stable/" rel="noopener noreferrer" target="_blank">scikit-learn</a>’s many features, it offers several, easy-to-use text analysis methods, ranging from quickly producing TF-IDF scores to topic modeling. An additional advantage to using such methods is that they play nicely with the larger scikit-learn ecosystem.</p>
 </div>
 <div id="r-nlp-tools" class="section level3">
 <h3>R NLP Tools</h3>
 <div id="quanteda" class="section level4">
 <h4>quanteda</h4>
-<p><a href="https://quanteda.io/" rel="noopener noreferrer" target="_blank">quanteda</a> is a newer text analysis suite for R, similar to NLTK or SpaCy for python. You can perform data management, cleaning, and analysis through the main tool and its companion packages.</p>
+<p><a href="https://quanteda.io/" rel="noopener noreferrer" target="_blank">quanteda</a> is a newer text analysis suite for R, similar to NLTK or SpaCy for Python. You can perform data management, cleaning, and analysis through the main tool and its companion packages.</p>
 </div>
 <div id="spacyr" class="section level4">
 <h4>Spacyr</h4>
-<p><a href="https://spacyr.quanteda.io/" rel="noopener noreferrer" target="_blank">Spacyr</a> is a R wrapper around the python SpaCy suite. It ports many of the SpaCy features to R, but relies on python running in the background.</p>
-</div>
-<div id="stringr" class="section level4">
-<h4>Stringr</h4>
-<p><a href="https://stringr.tidyverse.org/" rel="noopener noreferrer" target="_blank">Stringr</a> is a mainstay for working with text in R, though mainly for manipulation rather than analyses. It provides easy functions for searching through and manipulating strings.</p>
+<p><a href="https://spacyr.quanteda.io/" rel="noopener noreferrer" target="_blank">Spacyr</a> is a R wrapper around the python SpaCy suite. It ports many of the SpaCy features to R but ultimately relies on Python running in the background.</p>
 </div>
 <div id="text2vec" class="section level4">
 <h4>text2vec</h4>
-<p><a href="http://text2vec.org/" rel="noopener noreferrer" target="_blank">text2vec</a> is primary used for text modeling, and supports topic modeling, word embeddings, and text similarity testing. It is built on C++ and is thus fast and memory efficient.</p>
+<p><a href="http://text2vec.org/" rel="noopener noreferrer" target="_blank">text2vec</a> is primary used for text modeling. It supports topic modeling, word embeddings, and text similarity testing. It is built on C++ and is thus fast and memory efficient.</p>
 </div>
 <div id="tidytext" class="section level4">
 <h4>tidytext</h4>
@@ -341,7 +346,7 @@
 <h2>Text Analysis</h2>
 <div id="stanford-ner" class="section level3">
 <h3>Stanford NER *</h3>
-<p>Part of Stanford Core NLP, <a href="https://nlp.stanford.edu/software/CRF-NER.shtml" rel="noopener noreferrer" target="_blank">Stanford NER</a> is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The web page provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as python, php, perl, JavaScript, etc.</p>
+<p>Part of Stanford Core NLP, <a href="https://nlp.stanford.edu/software/CRF-NER.shtml" rel="noopener noreferrer" target="_blank">Stanford NER</a> is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The web page provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as Python, PHP, Perl, JavaScript, etc.</p>
 </div>
 <div id="stanford-sentiment-analysis" class="section level3">
 <h3>Stanford Sentiment Analysis *</h3>
@@ -357,7 +362,7 @@
 </div>
 <div id="macro-etyological-analyzer" class="section level3">
 <h3>Macro-Etyological Analyzer *</h3>
-<p><a href="http://jonreeve.com/2016/06/introducing-macroetym-cli/" rel="noopener noreferrer" target="_blank">Macro-Etyological Analyzer</a> is a python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. A very important tool for people interested in historical word usage and linguistic change.</p>
+<p><a href="http://jonreeve.com/2016/06/introducing-macroetym-cli/" rel="noopener noreferrer" target="_blank">Macro-Etyological Analyzer</a> is a Python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. It is a very important tool for people interested in historical word usage and linguistic change.</p>
 </div>
 <div id="textplot" class="section level3">
 <h3>TextPlot *</h3>
@@ -411,7 +416,7 @@
 </div>
 <div id="wordseer" class="section level3">
 <h3>WordSeer *</h3>
-<p><a href="https://github.com/Wordseer/wordseer/" rel="noopener noreferrer" target="_blank">WordSeer</a> is a python webapp for textual analysis combines visualization, information retrieval, sensemaking and natural language processing. After installing the source code via command line, use of WordSeer requires registration, and tools for collaboration are provided. Many standard nlp tools and visualizations are available through the web interface. Users can try out the tool on a test collection before uploading their own documents to see if the tool is right for them.</p>
+<p><a href="https://github.com/Wordseer/wordseer/" rel="noopener noreferrer" target="_blank">WordSeer</a> is a Python webapp for textual analysis combines visualization, information retrieval, sensemaking and natural language processing. After installing the source code via command line, use of WordSeer requires registration, and tools for collaboration are provided. Many standard nlp tools and visualizations are available through the web interface. Users can try out the tool on a test collection before uploading their own documents to see if the tool is right for them.</p>
 </div>
 <div id="voyant-tools" class="section level3">
 <h3>Voyant-Tools</h3>
