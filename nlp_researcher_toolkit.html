@@ -7,7 +7,7 @@
 
         <meta name="author" content="UC Davis DataLab" />
     
-        <meta name="date" content="2021-07-22" />
+        <meta name="date" content="2021-07-28" />
     
     <title>UC Davis DataLab Text and NLP Toolkit</title>
 
@@ -164,12 +164,17 @@
       <li><a href="#nonsense-laboratory">Nonsense Laboratory</a></li>
       <li><a href="#wordwanderer">WordWanderer</a></li>
       </ul></li>
+      <li><a href="#nlp-in-action">NLP in Action</a>
+      <ul>
+      <li><a href="#what-every1-says">What Every1 Says</a></li>
+      <li><a href="#quintessence">Quintessence</a></li>
+      </ul></li>
       <li><a href="#contributions">Contributions</a></li>
       </ul>
     </div>
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
                   <p class="author"><span class="glyphicon glyphicon-user"></span> UC Davis DataLab</p>
-                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-07-22</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-07-28</p>
           </div>
    </div>
      
@@ -183,6 +188,7 @@
 <h1>Overview</h1>
 <p>This page will provide you with a few basic concepts and tools for working with text data. Natural Language Processing (NLP) is a discipline of its own, so if you plan to use these methods of your own research, please consider this a starting point only. That being said, this page should give you the vocabulary required to start researching the concepts that are of interest to you and your project.</p>
 <p>Natural Language Processing (NLP) is a combination of linguistics, computer science, data science, and statistics, which uses models of language to understand large collections of text, called <em>corpora</em>. Here, “natural language” refers to language people use (in contrast with something like a “coding language,” for example). In the digital humanities, NLP is sometimes referred to as “distant reading,” to distinguish it from the kind of “close reading” that typically marks literary interpretation. Good NLP projects, however, still involve plenty of manual reading, at least in part. Ultimately, the adage “garbage in, garbage out” still applies to NLP, and much of this work involves iteratively comparing data-driven analysis of a corpus with human-led reading.</p>
+<p>Another common term used in this area is <em>text mining</em>. There is significant overlap between text mining and NLP, but they key distinction depends on the final use of the text data.</p>
 </div>
 <div id="natural-language-processing-nlp-concepts" class="section level1">
 <h1>Natural Language Processing (NLP) Concepts</h1>
@@ -344,6 +350,30 @@
 </div>
 <div id="text-analysis" class="section level2">
 <h2>Text Analysis</h2>
+<div id="booknlp" class="section level3">
+<h3>BookNLP</h3>
+<p><a href="https://github.com/dbamman/book-nlp" rel="noopener noreferrer" target="_blank">BookNLP</a> A natural language processing pipeline developed to run on books and other long (English only) documents. Uses the Stanford Core NLP software, so it requires Java and use of the command line or more advanced programming skills. Includes the ability to do part-of-speech tagging, dependency parsing, named entity recognition, character name clustering, quotation speaker identification, pronominal coreference resolution, and suspersense tagging.</p>
+</div>
+<div id="factorie" class="section level3">
+<h3>FACTORIE</h3>
+<p>From the command-line, <a href="http://factorie.cs.umass.edu/" rel="noopener noreferrer" target="_blank">FACTORIE</a> provides a framework for probabilistic graphical models, and can do a wide variety of text analysis tasks such as topic modeling, document classification, and part-of-speech tagging. The tutorials and how-to guides are mostly code, and so is recommended for users already familiar with at least one computer programming language. The last update to the software was 2014.</p>
+</div>
+<div id="ldavis" class="section level3">
+<h3>LDAvis *</h3>
+<p><a href="http://nlp.stanford.edu/events/illvi2014/papers/sievert-illvi2014.pdf" rel="noopener noreferrer" target="_blank">LDAvis</a> is a commonly used tool for exploring topic models and understanding the relationship between topics. It has implementations in many coding languages, notably R and Python. s</p>
+</div>
+<div id="macro-etyological-analyzer" class="section level3">
+<h3>Macro-Etyological Analyzer *</h3>
+<p><a href="http://jonreeve.com/2016/06/introducing-macroetym-cli/" rel="noopener noreferrer" target="_blank">Macro-Etyological Analyzer</a> is a Python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. It is a very important tool for people interested in historical word usage and linguistic change.</p>
+</div>
+<div id="signature-stylometric-system" class="section level3">
+<h3>Signature Stylometric System</h3>
+<p><a href="http://www.philocomp.net/texts/signature.htm" rel="noopener noreferrer" target="_blank">Signature Stylometric System</a> is a tool for stylometric analysis and comparison of texts with emphasis on author identification. The tool is well documented and seemingly well designed and implemented. Several corpuses are available with examples of usage available on the website. It seems like a good starting point for any kind of efforts towards author attribution, and the program is downloadable in a self-extracting ZIP file.</p>
+</div>
+<div id="sentiment-140" class="section level3">
+<h3>Sentiment 140</h3>
+<p><a href="http://help.sentiment140.com/api" rel="noopener noreferrer" target="_blank">Sentiment 140</a> is an API for sentiment analysis on tweets, this tool can do bulk processes of around 5000 per minute and was built from machine learning algorithms. The tool is well documented and seems easy to interface with and parse results. Users can upload JSON and CSV formatted data and use of the tool requires registration.</p>
+</div>
 <div id="stanford-ner" class="section level3">
 <h3>Stanford NER *</h3>
 <p>Part of Stanford Core NLP, <a href="https://nlp.stanford.edu/software/CRF-NER.shtml" rel="noopener noreferrer" target="_blank">Stanford NER</a> is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The web page provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as Python, PHP, Perl, JavaScript, etc.</p>
@@ -352,29 +382,9 @@
 <h3>Stanford Sentiment Analysis *</h3>
 <p>Part of Stanford Core NLP, <a href="https://nlp.stanford.edu/sentiment/" rel="noopener noreferrer" target="_blank">Stanford Sentiment Analysis</a> is a Java implementation with web demo of Stanford’s model for sentiment analysis. The model uses sentence structure to attempt to quantify the general sentiment of a text based on a type of recursive neural network which analyzed Stanford’s Sentiment Treebank dataset. This is a very useful tool and is a much more up to date and robust model for sentiment analysis then previous naive model’s that simply sum the scores of the words in the text without caring for order or grammatical nuance. Users can use a web based live demo to see if the tool is useful for them, and then download the source code via command line.</p>
 </div>
-<div id="sentiment-140" class="section level3">
-<h3>Sentiment 140</h3>
-<p><a href="http://help.sentiment140.com/api" rel="noopener noreferrer" target="_blank">Sentiment 140</a> is an API for sentiment analysis on tweets, this tool can do bulk processes of around 5000 per minute and was built from machine learning algorithms. The tool is well documented and seems easy to interface with and parse results. Users can upload JSON and CSV formatted data and use of the tool requires registration.</p>
-</div>
-<div id="signature-stylometric-system" class="section level3">
-<h3>Signature Stylometric System</h3>
-<p><a href="http://www.philocomp.net/texts/signature.htm" rel="noopener noreferrer" target="_blank">Signature Stylometric System</a> is a tool for stylometric analysis and comparison of texts with emphasis on author identification. The tool is well documented and seemingly well designed and implemented. Several corpuses are available with examples of usage available on the website. It seems like a good starting point for any kind of efforts towards author attribution, and the program is downloadable in a self-extracting ZIP file.</p>
-</div>
-<div id="macro-etyological-analyzer" class="section level3">
-<h3>Macro-Etyological Analyzer *</h3>
-<p><a href="http://jonreeve.com/2016/06/introducing-macroetym-cli/" rel="noopener noreferrer" target="_blank">Macro-Etyological Analyzer</a> is a Python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. It is a very important tool for people interested in historical word usage and linguistic change.</p>
-</div>
 <div id="textplot" class="section level3">
 <h3>TextPlot *</h3>
 <p><a href="https://github.com/davidmcclure/textplot" rel="noopener noreferrer" target="_blank">TextPlot</a> is a program that converts a document into a network of terms based on co-occurrences with the goal of teasing out information about high-level topic structure of the text. For each term, users can get the set of offsets in the document where the term appears and use the kernel density estimation to compute a probability density function that represents the word’s distribution across the document. Users can also compute the bray-Curtis dissimilarity between the term’s PDF and the PDFs of all other terms in the document to measure the extent to which two words appear in the same locations. Output includes various ways of graphing these measures, including an overall word network. Users can install the source code from Github and can use the program via command line or Python.</p>
-</div>
-<div id="booknlp" class="section level3">
-<h3>BookNLP</h3>
-<p><a href="https://github.com/dbamman/book-nlp" rel="noopener noreferrer" target="_blank">BookNLP</a> A natural language processing pipeline developed to run on books and other long (English only) documents. Uses the Stanford Core NLP software, so it requires Java and use of the command line or more advanced programming skills. Includes the ability to do part-of-speech tagging, dependency parsing, named entity recognition, character name clustering, quotation speaker identification, pronominal coreference resolution, and suspersense tagging.</p>
-</div>
-<div id="factorie" class="section level3">
-<h3>FACTORIE</h3>
-<p>From the command-line, <a href="http://factorie.cs.umass.edu/" rel="noopener noreferrer" target="_blank">FACTORIE</a> provides a framework for probabilistic graphical models, and can do a wide variety of text analysis tasks such as topic modeling, document classification, and part-of-speech tagging. The tutorials and how-to guides are mostly code, and so is recommended for users already familiar with at least one computer programming language. The last update to the software was 2014.</p>
 </div>
 </div>
 <div id="text-corpus-exploration-software" class="section level2">
@@ -433,6 +443,14 @@
 </div>
 <div id="dataset-sources" class="section level2">
 <h2>Dataset Sources</h2>
+<div id="chronicling-america" class="section level3">
+<h3>Chronicling America</h3>
+<p><a href="https://chroniclingamerica.loc.gov/about/api/" rel="noopener noreferrer" target="_blank">Chronicling America</a> provides an API to download relevant digitized historical newspapers from the US. This makes it easy to access large collections of digitized text, for free, compared to many other methods.</p>
+</div>
+<div id="digital-humanities-toychest" class="section level3">
+<h3>Digital Humanities Toychest</h3>
+<p>The <a href="http://dhresourcesforprojectbuilding.pbworks.com/w/page/69244469/Data%20Collections%20and%20Datasets" rel="noopener noreferrer" target="_blank">Digital Humanities Toychest</a> maintains a list of several corpora ready for analysis, and are good places to start your first NLP project. The website as a whole also presents several resources like those here readers may find helpful.</p>
+</div>
 <div id="hathitrust" class="section level3">
 <h3>HathiTrust</h3>
 <p><a href="https://www.hathitrust.org/" rel="noopener noreferrer" target="_blank">HathiTrust</a> is a web portal to many databases of texts, books, and images. Users can download text versions of many of the works, and the site includes works in many languages. HathiTrust interfaces with WorldCat and other tools for finding alternate versions of the text.</p>
@@ -452,6 +470,17 @@
 <div id="wordwanderer" class="section level2">
 <h2>WordWanderer</h2>
 <p><a href="http://wordwanderer.org/" rel="noopener noreferrer" target="_blank">WordWanderer</a> is an experimental web tool for visualization of an imported text. The web interface loads all words in the corpus and provides clickable and draggable options for users to explore the context of words and the relationships between words. No output or analysis function beyond exploring your text visually.</p>
+</div>
+</div>
+<div id="nlp-in-action" class="section level1">
+<h1>NLP in Action</h1>
+<div id="what-every1-says" class="section level2">
+<h2>What Every1 Says</h2>
+<p><a href="https://we1s.ucsb.edu/research/we1s-findings/key-findings/" rel="noopener noreferrer" target="_blank">What Every1 Says</a> is a meta-study using humanities and text methods to study the humanities. The link here shows off their gallery on one page reports, many of which rely on NLP for their findings.</p>
+</div>
+<div id="quintessence" class="section level2">
+<h2>Quintessence</h2>
+<p><a href="http://quintessence.ds.lib.ucdavis.edu/" rel="noopener noreferrer" target="_blank">Quintessence</a> seeks to add state-of-the-art data analysis and dynamic corpus exploration to the study of Early Modern period English texts. This project currently uses a corpus of approximately sixty thousand texts from the Early English Books Online (EEBO) Text Creation Partnership. Each text is standardized using Northwestern University’s MorphAdorner, which accounts for spelling changes over time. Any scholar interested in the archive can use Quintessence to run analyses ranging from individual word meanings to broad textual themes. The ability to add more collections of texts is under active development.</p>
 </div>
 </div>
 <div id="contributions" class="section level1">
