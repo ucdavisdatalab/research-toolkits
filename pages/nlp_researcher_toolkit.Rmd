@@ -33,6 +33,8 @@ This page will provide you with a few basic concepts and tools for working with 
 
 Natural Language Processing (NLP) is a combination of linguistics, computer science, data science, and statistics, which uses models of language to understand large collections of text, called *corpora*. Here, "natural language" refers to language people use (in contrast with something like a "coding language," for example). In the digital humanities, NLP is sometimes referred to as "distant reading," to distinguish it from the kind of "close reading" that typically marks literary interpretation. Good NLP projects, however, still involve plenty of manual reading, at least in part. Ultimately, the adage "garbage in, garbage out" still applies to NLP, and much of this work involves iteratively comparing data-driven analysis of a corpus with human-led reading.
 
+Another common term used in this area is *text mining*. There is significant overlap between text mining and NLP, but they key distinction depends on the final use of the text data. 
+
 # Natural Language Processing (NLP) Concepts
 
 NLP involves many methods. These can range from simple counts of words across a corpus, to processing the corpus to find salient themes and the documents that discuss them. Before you can pick a method though, you need to make some decisions about how you will represent your text as data. This includes how you will select and clean your text, as well as picking the unit of analysis. We will give a quick overview of these steps here, but please check out our [workshop archive](https://datalab.ucdavis.edu/archive/){rel="noopener noreferrer" target="_blank"} for NLP workshops and other resources that can better prepare you to take advantage of NLP methods in your work.
@@ -191,6 +193,30 @@ Among [scikit-learn](https://scikit-learn.org/stable/){rel="noopener noreferrer"
 
 ## Text Analysis
 
+### BookNLP
+
+[BookNLP](https://github.com/dbamman/book-nlp){rel="noopener noreferrer" target="_blank"} A natural language processing pipeline developed to run on books and other long (English only) documents. Uses the Stanford Core NLP software, so it requires Java and use of the command line or more advanced programming skills. Includes the ability to do part-of-speech tagging, dependency parsing, named entity recognition, character name clustering, quotation speaker identification, pronominal coreference resolution, and suspersense tagging.
+
+### FACTORIE
+
+From the command-line, [FACTORIE](http://factorie.cs.umass.edu/){rel="noopener noreferrer" target="_blank"} provides a framework for probabilistic graphical models, and can do a wide variety of text analysis tasks such as topic modeling, document classification, and part-of-speech tagging. The tutorials and how-to guides are mostly code, and so is recommended for users already familiar with at least one computer programming language. The last update to the software was 2014.
+
+### LDAvis *
+
+[LDAvis](http://nlp.stanford.edu/events/illvi2014/papers/sievert-illvi2014.pdf){rel="noopener noreferrer" target="_blank"} is a commonly used tool for exploring topic models and understanding the relationship between topics. It has implementations in many coding languages, notably R and Python. s
+
+### Macro-Etyological Analyzer *
+
+[Macro-Etyological Analyzer](http://jonreeve.com/2016/06/introducing-macroetym-cli/){rel="noopener noreferrer" target="_blank"} is a Python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. It is a very important tool for people interested in historical word usage and linguistic change.
+
+### Signature Stylometric System
+
+[Signature Stylometric System](http://www.philocomp.net/texts/signature.htm){rel="noopener noreferrer" target="_blank"} is a tool for stylometric analysis and comparison of texts with emphasis on author identification. The tool is well documented and seemingly well designed and implemented. Several corpuses are available with examples of usage available on the website. It seems like a good starting point for any kind of efforts towards author attribution, and the program is downloadable in a self-extracting ZIP file.
+
+### Sentiment 140
+
+[Sentiment 140](http://help.sentiment140.com/api){rel="noopener noreferrer" target="_blank"} is an API for sentiment analysis on tweets, this tool can do bulk processes of around 5000 per minute and was built from machine learning algorithms. The tool is well documented and seems easy to interface with and parse results. Users can upload JSON and CSV formatted data and use of the tool requires registration.
+
 ### Stanford NER *
 
 Part of Stanford Core NLP, [Stanford NER](https://nlp.stanford.edu/software/CRF-NER.shtml){rel="noopener noreferrer" target="_blank"} is a Java implementation with web interface (for demonstrations) of Stanford’s Name Entity Recognition and extraction. Users can get the names, dates, places, organizations and other entities from texts in many languages. Users can try out the software on a web interface to determine if the tool is useful, and then download the source code to their own machine. The web page provides step-by-step instructions to download and begin using the software via command-line. It has recently been extended to have bindings in many languages other than Java, such as Python, PHP, Perl, JavaScript, etc.
@@ -199,29 +225,9 @@ Part of Stanford Core NLP, [Stanford NER](https://nlp.stanford.edu/software/CRF-
 
 Part of Stanford Core NLP, [Stanford Sentiment Analysis](https://nlp.stanford.edu/sentiment/){rel="noopener noreferrer" target="_blank"} is a Java implementation with web demo of Stanford’s model for sentiment analysis. The model uses sentence structure to attempt to quantify the general sentiment of a text based on a type of recursive neural network which analyzed Stanford’s Sentiment Treebank dataset. This is a very useful tool and is a much more up to date and robust model for sentiment analysis then previous naive model’s that simply sum the scores of the words in the text without caring for order or grammatical nuance. Users can use a web based live demo to see if the tool is useful for them, and then download the source code via command line.
 
-### Sentiment 140
-
-[Sentiment 140](http://help.sentiment140.com/api){rel="noopener noreferrer" target="_blank"} is an API for sentiment analysis on tweets, this tool can do bulk processes of around 5000 per minute and was built from machine learning algorithms. The tool is well documented and seems easy to interface with and parse results. Users can upload JSON and CSV formatted data and use of the tool requires registration.
-
-### Signature Stylometric System
-
-[Signature Stylometric System](http://www.philocomp.net/texts/signature.htm){rel="noopener noreferrer" target="_blank"} is a tool for stylometric analysis and comparison of texts with emphasis on author identification. The tool is well documented and seemingly well designed and implemented. Several corpuses are available with examples of usage available on the website. It seems like a good starting point for any kind of efforts towards author attribution, and the program is downloadable in a self-extracting ZIP file.
-
-### Macro-Etyological Analyzer *
-
-[Macro-Etyological Analyzer](http://jonreeve.com/2016/06/introducing-macroetym-cli/){rel="noopener noreferrer" target="_blank"} is a Python tool for text analysis that tracks the etymological origins of the words in a text based on language family, this tool was recently updated to analyze any number of texts in 250 languages. This tool outputs many useful statistical descriptions of the results and can be useful with other NLP methods such as topic modeling. It is a very important tool for people interested in historical word usage and linguistic change.
-
 ### TextPlot *
 
 [TextPlot](https://github.com/davidmcclure/textplot){rel="noopener noreferrer" target="_blank"} is a program that converts a document into a network of terms based on co-occurrences with the goal of teasing out information about high-level topic structure of the text. For each term, users can get the set of offsets in the document where the term appears and use the kernel density estimation to compute a probability density function that represents the word’s distribution across the document. Users can also compute the bray-Curtis dissimilarity between the term’s PDF and the PDFs of all other terms in the document to measure the extent to which two words appear in the same locations. Output includes various ways of graphing these measures, including an overall word network. Users can install the source code from Github and can use the program via command line or Python.
-
-### BookNLP
-
-[BookNLP](https://github.com/dbamman/book-nlp){rel="noopener noreferrer" target="_blank"} A natural language processing pipeline developed to run on books and other long (English only) documents. Uses the Stanford Core NLP software, so it requires Java and use of the command line or more advanced programming skills. Includes the ability to do part-of-speech tagging, dependency parsing, named entity recognition, character name clustering, quotation speaker identification, pronominal coreference resolution, and suspersense tagging.
-
-### FACTORIE
-
-From the command-line, [FACTORIE](http://factorie.cs.umass.edu/){rel="noopener noreferrer" target="_blank"} provides a framework for probabilistic graphical models, and can do a wide variety of text analysis tasks such as topic modeling, document classification, and part-of-speech tagging. The tutorials and how-to guides are mostly code, and so is recommended for users already familiar with at least one computer programming language. The last update to the software was 2014.
 
 ## Text Corpus Exploration Software
 
@@ -277,6 +283,14 @@ Qualitative Data Analysis (QDA) tools are often used by researchers to code and 
 
 ## Dataset Sources
 
+### Chronicling America
+
+[Chronicling America](https://chroniclingamerica.loc.gov/about/api/){rel="noopener noreferrer" target="_blank"} provides an API to download relevant digitized historical newspapers from the US. This makes it easy to access large collections of digitized text, for free, compared to many other methods.
+
+### Digital Humanities Toychest
+
+The [Digital Humanities Toychest](http://dhresourcesforprojectbuilding.pbworks.com/w/page/69244469/Data%20Collections%20and%20Datasets){rel="noopener noreferrer" target="_blank"} maintains a list of several corpora ready for analysis, and are good places to start your first NLP project. The website as a whole also presents several resources like those here readers may find helpful.
+
 ### HathiTrust
 
 [HathiTrust](https://www.hathitrust.org/){rel="noopener noreferrer" target="_blank"} is a web portal to many databases of texts, books, and images. Users can download text versions of many of the works, and the site includes works in many languages. HathiTrust interfaces with WorldCat and other tools for finding alternate versions of the text.
@@ -294,6 +308,16 @@ Qualitative Data Analysis (QDA) tools are often used by researchers to code and 
 ## WordWanderer
 
 [WordWanderer](http://wordwanderer.org/){rel="noopener noreferrer" target="_blank"} is an experimental web tool for visualization of an imported text. The web interface loads all words in the corpus and provides clickable and draggable options for users to explore the context of words and the relationships between words. No output or analysis function beyond exploring your text visually.
+
+# NLP in Action
+
+## What Every1 Says
+
+[What Every1 Says](https://we1s.ucsb.edu/research/we1s-findings/key-findings/){rel="noopener noreferrer" target="_blank"} is a meta-study using humanities and text methods to study the humanities. The link here shows off their gallery on one page reports, many of which rely on NLP for their findings.
+
+## Quintessence
+
+[Quintessence](http://quintessence.ds.lib.ucdavis.edu/){rel="noopener noreferrer" target="_blank"} seeks to add state-of-the-art data analysis and dynamic corpus exploration to the study of Early Modern period English texts. This project currently uses a corpus of approximately sixty thousand texts from the Early English Books Online (EEBO) Text Creation Partnership. Each text is standardized using Northwestern University’s MorphAdorner, which accounts for spelling changes over time. Any scholar interested in the archive can use Quintessence to run analyses ranging from individual word meanings to broad textual themes. The ability to add more collections of texts is under active development.
 
 # Contributions
 
