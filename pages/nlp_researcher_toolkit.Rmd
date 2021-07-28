@@ -33,7 +33,7 @@ This page will provide you with a few basic concepts and tools for working with 
 
 Natural Language Processing (NLP) is a combination of linguistics, computer science, data science, and statistics, which uses models of language to understand large collections of text, called *corpora*. Here, "natural language" refers to language people use (in contrast with something like a "coding language," for example). In the digital humanities, NLP is sometimes referred to as "distant reading," to distinguish it from the kind of "close reading" that typically marks literary interpretation. Good NLP projects, however, still involve plenty of manual reading, at least in part. Ultimately, the adage "garbage in, garbage out" still applies to NLP, and much of this work involves iteratively comparing data-driven analysis of a corpus with human-led reading.
 
-Another common term used in this area is *text mining*. There is significant overlap between text mining and NLP, but they key distinction depends on the final use of the text data. 
+Another common term used in this area is *text mining*. There is significant overlap between text mining and NLP, but the key distinction depends on the final use of the text data. Text mining is usually understood as the process of collecting, cleaning, and doing structural analyses of text such as word counts. While this is always part of the process of NLP, NLP itself is usually concerned with the semantic meaning of the text, and the concepts contained within.
 
 # Natural Language Processing (NLP) Concepts
 
@@ -41,7 +41,7 @@ NLP involves many methods. These can range from simple counts of words across a 
 
 As with all data sets, you must keep in mind what you are actually sampling when you collect text data. For example, while Twitter may provide ready access to social media data through their API, it is still only a snapshot of Twitter users, not a generalizable corpus of all humanity. The same is true when you get newspapers from an archive or transcripts from speeches: it will always be just one slice of all that has ever been said or written. Readers interested in how they might frame their research with these caveats in mind are encouraged to consult research that employs data-driven approaches to book history and bibliography.
 
-After you have selected a corpus, you'll likely need to clean it. Even the most common NLP analyses involve substantial data cleaning and preprocessing. Consider, for example, a scenario in which you are interested in simply counting the number of times "Follow" appears in your corpus. You would need to decide things like:
+After you have selected a corpus, you'll likely need to clean it. Even the most common NLP analyses involve substantial data cleaning and pre-processing. Consider, for example, a scenario in which you are interested in simply counting the number of times "Follow" appears in your corpus. You would need to decide things like:
 
 1. Does capitalization matter? Is Follow a proper term?
 2. Does the tense of the word matter? Does Follow == Following == Followed?
