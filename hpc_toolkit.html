@@ -7,7 +7,7 @@
 
         <meta name="author" content="UC Davis DataLab" />
     
-        <meta name="date" content="2021-07-28" />
+        <meta name="date" content="2021-08-26" />
     
     <title>UC Davis DataLab High Performance Computing Toolkit (WIP)</title>
 
@@ -148,7 +148,7 @@
     </div>
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
                   <p class="author"><span class="glyphicon glyphicon-user"></span> UC Davis DataLab</p>
-                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-07-28</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-08-26</p>
           </div>
    </div>
      
@@ -160,7 +160,7 @@
 <div id="main">
 <div id="overview" class="section level1">
 <h1>Overview</h1>
-<p>This guide is a quick overview of High Performance Computing (HPC) at UC Davis. It has taken heavily from several other resources, listed below. A more comprehensive guide is under construction, and is set to be released this summer.</p>
+<p>This guide is a quick overview of High Performance Computing (HPC) at UC Davis. It has taken heavily from several other resources, listed below. If you would like a more in-depth tutorial, please look at the <a href="https://ngs-docs.github.io/2021-august-remote-computing/index.html">Introduction to Remote Computing</a> workshop series.</p>
 <p>If you need to talk with someone now, look into the <code>#hpc</code> channel on the <a href="https://ucdavis.slack.com/">UC Davis slack</a>, or email the <a href="hpc-help@ucdavis.edu">HPC helpdesk</a>.</p>
 <p><strong>Consulted Resources</strong></p>
 <ul>
@@ -302,6 +302,10 @@ rsync -avzeP &#39;ssh -p 22&#39; &lt;LOCAL DIRECTORY LOCATION&gt; &lt;SHORT SERV
 #SBATCH -J MY_JOB
 #SBATCH -t 24:00:00
 set -u
+set -e
+set -x
+
+scontrol show job ${SLURM_JOB_ID}
 
 &lt;PUT YOUR CODE HERE&gt;</code></pre>
 </div>
@@ -314,6 +318,10 @@ Set the output location for your stanard errors
 Name your job
 Max runtime? (here is 24 hours)
 Error if un-named variables called
+Error if a single command fails
+Print commands as they run
+
+Print out final stats from your job on exit
 
 Whatever your code is,
 most likely calling R or python</code></pre>
