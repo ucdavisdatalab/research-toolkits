@@ -18,7 +18,7 @@ csl: apa.csl
 
 # Overview
 
-This guide is a quick overview of High Performance Computing (HPC) at UC Davis. It has taken heavily from several other resources, listed below. A more comprehensive guide is under construction, and is set to be released this summer.
+This guide is a quick overview of High Performance Computing (HPC) at UC Davis. It has taken heavily from several other resources, listed below. If you would like a more in-depth tutorial, please look at the [Introduction to Remote Computing](https://ngs-docs.github.io/2021-august-remote-computing/index.html) workshop series.
 
 If you need to talk with someone now, look into the `#hpc` channel on the [UC Davis slack](https://ucdavis.slack.com/), or email the [HPC helpdesk](hpc-help@ucdavis.edu).
 
@@ -123,8 +123,13 @@ After you have your project directory set up, you can start making scripts for y
     #SBATCH -J MY_JOB
     #SBATCH -t 24:00:00
     set -u
+    set -e
+    set -x
+    
+    scontrol show job ${SLURM_JOB_ID}
 
     <PUT YOUR CODE HERE>
+    
 
 ###### Key {.rcol_2}
 
@@ -135,6 +140,10 @@ After you have your project directory set up, you can start making scripts for y
     Name your job
     Max runtime? (here is 24 hours)
     Error if un-named variables called
+    Error if a single command fails
+    Print commands as they run
+    
+    Print out final stats from your job on exit
 
     Whatever your code is,
     most likely calling R or python
