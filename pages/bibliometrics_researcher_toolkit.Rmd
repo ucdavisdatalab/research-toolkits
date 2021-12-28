@@ -57,7 +57,7 @@ Several APIs and portals are available for gathering bibliometric data. Each pla
 
 [Microsoft Academic Search](https://academic.microsoft.com/home){rel="noopener noreferrer" target="_blank"} has recently emerged as a competitor to Web of Science and Scopus. Unlike Web of Science and Scopus, Academic Search incorporates "grey literature" from the open web and public book databases such as WorldCat. This means that Academic Search frequently has better coverage than Web of Science and Scopus, especially for works in languages other than English and qualitative social science and humanities. However, this also leads to concerns about data quality. Academic Search has a [free API](https://docs.microsoft.com/en-us/azure/cognitive-services/academic-knowledge/home){rel="noopener noreferrer" target="_blank"}.
 
-##Crossref API
+## Crossref API
 
 [Crossref](https://github.com/CrossRef/rest-api-doc){rel="noopener noreferrer" target="_blank"} is the primary DOI registration agency. DOI is an identifier widely used with academic publications, including journal articles but increasingly also book chapters and other born-digital scholarly works. In addition, many major academic publishers have registered DOIs for their entire archives. When a DOI is registered, the publisher provides metadata describing the item to Crossref. These metadata can be retrieved quickly, easily, and for free using the Crossref API for virtually any item with a valid DOI. For R users, the [rcrossref package](https://cran.r-project.org/package=rcrossref){rel="noopener noreferrer" target="_blank"} provides an elegant interface to this API. Crossref has excellent coverage for recent research across almost all fields, and very good coverage for historical work across most fields. However, Crossref is limited to the metadata provided by publishers, which generally do not include abstract texts or citations.
 
@@ -68,6 +68,10 @@ Several APIs and portals are available for gathering bibliometric data. Each pla
 ## PubMed APIs
 
 [The PubMed APIs](https://www.ncbi.nlm.nih.gov/home/develop/api/){rel="noopener noreferrer" target="_blank"} may already be familiar to researchers in biomedical research and genomics. The Entrez set of utilities can be used to search and retrieve publication metadata from the PubMed index. These utilities are all free to use. PubMed's coverage is generally excellent for English-language publications in biomedical journals and related fields, but extremely limited otherwise. A web search returns several results for PubMed-related packages on CRAN, but the author of this toolkit has not used any of them.
+
+## Grobid
+
+[Grobid](https://grobid.readthedocs.io/en/latest/Introduction/){rel="noopener noreferrer" target="_blank"}, or the "GeneRation Of BIbliographic Data" library, assists researchers in extracting citations from PDF documents. It's especially useful for working with digitized sources that have little or no citation metadata. Grobid involves a fair amount of setup and disk space: contained in the library are several sequence labeling models that collect article information ranging from layout features (figures, footnotes, etc.) to author affiliations; OCR is performed where necessary. Grobid checks citations against Crossref and, when possible, resolves them into canonical listings. There are a few different output options from this process. The most germane one for bibliometric analysis is a TEI-formatted representation of an inputted PDF. For Python users,   [grobid_tei_xml](https://pypi.org/project/grobid-tei-xml/){rel="noopener noreferrer" target="_blank"} enables researchers to easily parse this TEI.
 
 # Resources
 
@@ -83,5 +87,6 @@ This toolkit has been made possible thanks to contributions by:
 
 * [Dan Hicks](https://dhicks.github.io/){rel="noopener noreferrer" target="_blank"}
 * [Jared Joseph](https://jnjoseph.com/){rel="noopener noreferrer" target="_blank"}
+* [Tyler Shoemaker](https://tylershoemaker.info/){rel="noopener noreferrer" target="_blank"}
 
 # References
