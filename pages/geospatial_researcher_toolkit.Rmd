@@ -238,8 +238,6 @@ Low altitude remote sensing platforms typically require many large scale (in the
 
 ### Pix4D
 
-Alex Mandel coordinates the EDU licenses of Pix4D. Contact him if you need to purchase a new license.
-
 |Platforms|Cost|Download|
 |:-|:-|:-|
 |Windows|Typically licenses are offered on a subscription (yearly or monthly) basis.|[Pix4D Homepage](https://www.pix4d.com/){rel="noopener noreferrer" target="_blank"}|
@@ -249,8 +247,6 @@ Learning:
 * [Pix4D Training Site](https://www.pix4d.com/services/training-certification){rel="noopener noreferrer" target="_blank"}
 
 ### Metashape (formerly PhotoScan)
-
-Alex Mandel also coordinates the Metashape/Photoscan licenses.
 
 |Platforms|Cost|Download|
 |:-|:-|:-|
@@ -295,9 +291,9 @@ UC Davis affiliates can sign up for email lists through the [UC Davis Informatio
 
 ## GIS Workstation & Scanner
 
-The lower level of Shields Library has one GIS workstation that UC Davis students, faculty, researchers, and other staff may to use for a maximum of two hours per day. The workstation room is located near, but outside the Map Room and is open the same hours as the Library. The workstation has the full suite of ArcGIS 10 software (available to campus affiliates) including ArcMap and ArcGIS Pro, as well as QGIS 3 (available to anyone).
+DataLab currently houses the Librar's GIS workstation that UC Davis students, faculty, researchers, and other staff may to use. Email DataLab to set up a time to access this resource. The workstation has the full suite of ArcGIS software (available to campus affiliates) including ArcMap and ArcGIS Pro, as well as QGIS 3 (available to anyone).
 
-An 11″ x 17″ color scanner is available for maps and aerial photography.
+An 11″ x 17″ color scanner is available for maps and aerial photography is also available in DataLab.
 
 Workstation use must comply with [UC Davis Computer Use Policies](https://computerrooms.ucdavis.edu/policies.html){rel="noopener noreferrer" target="_blank"} and the [Library Computer Use Policy](https://www.library.ucdavis.edu/library-policies/){rel="noopener noreferrer" target="_blank"}. GIS software and data licensed by the library may not be used for commercial purposes. Save your data and project files to portable media.
 
