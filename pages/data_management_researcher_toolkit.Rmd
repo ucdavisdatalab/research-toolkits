@@ -48,6 +48,11 @@ Data management plans should address:
 
 # Helpful resources for preparing a plan
 
+
+## Ask a Librarian ##
+
+Have questions about data management? Contact [dataserv@ucdavis.edu](dataserv@ucdavis.edu) to get help from a research services librarian.
+
 ## Software Carpentry Data Management Lesson
 
 A software carpentry-produced guide to data management, in particular metadata and version control.
