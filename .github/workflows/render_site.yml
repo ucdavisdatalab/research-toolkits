@@ -35,7 +35,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Build
-        run: bookdown::render_book("index.Rmd", output_dir="./docs")
+        run: lapply(list.files("./pages/", pattern = "^.+\\.Rmd$", full.names = TRUE), rmarkdown::render, output_dir="./docs/")
         shell: Rscript {0}
 
       - name: Deploy
