@@ -26,7 +26,7 @@ jobs:
       - name: Cache results
         uses: actions/cache@v3
         with:
-          path: docs
+          path: pages
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
 
@@ -42,5 +42,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: main
-          folder: docs
-          target-folder: docs
+          folder: pages
+          target-folder: pages
