@@ -51,7 +51,10 @@ Data management plans should address:
 
 ## Ask a Librarian ##
 
-Have questions about data management? Contact [dataserv@ucdavis.edu](dataserv@ucdavis.edu) to get help from a research services librarian.
+Have questions about data management? Contact [dataservices@ucdavis.edu](dataservices@ucdavis.edu) to get help from a research services librarian. They also have [data management resources on the UC Davis Library's website](https://library.ucdavis.edu/data-analysis-and-management/){rel="noopener noreferrer" target="_blank"}.
+
+new email:
+
 
 ## Software Carpentry Data Management Lesson
 
@@ -115,5 +118,6 @@ This research toolkit is maintained by the UC Davis DataLab, and is open for con
 
 This toolkit has been made possible thanks to contributions by:
 
+* [Pamela Reynolds](https://datalab.ucdavis.edu/staff/){rel="noopener noreferrer" target="_blank"}
 * [Sam Pizelo](https://www.samuelpizelo.com/){rel="noopener noreferrer" target="_blank"}
 * [Jared Joseph](https://jnjoseph.com/){rel="noopener noreferrer" target="_blank"}
